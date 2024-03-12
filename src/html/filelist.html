@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+		<link rel="shortcut icon" type="image/x-icon" href="">
+		<title>bzp출장관리 출장관리자 :: 파일리스트</title>
+		<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+		<style>
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+			}
+
+			*:after,
+			*:before {
+				box-sizing: border-box;
+			}
+
+			table {
+				border-collapse: collapse;
+				width: 100%;
+				table-layout: fixed;
+			}
+
+			table caption {
+				display: none;
+			}
+
+			table th,
+			td {
+				border: 1px solid #ccc;
+				padding: 8px;
+			}
+
+			table thead th {
+				color: #000;
+				text-align: center;
+				background: #f2f2f2;
+			}
+
+			table tbody th {
+				color: #333;
+				text-align: center;
+				background: #f2f2f2;
+			}
+
+			table tbody td {
+				color: #333;
+				text-align: left;
+			}
+
+			table tbody td a {
+				color: #eb2a14;
+				text-decoration: underline;
+				font-weight: bold;
+			}
+
+			table tbody td.ac {
+				text-align: center;
+				font-weight: bold;
+			}
+
+			table tr.bg td,
+			table tr.bg th {
+				background: #eee8ff;
+			}
+
+			table tr.bg2 td,
+			table tr.bg2 th {
+				background: #f9ffec;
+			}
+
+			table tr.bg3 td,
+			table tr.bg3 th {
+				background: #f5f5f5;
+				opacity: 0.5;
+				text-decoration: line-through;
+			}
+
+			body,
+			html {
+				font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Malgun Gothic', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', sans-serif;
+				color: #000;
+				font-size: 12px;
+			}
+
+			dl,
+			ol,
+			ul {
+				list-style: none;
+			}
+
+			.color1 {
+				color: #eb2a14;
+			}
+
+			.wrap {
+				padding: 16px;
+			}
+
+			h1 {
+				font-size: 14px;
+				font-weight: bold;
+			}
+
+			.noti {
+				border: 1px solid #ccc;
+				margin: 5px 0 10px;
+				padding: 10px;
+			}
+
+			.noti li {
+				position: relative;
+				padding-left: 10px;
+			}
+
+			.noti li+li {
+				margin-top: 2px;
+			}
+
+			.noti li:before {
+				content: '';
+				position: absolute;
+				left: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 2px;
+				height: 2px;
+				background: #333;
+				border-radius: 50%;
+			}
+
+			#data {
+				padding: 10px;
+				border: 1px solid #e0e0e0;
+				background-color: #fafafa;
+				margin-bottom: 10px;
+				font-size: 14px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+
+			#data span:first-child {
+				font-weight: 500;
+			}
+
+			#data span:not(:first-child) {
+				position: relative;
+				margin-left: 10px;
+				padding-left: 10px;
+			}
+
+			#data span:not(:first-child):before {
+				content: '';
+				position: absolute;
+				top: 2px;
+				left: 0;
+				bottom: 2px;
+				width: 1px;
+				background: #ccc;
+			}
+
+			#data .complete {
+				color: #ff0000;
+			}
+
+			#data .partial {
+				color: #008f42;
+			}
+
+			@media only screen and (max-width: 812px) {
+
+				colgroup col:nth-child(6),
+				colgroup col:nth-child(7),
+				table tbody tr .ac+td,
+				table thead th:nth-child(6),
+				table thead th:nth-child(7) {
+					display: none;
+				}
+
+				table tr td,
+				table tr th {
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					overflow: hidden;
+				}
+			}
+		</style>
+		<script>
+			$(function () {
+				const tdElements = $('tbody tr td:nth-last-child(3)');
+				const totalTDElements = tdElements.length;
+				let emptyCount = 0;
+				let ingCount = 0;
+				let completeCount = 0;
+				let partialCount = 0;
+				const values = new Set();
+				tdElements.each(function () {
+					const value = $(this).text().trim();
+					if (value === '') {
+						emptyCount++;
+					} else if (value === '작업중') {
+						ingCount++;
+					} else if (value === '완료') {
+						completeCount++;
+					} else if (value === '부분완료') {
+						partialCount++;
+					}
+					if (value === '' || value === '작업중' || value === '완료' || value === '부분완료') {
+						values.add(value);
+					}
+				});
+				const count = values.size;
+				const emptyPercentage = (emptyCount / totalTDElements) * 100;
+				const ingPercentage = (ingCount / totalTDElements) * 100;
+				const completePercentage = (completeCount / totalTDElements) * 100;
+				const partialPercentage = (partialCount / totalTDElements) * 100;
+				const totalCompletePercentage = completePercentage + partialPercentage;
+				const result = `<span>전체 : ${totalTDElements}개 (${totalCompletePercentage.toFixed(
+					2,
+				)}%)</span><span>작업전 : ${emptyCount}개 (${emptyPercentage.toFixed(
+					2,
+				)}%)</span><span class="ing">작업중 : ${ingCount}개 (${ingPercentage.toFixed(
+					2,
+				)}%)</span><span class="partial">부분완료 : ${partialCount}개 (${partialPercentage.toFixed(
+					2,
+				)}%)</span><span class="complete">완료 : ${completeCount}개 (${completePercentage.toFixed(2)}%)</span>`;
+				$('#data').html(result);
+			});
+		</script>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<h1>:: bzp출장관리 MOBILE - 파일리스트 ::</h1>
+			<ul class="noti">
+				<li>퍼블리싱과 관련한 문의는 <strong>트래포트 이종석 팀장</strong>에게 문의 바랍니다.</li>
+				<li><strong>UI 개발과 관련한 내용은 페이지 내 주석을 참고하세요.</strong></li>
+				<li><strong class="color1">"완료"</strong>로 표시된 파일만 복사 후 개발 진행 바랍니다.</li>
+			</ul>
+			<p id="data"></p>
+			<table>
+				<caption>파일리스트</caption>
+				<colgrup>
+					<col width="8%">
+					<col width="8%">
+					<col width="10%">
+					<col width="10%">
+					<col width="20%">
+					<col width="8%">
+					<col width="8%">
+					<col>
+				</colgrup>
+				<thead>
+					<tr>
+						<th scope="col">대분류</th>
+						<th scope="col">중분류</th>
+						<th scope="col">소분류</th>
+						<th scope="col">구분</th>
+						<th scope="col">경로/파일명</th>
+						<th scope="col">작업여부</th>
+						<th scope="col">최종작업일</th>
+						<th scope="col">비고</th>
+					</tr>
+				</thead>
+				<!-- ! UI Guide -->
+				<tbody>
+					<tr class="bg">
+						<th scope="rowgroup" rowspan="5">UI GUIDE</th>
+						<th scope="rowgroup" rowspan="5">기본 가이드</th>
+						<th scope="rowgroup" rowspan="3">PAGE</th>
+						<th scope="row">Components</th>
+						<td><a href="style-guide/components.html" target="_blank">components.html</a></td>
+						<td class="ac">진행중</td>
+						<td class="ac"></td>
+						<td></td>
+					</tr>
+					<tr class="bg">
+						<th scope="row">Layout</th>
+						<td><a href="style-guide/layout.html" target="_blank">layout.html</a></td>
+						<td class="ac">진행중</td>
+						<td class="ac"></td>
+						<td></td>
+					</tr>
+					<tr class="bg">
+						<th scope="row">Table</th>
+						<td><a href="style-guide/table.html" target="_blank">table.html</a></td>
+						<td class="ac">진행중</td>
+						<td class="ac"></td>
+						<td></td>
+					</tr>
+					<tr class="bg">
+						<th scope="row">ALERT</th>
+						<th scope="row">ALERT</th>
+						<td><a href="style-guide/alert.html" target="_blank">alert.html</a></td>
+						<td class="ac">완료</td>
+						<td class="ac"></td>
+						<td></td>
+					</tr>
+					<tr class="bg">
+						<th scope="row">MODAL</th>
+						<th scope="row">MODAL</th>
+						<td><a href="style-guide/modal.html" target="_blank">modal.html</a></td>
+						<td class="ac">완료</td>
+						<td class="ac"></td>
+						<td></td>
+					</tr>
+				</tbody>
+				<!-- ! 로그인 -->
+				<tbody>
+					<tr>
+						<th scope="row">로그인</th>
+						<th scope="colgroup" colspan="2">로그인</th>
+						<th scope="row">PAGE</th>
+						<td>
+							<a href="page/로그인.html" target="_blank">로그인.html</a>
+						</td>
+						<td class="ac"></td>
+						<td class="ac"></td>
+						<td></td>
+					</tr>
+				</tbody>
+				<!-- ! 예약/직원관리 -->
+				<tbody>
+					<tr>
+						<th scope="row">예약/직원관리</th>
+						<th scope="colgroup" colspan="2">전체 예약 리스트</th>
+						<th scope="row">PAGE</th>
+						<td>
+							<a href="page/전체예약리스트.html" target="_blank">전체예약리스트.html</a>
+						</td>
+						<td class="ac"></td>
+						<td class="ac"></td>
+						<td></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+
+</html>

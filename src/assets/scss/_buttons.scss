@@ -1,0 +1,149 @@
+// ! Button
+.btn {
+	@include border(all, 1px, solid, transparent, var(--rd-medium));
+	cursor: pointer;
+	&.inline {
+		@include flex(inline-flex, column, null, center, null, null, center);
+		padding: 0 24px;
+	}
+	&:not(.inline) {
+		@include flex(flex, column, null, center, null, null, center);
+		width: 100%;
+	}
+	&.xs {
+		--height: 40px;
+		height: var(--height);
+		font: {
+			size: var(--fs-base);
+			weight: var(--fw-medium);
+		}
+	}
+	&.sm {
+		--height: 44px;
+		height: var(--height);
+		font: {
+			size: var(--fs-medium);
+			weight: var(--fw-medium);
+		}
+	}
+	&.md {
+		--height: 50px;
+		height: var(--height);
+		font: {
+			size: var(--fs-medium);
+			weight: var(--fw-medium);
+		}
+	}
+	&.lg {
+		--height: 56px;
+		height: var(--height);
+		font: {
+			size: var(--fs-large);
+			weight: var(--fw-bold);
+		}
+		> span {
+			font: {
+				size: var(--fs-xxsmall);
+				weight: var(--fw-medium);
+			}
+		}
+	}
+	&.primary {
+		color: var(--c-white);
+		background: {
+			color: var(--primary-blue);
+		}
+	}
+	&.secondary {
+		color: var(--c-white);
+		background: {
+			color: var(--c-black);
+		}
+	}
+	&.tertiary {
+		color: var(--c-black);
+		background: {
+			color: var(--c-gray-8);
+		}
+	}
+	&.line {
+		color: var(--primary-blue);
+		border: {
+			color: var(--primary-blue);
+		}
+		background: {
+			color: var(--c-white);
+		}
+	}
+	&.line2 {
+		color: var(--c-black);
+		border: {
+			color: var(--border-default);
+		}
+		background: {
+			color: var(--c-white);
+		}
+	}
+	&.line3 {
+		color: var(--c-black);
+		border: {
+			color: var(--c-black);
+		}
+		background: {
+			color: var(--c-white);
+		}
+	}
+	&.primary,
+	&.secondary,
+	&.tertiary {
+		&:disabled {
+			color: var(--c-white);
+			border: {
+				color: transparent;
+			}
+			background: {
+				color: var(--disabled-btn);
+			}
+		}
+	}
+	&.line,
+	&.line2,
+	&.line3 {
+		&:disabled {
+			color: rgba(var(--c-gray-3-rgb), 30%);
+			border: {
+				color: rgba(var(--c-gray-3-rgb), 30%);
+			}
+			background: {
+				color: var(--c-white);
+			}
+		}
+	}
+	&.rounded {
+		border: {
+			radius: var(--height);
+		}
+	}
+}
+
+// * Button Group
+.btn-group {
+	@include position(relative);
+	&.both {
+		@include flex(flex, null, null, center);
+		[class^="btn"] {
+			flex: 1 1 auto;
+			+ [class^="btn"] {
+				margin-left: 12px;
+			}
+		}
+		[class^='btn-'] {
+			+ .btn {
+				margin-left: 12px;
+			}
+		}
+	}
+	&.flex {
+		@include flex(flex, null, null, center);
+	}
+}

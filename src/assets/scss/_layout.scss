@@ -1,0 +1,32 @@
+#login {
+	@include position(relative);
+	height: 100vh;
+	@include bg-image-set(common, bg-login, bottom center, no-repeat, null, cover);
+	.logo {
+		@include position(absolute, 12vh, null, null, 50%, null, 6.62vw);
+	}
+	.login-msg {
+		margin-bottom: 22px;
+		font: {
+			size: 40px;
+			weight: var(--fw-medium);
+		}
+	}
+	.login-form {
+		width: 350px;
+		@include position(absolute, 50vh, null, null, 50%, null, calc(27vw - 175px), -50%);
+		.btn-group {
+			margin-top: 34px;
+		}
+	}
+}
+@media screen and (max-width: 1920px) {
+	#login {
+		.logo {
+			@include position(absolute, 15vh, null, null, 50%, null, 120px);
+		}
+		.login-form {
+			@include position(absolute, 50vh, null, null, 50%, null, 17vw, -50%);
+		}
+	}
+}
