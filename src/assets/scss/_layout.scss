@@ -103,10 +103,8 @@
 	.btn-nav-main {
 		@include flex(inline-flex, null, null, center);
 		vertical-align: middle;
-		.icon {
-			margin-right: 8px;
-		}
 		.text {
+			margin-left: 8px;
 			font: {
 				size: var(--fs-medium);
 				weight: var(--fw-medium);
