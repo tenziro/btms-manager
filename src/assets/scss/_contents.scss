@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+.contents-box {
+	@include box-shadow(0, 0.125rem, 0.25rem, rgba(165, 163, 174, .15));
+	background: {
+		color: var(--c-white);
+	}
+	border: {
+		radius: var(--rd-medium);
+	}
+	&.default {
+		padding: 20px;
+	}
+}

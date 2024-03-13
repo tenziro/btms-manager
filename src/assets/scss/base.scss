@@ -70,16 +70,14 @@
 	--rd-medium: 8px;
 	--rd-large: 16px;
 
-	// * min, max size
-	--body-min-width: 320px;
-	--body-max-width: 1000px;
-
 	// * line height
 	--lh-120: 120%;
 	--lh-130: 130%;
 	--lh-140: 140%;
 	--lh-150: 150%;
 	--lh-160: 160%;
+
+	--body-min-width: 1200px;
 }
 
 // * local image url setting

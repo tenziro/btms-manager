@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+.icon {
+	@include flex(flex, null, null, center, null, null, center);
+	flex: none;
+	&:before {
+		transform: translateY(2px);
+	}
+	&.nav {
+		width: 24px;
+		height: 24px;
+		overflow: hidden;
+		&.home {
+			&:before {
+				content: url("../../assets/images/icons/ico-home.svg");
+			}
+		}
+		&.report {
+			&:before {
+				content: url("../../assets/images/icons/ico-report.svg");
+			}
+		}
+		&.flight {
+			&:before {
+				content: url("../../assets/images/icons/ico-flight.svg");
+			}
+		}
+		&.hotel {
+			&:before {
+				content: url("../../assets/images/icons/ico-hotel.svg");
+			}
+		}
+		&.train {
+			&:before {
+				content: url("../../assets/images/icons/ico-train.svg");
+			}
+		}
+		&.bus {
+			&:before {
+				content: url("../../assets/images/icons/ico-bus.svg");
+			}
+		}
+	}
+	&.setting {
+		&:before {
+			content: url("../../assets/images/icons/ico-settings.svg");
+		}
+	}
+	&.user {
+		&:before {
+			content: url("../../assets/images/icons/ico-user.svg");
+		}
+	}
+	&.logout {
+		&:before {
+			content: url("../../assets/images/icons/ico-logout.svg");
+		}
+	}
+}

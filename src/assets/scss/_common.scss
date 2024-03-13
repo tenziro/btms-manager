@@ -22,9 +22,6 @@ html {
 	height: 100%;
 	height: -webkit-fill-available;
 	scroll-behavior: smooth;
-	background: {
-		color: var(--root-bg);
-	}
 }
 body {
 	color: var(--c-black);
@@ -37,11 +34,6 @@ body {
 	}
 	background: {
 		color: var(--c-white);
-	}
-	&.bg {
-		background: {
-			color: var(--default-bg);
-		}
 	}
 	&.stop-scroll {
 		overflow-y: hidden;
@@ -102,6 +94,9 @@ button,
 	}
 	&:disabled {
 		cursor: not-allowed $imp;
+	}
+	&:focus {
+		outline: 5px auto -webkit-focus-ring-color;
 	}
 }
 hr {
