@@ -197,10 +197,6 @@
 	}
 	#nav {
 		.btn-nav-main {
-			.icon,
-			.text {
-				transition: all 300ms;
-			}
 			&:hover {
 				.icon {
 					filter: brightness(0) saturate(100%) invert(14%) sepia(81%) saturate(5172%) hue-rotate(238deg) brightness(85%) contrast(101%);
