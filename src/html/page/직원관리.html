@@ -9,7 +9,7 @@
 		<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
 		<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
 		<link rel="stylesheet" type="text/css" href="../../assets/css/base.css" />
-		<title>bzp출장관리 - 출장관리자 :: 스타일 가이드</title>
+		<title>bzp출장관리 - 출장관리자 :: 직원관리</title>
 	</head>
 
 	<body>
@@ -41,14 +41,14 @@
 						<button type="button" class="btn-close-nav">메뉴 닫기</button>
 					</h1>
 					<ul class="main-nav">
-						<li><button type="button" class="btn-nav-main active"><i class="icon md home"></i><span class="text">홈</span></button></li>
+						<li><button type="button" class="btn-nav-main"><i class="icon md home"></i><span class="text">홈</span></button></li>
 						<li>
-							<details class="nav-btn-group" name="nav">
+							<details class="nav-btn-group" name="nav" open>
 								<summary class="btn-nav-main"><i class="icon md user"></i><span class="text">예약/직원관리</span></summary>
 								<div class="sub-nav">
 									<ul>
 										<li><a href="#" class="nav-item">전체 예약 리스트</a></li>
-										<li><a href="#" class="nav-item">직원관리</a></li>
+										<li><a href="#" class="nav-item active">직원관리</a></li>
 										<li><a href="#" class="nav-item">발권내역</a></li>
 									</ul>
 								</div>
@@ -110,33 +110,50 @@
 					<!-- breadcrumbs -->
 					<ul class="breadcrumbs">
 						<li class="home"><a href="#">홈</a></li>
-						<li><a href="#">종합 리포트</a></li>
-						<li><span class="current">전체 예약 리스트</span></li>
+						<li><a href="#">예약/직원관리</a></li>
+						<li><span class="current">직원관리</span></li>
 					</ul>
-					<div class="row">
-						<div class="col-6">
-							<div class="card default"></div>
-						</div>
-						<div class="col-6">
-							<div class="card default"></div>
-						</div>
-						<div class="col-6">
-							<div class="card default">
-							</div>
-						</div>
+					<div id="page-header">
+						<h2>직원관리</h2>
+						<p>출장대상 직원정보를 관리합니다.</p>
 					</div>
 					<div class="row">
 						<div class="col-12">
-							<div class="card default">
+							<div class="card default search-form-area">
 								<div class="row">
-									<div class="col-6"></div>
-									<div class="col-6"></div>
-									<div class="col-6"></div>
 									<div class="col-6">
-										ㅇㅇㅇ
+										<label for="" class="search-form-label">직원명</label>
+										<div class="input md line">
+											<input type="text" name="" id="" placeholder="직원명 입력">
+										</div>
+									</div>
+									<div class="col-6">
+										<label for="" class="search-form-label">직원ID</label>
+										<div class="input md line">
+											<input type="text" name="" id="" placeholder="직원명 입력">
+										</div>
+									</div>
+									<div class="col-6">
+										<label for="" class="search-form-label">휴대폰번호</label>
+										<div class="input md line">
+											<input type="tel" name="" id="" placeholder="숫자만 입력">
+										</div>
+									</div>
+									<div class="col-6">
+										<label for="" class="search-form-label">직원구분</label>
+										<div class="select-box md line">
+											<select name="" id="">
+												<option value="">전체</option>
+												<option value="">출장관리자</option>
+												<option value="">출장자</option>
+											</select>
+										</div>
 									</div>
 									<div class="col-12">
-										ㅇㅇㅇㅇ
+										<div class="btn-group search-group">
+											<button type="reset" class="btn md secondary"><span>초기화</span></button>
+											<button type="submit" class="btn md tertiary"><span>검색</span></button>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -145,87 +162,81 @@
 					<div class="row">
 						<div class="col-12">
 							<div class="card database">
-								<div class="database-control">
-									<div class="total">총 <strong>35</strong>개의 검색결과가 있습니다.</div>
-									<div class="control">
-										<button type="button" class="btn sm primary" data-icon-position="left"><i class="icon xxs user-plus"></i><span>신규 임직원 등록</span></button>
-										<button type="button" class="btn sm secondary" data-icon-position="left"><i class="icon xxs download"></i><span>엑셀 다운로드</span></button>
-										<button type="button" class="btn sm secondary" data-icon-position="left" disabled><i class="icon xxs download"></i><span>엑셀 다운로드</span></button>
+								<div class="row database-control">
+									<div class="col-6 total">
+										총 <strong>35</strong>개의 검색결과가 있습니다.
+									</div>
+									<div class="col-6 control">
+										<button type="button" class="btn sm secondary" data-icon-position="left"><i class="icon xxs user-plus"></i><span>신규 임직원 등록</span></button>
+										<div class="select-box sm line">
+											<select name="" id="">
+												<option value="">10</option>
+												<option value="">20</option>
+												<option value="">30</option>
+												<option value="">50</option>
+												<option value="">100</option>
+											</select>
+										</div>
 									</div>
 								</div>
 								<div class="table type1 table-responsive text-wrap bordered-bottom">
 									<table>
 										<thead>
 											<tr>
-												<th>카테고리</th>
-												<th>예약일</th>
-												<th>예약번호</th>
-												<th>예약자</th>
-												<th>1번 출장자</th>
+												<th>#</th>
+												<th>직원명</th>
+												<th>직원구분</th>
+												<th>직원ID</th>
 												<th>소속부서</th>
 												<th>직급</th>
-												<th>인원</th>
-												<th>예약상태</th>
-												<th>결제상태</th>
-												<th>이용일자</th>
-												<th>박수</th>
-												<th>객실수</th>
-												<th>출장규정 환산금액</th>
-												<th>원화금액</th>
-												<th>TASF</th>
-												<th>규정위반여부</th>
-												<th>규정위반사유</th>
-												<th>M.Cost 여부</th>
-												<th>M.Cost 사유</th>
-												<th>품의번호</th>
+												<th>상태</th>
 											</tr>
 										</thead>
 										<tbody>
 											<tr>
-												<td>항공</td>
-												<td>2024.03.02 16:13:47</td>
-												<td>24033110002-F01</td>
+												<td>5</td>
 												<td>이윤지</td>
-												<td>이윤지</td>
+												<td>출장관리자</td>
+												<td>yunji.lee@bizplay.co.kr</td>
 												<td>해외영업팀</td>
-												<td>팀장</td>
-												<td>1명</td>
-												<td>예약완료</td>
-												<td>결제완료</td>
-												<td>2024.03.20 ~ 2024.03.24</td>
-												<td>-</td>
-												<td>-</td>
-												<td>-</td>
-												<td>1,350,000원</td>
-												<td>75,000원</td>
-												<td>N</td>
-												<td>-</td>
-												<td>N</td>
-												<td>N</td>
-												<td>BZP-12345</td>
+												<td>차장</td>
+												<td>정상사용</td>
 											</tr>
 											<tr>
-												<td>숙박</td>
-												<td>2024.03.02 16:13:47</td>
-												<td>24033110002-H01</td>
-												<td>이윤지</td>
-												<td>이윤지</td>
+												<td>4</td>
+												<td>이성우</td>
+												<td>출장관리자</td>
+												<td>seongwoo.lee@bizplay.co.kr</td>
 												<td>해외영업팀</td>
-												<td>팀장</td>
-												<td>1명</td>
-												<td>예약완료</td>
-												<td>결제완료</td>
-												<td>2024.03.20 ~ 2024.03.21</td>
-												<td>1박</td>
-												<td>1개</td>
-												<td>USD 300.00</td>
-												<td>330,000원</td>
-												<td>0원</td>
-												<td><span class="c-point-1">Y</span></td>
-												<td>호텔부족</td>
-												<td>N</td>
-												<td>N</td>
-												<td>BZP-12345</td>
+												<td>대리</td>
+												<td>정상사용</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>박소영</td>
+												<td>출장자</td>
+												<td>soyoung.park@bizplay.co.kr</td>
+												<td>해외영업팀</td>
+												<td>대리</td>
+												<td>승인대기</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>이종석</td>
+												<td>출장자</td>
+												<td>jongseok.lee@bizplay.co.kr</td>
+												<td>서비스지원팀</td>
+												<td>부장</td>
+												<td>승인대기</td>
+											</tr>
+											<tr>
+												<td>1</td>
+												<td>박인영</td>
+												<td>출장자</td>
+												<td>inyoung.park@bizplay.co.kr</td>
+												<td>서비스지원팀</td>
+												<td>차장</td>
+												<td>승인대기</td>
 											</tr>
 										</tbody>
 									</table>
@@ -236,94 +247,6 @@
 									<strong class="btn-pagination selected">2</strong>
 									<button type="button" class="btn-pagination">3</button>
 									<button type="button" class="btn-pagination-next">Next</button>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-6">
-							<div class="card database">
-								<div class="card-header">
-									<div class="title">
-										<h3 class="header-title">상위 10개 도시</h3>
-										<p>상위 10개 도시에 대한 리포트를 제공합니다.</p>
-									</div>
-								</div>
-								<div class="table type1 table-responsive text-wrap bordered-bottom">
-									<table>
-										<thead>
-											<tr>
-												<th>#</th>
-												<th>도시명(국가명, 주코드)</th>
-												<th>위반건수</th>
-												<th>점유율</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>1</td>
-												<td>프랑크푸르트(Germany)</td>
-												<td>4건</td>
-												<td>80%</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td>암스테르담(Netherlands)</td>
-												<td>1건</td>
-												<td>20%</td>
-											</tr>
-										</tbody>
-										<tfoot>
-											<tr>
-												<th colspan="2" class="align-c">합계</th>
-												<th>5건</th>
-												<th>100%</th>
-											</tr>
-										</tfoot>
-									</table>
-								</div>
-							</div>
-						</div>
-						<div class="col-6">
-							<div class="card database">
-								<div class="card-header">
-									<div class="title">
-										<h3 class="header-title">위반사유</h3>
-										<p>규정위반 사유에 대한 리포트를 제공합니다.</p>
-									</div>
-								</div>
-								<div class="table type1 table-responsive text-wrap bordered-bottom">
-									<table>
-										<thead>
-											<tr>
-												<th>#</th>
-												<th>위반사유</th>
-												<th>위반건수</th>
-												<th>점유율</th>
-											</tr>
-										</thead>
-										<tbody>
-											<tr>
-												<td>1</td>
-												<td>좌석부족</td>
-												<td>4건</td>
-												<td>80%</td>
-											</tr>
-											<tr>
-												<td>2</td>
-												<td>기타</td>
-												<td>1건</td>
-												<td>20%</td>
-											</tr>
-										</tbody>
-										<tfoot>
-											<tr>
-												<th colspan="2" class="align-c">합계</th>
-												<th>5건</th>
-												<th>100%</th>
-											</tr>
-										</tfoot>
-									</table>
 								</div>
 							</div>
 						</div>

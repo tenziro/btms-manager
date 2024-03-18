@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-.contents-box {
+.card {
 	@include box-shadow(0, 0.125rem, 0.25rem, rgba(165, 163, 174, .15));
 	background: {
 		color: var(--c-white);
@@ -9,6 +9,83 @@
 		radius: var(--rd-medium);
 	}
 	&.default {
-		padding: 20px;
+		padding: 1.143rem;
+	}
+	&.database {
+		.card-header {
+			padding: 1.143rem 1.143rem 1rem;
+		}
+		.database-control {
+			padding: 1.143rem 1.143rem 1rem;
+		}
+		overflow: hidden;
+	}
+	&.search-form-area {
+		.row {
+			--gap-row: 0.625rem;
+		}
+		.search-form-label {
+			color: var(--c-gray-1);
+			font: {
+				size: var(--fs-small);
+				weight: var(--fw-medium);
+			}
+		}
+	}
+}
+.card-header {
+	@include flex(flex, null, null, center);
+	.title {
+		p {
+			color: var(--c-gray-3);
+			font: {
+				size: var(--fs-small);
+			}
+		}
+	}
+	.header-title {
+		font: {
+			size: var(--fs-large);
+			weight: var(--fw-medium);
+		}
+		+ p {
+			margin-top: 4px;
+		}
+	}
+}
+
+@media (min-width: 769px) {
+	.card {
+		&.search-form-area {
+			.row {
+				[class^="col-6"] {
+					@include flex(flex, null, null, center);
+				}
+			}
+			.search-form-label {
+				flex: 0 0 100px;
+				+ * {
+					flex: 1 1 auto;
+					margin-left: 0.5rem;
+				}
+			}
+			.search-group {
+				padding-top: 0.5rem;
+			}
+		}
+	}
+}
+@media (max-width: 768px) {
+	.card {
+		&.search-form-area {
+			.search-form-label {
+				display: block;
+				margin-bottom: 0.5rem;
+				padding-left: 0.375rem;
+			}
+			.search-group {
+				padding-top: 0.5rem;
+			}
+		}
 	}
 }

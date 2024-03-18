@@ -2,58 +2,224 @@
 
 .icon {
 	@include flex(flex, null, null, center, null, null, center);
+	--size: initial;
 	flex: none;
-	&:before {
-		transform: translateY(2px);
+	background: {
+		position: 50% 50%;
+		repeat: no-repeat;
 	}
-	&.nav {
-		width: 24px;
-		height: 24px;
-		overflow: hidden;
-		&.home {
-			&:before {
-				content: url("../../assets/images/icons/ico-home.svg");
-			}
+	overflow: hidden;
+	width: var(--icon-size);
+	height: var(--icon-size);
+	background: {
+		size: auto var(--icon-size);
+	}
+	&.xxs {
+		--icon-size: 0.857rem;
+	}
+	&.xs {
+		--icon-size: 1rem;
+	}
+	&.sm {
+		--icon-size: 1.143rem;
+	}
+	&.md {
+		--icon-size: 1.714rem;
+	}
+	&.lg {
+		--icon-size: 2rem;
+	}
+	&.xl {
+		--icon-size: 2.286em;
+	}
+	&.arrow {
+		&-down {
+			@include bg-image-svg(icons, ico-arrow-down);
 		}
-		&.report {
-			&:before {
-				content: url("../../assets/images/icons/ico-report.svg");
-			}
+		&-left {
+			@include bg-image-svg(icons, ico-arrow-left);
 		}
-		&.flight {
-			&:before {
-				content: url("../../assets/images/icons/ico-flight.svg");
-			}
+		&-right {
+			@include bg-image-svg(icons, ico-arrow-right);
 		}
-		&.hotel {
-			&:before {
-				content: url("../../assets/images/icons/ico-hotel.svg");
-			}
-		}
-		&.train {
-			&:before {
-				content: url("../../assets/images/icons/ico-train.svg");
-			}
-		}
-		&.bus {
-			&:before {
-				content: url("../../assets/images/icons/ico-bus.svg");
-			}
+		&-up {
+			@include bg-image-svg(icons, ico-arrow-up);
 		}
 	}
-	&.setting {
-		&:before {
-			content: url("../../assets/images/icons/ico-settings.svg");
+	&.arrows {
+		&-exchange {
+			@include bg-image-svg(icons, ico-arrows-exchange);
+		}
+		&-horizontal {
+			@include bg-image-svg(icons, ico-arrows-horizontal);
+		}
+		&-transfer-down {
+			@include bg-image-svg(icons, ico-arrows-transfer-down);
+		}
+		&-transfer-up {
+			@include bg-image-svg(icons, ico-arrows-transfer-up);
+		}
+		&-up-down {
+			@include bg-image-svg(icons, ico-arrows-up-down);
 		}
 	}
-	&.user {
-		&:before {
-			content: url("../../assets/images/icons/ico-user.svg");
+	&.booking {
+		@include bg-image-svg(icons, ico-booking);
+	}
+	&.bookmark {
+		@include bg-image-svg(icons, ico-bookmark);
+	}
+	&.building {
+		@include bg-image-svg(icons, ico-building);
+	}
+	&.bus {
+		@include bg-image-svg(icons, ico-bus);
+	}
+	&.cake {
+		@include bg-image-svg(icons, ico-cake);
+	}
+	&.calculator {
+		@include bg-image-svg(icons, ico-calculator);
+	}
+	&.calendar-month {
+		@include bg-image-svg(icons, ico-calendar-month);
+	}
+	&.chevron {
+		&-left {
+			@include bg-image-svg(icons, ico-chevron-left);
 		}
+		&-right {
+			@include bg-image-svg(icons, ico-chevron-right);
+		}
+	}
+	&.circle-chevron {
+		&-down {
+			@include bg-image-svg(icons, ico-chevron-down);
+		}
+		&-left {
+			@include bg-image-svg(icons, ico-chevron-left);
+		}
+		&-right {
+			@include bg-image-svg(icons, ico-chevron-right);
+		}
+		&-up {
+			@include bg-image-svg(icons, ico-chevron-up);
+		}
+	}
+	&.close {
+		@include bg-image-svg(icons, ico-calendar-close);
+	}
+	&.device-mobile {
+		@include bg-image-svg(icons, ico-device-mobile);
+	}
+	&.download {
+		@include bg-image-svg(icons, ico-download);
+	}
+	&.edit {
+		@include bg-image-svg(icons, ico-edit);
+	}
+	&.eye {
+		@include bg-image-svg(icons, ico-eye);
+	}
+	&.flag {
+		@include bg-image-svg(icons, ico-flag);
+		&-2 {
+			@include bg-image-svg(icons, ico-flag-2);
+		}
+		&-3 {
+			@include bg-image-svg(icons, ico-flag-3);
+		}
+	}
+	&.flight {
+		@include bg-image-svg(icons, ico-flight);
+	}
+	&.gender {
+		&-male {
+			@include bg-image-svg(icons, ico-gender-male);
+		}
+		&-female {
+			@include bg-image-svg(icons, ico-gender-female);
+		}
+	}
+	&.home {
+		@include bg-image-svg(icons, ico-home);
+	}
+	&.hotel {
+		@include bg-image-svg(icons, ico-hotel);
+	}
+	&.id {
+		@include bg-image-svg(icons, ico-id);
+	}
+	&.location {
+		@include bg-image-svg(icons, ico-location);
+	}
+	&.lock {
+		@include bg-image-svg(icons, ico-lock);
 	}
 	&.logout {
-		&:before {
-			content: url("../../assets/images/icons/ico-logout.svg");
+		@include bg-image-svg(icons, ico-logout);
+	}
+	&.mail {
+		@include bg-image-svg(icons, ico-mail);
+	}
+	&.map {
+		@include bg-image-svg(icons, ico-map);
+		&-pin {
+			@include bg-image-svg(icons, ico-map-pin);
+		}
+		&-search {
+			@include bg-image-svg(icons, ico-map-search);
+		}
+	}
+	&.menu {
+		@include bg-image-svg(icons, ico-menu);
+	}
+	&.password {
+		@include bg-image-svg(icons, ico-password);
+	}
+	&.phone {
+		@include bg-image-svg(icons, ico-phone);
+	}
+	&.photo {
+		@include bg-image-svg(icons, ico-photo);
+	}
+	&.receipt {
+		@include bg-image-svg(icons, ico-receipt);
+	}
+	&.refresh {
+		@include bg-image-svg(icons, ico-refresh);
+	}
+	&.reload {
+		@include bg-image-svg(icons, ico-reload);
+	}
+	&.rentalcar {
+		@include bg-image-svg(icons, ico-rentalcar);
+	}
+	&.report {
+		@include bg-image-svg(icons, ico-report);
+	}
+	&.search {
+		@include bg-image-svg(icons, ico-report);
+	}
+	&.setting {
+		@include bg-image-svg(icons, ico-settings);
+	}
+	&.staff {
+		@include bg-image-svg(icons, ico-staff);
+	}
+	&.ticket {
+		@include bg-image-svg(icons, ico-ticket);
+	}
+	&.train {
+		@include bg-image-svg(icons, ico-train);
+	}
+	&.upload {
+		@include bg-image-svg(icons, ico-upload);
+	}
+	&.user {
+		@include bg-image-svg(icons, ico-user);
+		&-plus {
+			@include bg-image-svg(icons, ico-user-plus);
 		}
 	}
 }
