@@ -12,9 +12,6 @@
 			border-collapse: collapse;
 			caption-side: bottom;
 		}
-		.link {
-			color: var(--table-link-color);
-		}
 		thead {
 			th {
 				padding: 0.714rem 1.143rem;
@@ -32,8 +29,8 @@
 		tbody {
 			th,
 			td {
-				color: var(--c-gray-3);
 				padding: 1.143rem;
+				color: var(--c-gray-3);
 			}
 		}
 		tfoot {
@@ -69,6 +66,10 @@
 				}
 			}
 		}
+	}
+	.table-link {
+		@include underline-offset(4);
+		color: var(--table-link-color);
 	}
 	&.text-wrap {
 		white-space: nowrap $imp;

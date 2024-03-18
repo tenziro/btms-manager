@@ -104,6 +104,11 @@
 		> .select-box {
 			flex: 1 1;
 		}
+		.dash {
+			color: var(--c-gray-4);
+			flex: none;
+			padding: 0 0.714rem;
+		}
 	}
 }
 
@@ -199,6 +204,17 @@
 		.btn-input-clear {
 			--btn-input-clear: 1.143rem;
 			top: 16px;
+		}
+	}
+	&.cal {
+		input {
+			@include bg-image-set(common, ico-input-calendar-default, right calc(var(--input-padding-right) - 4px) center, no-repeat);
+			&:disabled {
+				@include bg-image-set(common, ico-input-calendar-disabled calc(var(--input-padding-left) - 4px) 50%, no-repeat);
+			}
+			padding: {
+				right: calc(var(--input-padding-right) + 24px);
+			}
 		}
 	}
 	&.line {
