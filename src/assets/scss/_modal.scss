@@ -13,7 +13,7 @@
 		@include flex(flex, null, null, center, null, null, center);
 		@include position(relative);
 		flex: none;
-		padding: 1.125rem;
+		padding: 1.143rem;
 		background: {
 			color: var(--c-white);
 		}
@@ -26,16 +26,18 @@
 	}
 	&-body {
 		flex: 1 1;
-		padding: 1.125rem;
 		overflow-y: auto;
 		background: {
 			color: var(--c-white);
+		}
+		&.default {
+			padding: 1.143rem;
 		}
 	}
 	&-footer {
 		@include flex(flex, null, null, center);
 		flex: none;
-		padding: 1.125rem;
+		padding: 1.143rem;
 		column-gap: 8px;
 		background: {
 			color: var(--c-white);
@@ -51,7 +53,7 @@
 		@include border(top, 1px, solid, var(--border-default));
 	}
 	.btn-modal-close {
-		@include position(absolute, 1, 50%, 1.125rem, null, null, null, -50%);
+		@include position(absolute, 1, 50%, 1.143rem, null, null, null, -50%);
 		@include bg-image-svg(icons, ico-close, 50% 50%, no-repeat);
 		display: inline-block;
 		width: 30px;
@@ -64,17 +66,18 @@
 	.modal {
 		backdrop-filter: blur(5px);
 		background: {
-			color: rgba(var(--c-black-rgb), 50%);
+			color: rgba(var(--c-black-rgb), 0.5);
 		}
 		&-contents {
 			max-width: 510px;
 			max-height: 80vh;
-			&:not(:has(.modal-footer)) {
-				.modal-body {
-					border: {
-						bottom-left-radius: var(--rd-medium);
-						bottom-right-radius: var(--rd-medium);
-					}
+			box-shadow: rgba(var(--c-black-rgb), 0.1) 0px 4px 6px -1px, rgba(var(--c-black-rgb), 0.06) 0px 2px 4px -1px;
+		}
+		&:not(:has(.modal-footer)) {
+			.modal-body {
+				border: {
+					bottom-left-radius: var(--rd-medium);
+					bottom-right-radius: var(--rd-medium);
 				}
 			}
 		}

@@ -87,15 +87,26 @@
 			filter: brightness(0) saturate(100%) invert(100%) sepia(99%) saturate(3%) hue-rotate(81deg) brightness(102%) contrast(101%);
 		}
 	}
+	&.danger {
+		--btn-text-color: var(--c-white);
+		--btn-bg-color: var(--c-danger);
+		.icon {
+			filter: brightness(0) saturate(100%) invert(100%) sepia(99%) saturate(3%) hue-rotate(81deg) brightness(102%) contrast(101%);
+		}
+	}
 	&:disabled {
 		--btn-text-color: var(--c-gray-5);
 		--btn-border-color: var(--border-default);
-		--btn-bg-color: rgba(var(--c-gray-7-rgb), 40%);
+		--btn-bg-color: rgba(var(--c-gray-7-rgb), 0.4);
 		.icon {
 			filter: brightness(0) saturate(100%) invert(84%) sepia(1%) saturate(1194%) hue-rotate(155deg) brightness(90%) contrast(94%);
 		}
 	}
-
+	&.rounded {
+		border: {
+			radius: calc(var(--btn-height) / 2);
+		}
+	}
 }
 @media (hover: hover) {
 	.btn {
@@ -107,6 +118,9 @@
 					}
 				}
 			}
+		}
+		&:hover {
+			filter: brightness(105%);
 		}
 	}
 }

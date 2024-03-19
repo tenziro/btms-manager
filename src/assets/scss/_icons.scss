@@ -38,9 +38,15 @@
 	&.alert {
 		&-circle {
 			@include bg-image-svg(icons, ico-alert-circle);
+			&-filld {
+				@include bg-image-svg(icons, ico-alert-circle-filled);
+			}
 		}
 		&-triangle {
 			@include bg-image-svg(icons, ico-alert-triangle);
+			&-filld {
+				@include bg-image-svg(icons, ico-alert-triangle-filled);
+			}
 		}
 	}
 	&.arrow {

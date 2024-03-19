@@ -105,7 +105,7 @@ button,
 a,
 button {
 	&:focus-visible {
-		outline: 2px solid rgba(var(--primary-blue-rgb), 50%);
+		outline: 2px solid rgba(var(--primary-blue-rgb), 0.5);
 	}
 	&:focus:not(:focus-visible) {
 		outline: 0;
@@ -156,7 +156,7 @@ select,
 textarea {
 	&:disabled {
 		cursor: not-allowed;
-		color: rgba(var(--c-black-rgb), 40%);
+		color: rgba(var(--c-black-rgb), 0.4);
 		background: {
 			color: var(--disabled) $imp;
 		}
@@ -173,7 +173,7 @@ input,
 textarea {
 	caret-color: var(--border-focus);
 	&::placeholder {
-		color: rgba(var(--c-gray-3-rgb), 40%);
+		color: rgba(var(--c-gray-3-rgb), 0.4);
 	}
 }
 [type='submit'] {

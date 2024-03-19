@@ -13,13 +13,13 @@
 			caption-side: bottom;
 		}
 		thead {
+			background: {
+				color: var(--table-bg-color);
+			}
 			th {
 				padding: 0.714rem 1.143rem;
 				color: var(--c-gray-1);
 				text-align: left;
-				background: {
-					color: var(--table-bg-color);
-				}
 				font: {
 					size: var(--fs-small);
 					weight: var(--fw-medium);
@@ -68,7 +68,6 @@
 		}
 	}
 	.table-link {
-		@include underline-offset(4);
 		color: var(--table-link-color);
 	}
 	&.text-wrap {
@@ -76,6 +75,9 @@
 	}
 	&.table-responsive {
 		overflow-x: auto;
+	}
+	&.table-hover {
+		--table-hover-color: rgba(var(--primary-blue-rgb), 0.03);
 	}
 }
 
@@ -89,4 +91,27 @@
 	background: linear-gradient(to right, #eaecee 30%, #f2f3f7 50%, #eaecee 70%);
 	background-size: 200% 200%;
 	animation: 1.2s skeleton-loading linear infinite;
+}
+
+@media (hover: hover) {
+	.table {
+		.table-link {
+			&:hover {
+				@include underline-offset(4);
+			}
+		}
+		&.table-hover {
+			tbody {
+				&:not(.table-nolist):not(.table-loading) {
+					tr {
+						&:hover {
+							background: {
+								color: var(--table-hover-color);
+							}
+						}
+					}
+				}
+			}
+		}
+	}
 }

@@ -5,12 +5,12 @@
 	--root-bg: #FAFAFA;
 	--default-bg: #F2F3F7;
 	--default-bg-rgb: 242, 243, 247;
-	--placeholder: rgba(126, 130, 137, 40%);
+	--placeholder: rgba(126, 130, 137, 0.4);
 	--border-default: #E5E9ED;
 	--border-focus: #BEBEBE;
 	--border-valid: #FF5C4B;
-	--disabled-btn: rgba(126, 130, 137, 30%);
-	--disabled: rgba(230, 233, 238, 40%);
+	--disabled-btn: rgba(126, 130, 137, 0.3);
+	--disabled: rgba(230, 233, 238, 0.4);
 	--c-white: #FFF;
 	--c-white-rgb: 255, 255, 255;
 	--c-black: #000;
@@ -37,6 +37,8 @@
 	--c-point-1-rgb: 255, 92, 75;
 	--c-point-2: #91ACCE;
 	--c-point-2-rgb: 145, 172, 206;
+	--c-danger: #CC3333;
+	--c-danger-rgb: 239, 68, 68;
 
 	// * font size
 	--fs-mini: 10px;
@@ -422,10 +424,10 @@ $imp: unquote("!important");
 // * gradient @mixin
 @mixin linear-gradient($solid: true) {
 	@if ($solid) {
-		background: linear-gradient(rgba(var(--c-black-rgb), 3%), rgba(var(--c-black-rgb), 3%));
+		background: linear-gradient(rgba(var(--c-black-rgb), 0.03), rgba(var(--c-black-rgb), 0.03));
 	}
 	@else {
-		background: linear-gradient(rgba(var(--c-black-rgb), 0), rgba(var(--c-black-rgb), 4%));
+		background: linear-gradient(rgba(var(--c-black-rgb), 0), rgba(var(--c-black-rgb), 0.04));
 	}
 }
 // * border box 공통 속성 @mixin
