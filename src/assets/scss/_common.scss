@@ -82,9 +82,6 @@ a {
 	color: inherit;
 	text-decoration: none;
 	-webkit-tap-highlight-color: transparent;
-	&:active {
-		transform: translateY(1px);
-	}
 }
 area {
 	outline: none;
@@ -98,12 +95,12 @@ button,
 	&:disabled {
 		cursor: not-allowed $imp;
 	}
-	&:not(:disabled) {
-		will-change: transform;
-		&:active {
-			transform: translateY(1px);
-		}
-	}
+	// &:not(:disabled) {
+	// 	will-change: transform;
+	// 	&:active {
+	// 		transform: translateY(1px);
+	// 	}
+	// }
 }
 a,
 button {

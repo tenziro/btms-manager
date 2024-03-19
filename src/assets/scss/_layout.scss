@@ -184,7 +184,7 @@
 }
 .breadcrumbs {
 	@include flex(flex, null, null, center, null, null, flex-end);
-	margin-bottom: var(--breadcrumb-mg);
+	margin-bottom: var(--breadcrumbs-mg);
 	a {
 		color: rgba(var(--primary-blue-rgb), 60%);
 		&:focus {
@@ -193,7 +193,9 @@
 	}
 	li {
 		@include flex(inline-flex, null, null, center);
-		--icon-size: 1.143rem;
+		font: {
+			size: var(--breadcrumbs-text-size);
+		}
 		&.home {
 			&:before {
 				content: "";
@@ -381,8 +383,10 @@
 		--page-text-size: var(--fs-base);
 	}
 	.breadcrumbs {
-		--breadcrumb-mg: 1.429rem;
-		--li-gap: 1.143rem;
+		--breadcrumbs-mg: 1.429rem;
+		--icon-size: 1.143rem;
+		--breadcrumbs-text-size: var(--fs-base);
+		--li-gap: 0.714rem;
 	}
 	.col-auto {
 		flex: 0 0 auto;
@@ -670,7 +674,9 @@
 		--page-text-size: var(--fs-xsmall);
 	}
 	.breadcrumbs {
-		--breadcrumb-mg: 1rem;
+		--breadcrumbs-mg: 1rem;
+		--icon-size: 1rem;
+		--breadcrumbs-text-size: var(--fs-xsmall);
 		--li-gap: 0.571rem;
 	}
 }

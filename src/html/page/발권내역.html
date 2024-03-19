@@ -124,12 +124,15 @@
 									<div class="col-6">
 										<label for="" class="search-form-label">항공권 발권일</label>
 										<div class="form-group both">
-											<div class="input md line cal">
+											<!--.btn-input-cal이 있는 경우에는 .btn-input-clear를 표시하지 않는다. -->
+											<div class="input md line">
 												<input type="text" name="" id="" value="2024.03.01">
+												<button type="button" class="btn-input-cal">달력 열기</button>
 											</div>
 											<span class="dash">~</span>
-											<div class="input md line cal">
+											<div class="input md line">
 												<input type="text" name="" id="" value="2024.03.31">
+												<button type="button" class="btn-input-cal">달력 열기</button>
 											</div>
 										</div>
 									</div>
@@ -167,22 +170,20 @@
 					</div>
 					<div class="row">
 						<div class="col-12">
+							<div class="list-total-count">
+								총 <strong>35</strong>개의 검색결과가 있습니다.
+							</div>
 							<div class="card database">
-								<div class="row database-control">
-									<div class="col-6 total">
-										총 <strong>35</strong>개의 검색결과가 있습니다.
-									</div>
-									<div class="col-6 control">
-										<button type="button" class="btn sm secondary" data-icon-position="left"><i class="icon xxs download"></i><span>엑셀 다운로드</span></button>
-										<div class="select-box sm line">
-											<select name="" id="">
-												<option value="">10</option>
-												<option value="">20</option>
-												<option value="">30</option>
-												<option value="">50</option>
-												<option value="">100</option>
-											</select>
-										</div>
+								<div class="database-control">
+									<button type="button" class="btn sm secondary" data-icon-position="left"><i class="icon xxs download"></i><span>엑셀 다운로드</span></button>
+									<div class="select-box sm line">
+										<select name="" id="">
+											<option value="">10</option>
+											<option value="">20</option>
+											<option value="">30</option>
+											<option value="">50</option>
+											<option value="">100</option>
+										</select>
 									</div>
 								</div>
 								<div class="table type1 table-responsive text-wrap bordered-bottom">
@@ -240,6 +241,68 @@
 												<td>방콕</td>
 												<td>ICN-BKK</td>
 												<td>2024.04.01 11:44:39</td>
+											</tr>
+										</tbody>
+										<!-- 로딩 중일때 -->
+										<tbody>
+											<!-- 로딩 표시는 상단 리스트 표시 갯수만큼 반복해서 표시한다. -->
+											<tr>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+											</tr>
+										</tbody>
+										<!-- 데이터 검색 결과 없을때 -->
+										<tbody>
+											<tr>
+												<td colspan="15">
+													<div class="database-nolist">
+														<i class="icon xxl alert-triangle"></i>
+														<p class="nolist-msg">검색 결과가 없습니다.<br>다른 검색조건으로 검색 바랍니다.</p>
+													</div>
+												</td>
 											</tr>
 										</tbody>
 									</table>

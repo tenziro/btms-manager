@@ -174,24 +174,36 @@
 	}
 }
 
-.database-control {
-	.total {
-		align-self: center;
-		font: {
-			size: var(--fs-xsmall);
-		}
-		color: var(--c-gray-4);
-		strong {
-			color: var(--primary-blue);
-		}
+.list-total-count {
+	color: var(--c-gray-4);
+	margin-bottom: 0.714rem;
+	font: {
+		size: var(--total-count-text-size);
 	}
-	.control {
-		@include flex(flex, null, null, center);
-		justify-content: flex-end;
-		flex: none;
-		gap: 0.429rem;
+	strong {
+		color: var(--primary-blue);
 	}
 }
+.database-control {
+	@include flex(flex, null, null, center, null, null, flex-end);
+	gap: 0.429rem;
+}
+.database-nolist {
+	@include flex(flex, column, null, center, null, null, center);
+	padding: 2.857rem 0;
+	gap: 0.714rem;
+	.icon {
+		filter: brightness(0) saturate(100%) invert(78%) sepia(5%) saturate(307%) hue-rotate(157deg) brightness(95%) contrast(99%);
+	}
+	.nolist-msg {
+		text-align: center;
+		line-height: var(--lh-150);
+		font: {
+			size: var(--fs-small);
+		}
+	}
+}
+
 
 @media (hover: hover) {
 	.pagination {
@@ -206,8 +218,13 @@
 		}
 	}
 }
+@media (min-width: 769px) {
+	.list-total-count {
+		--total-count-text-size: var(--fs-base);
+	}
+}
 @media (max-width: 768px) {
-	.database-control.row {
-		row-gap: 0.625rem;
+	.list-total-count {
+		--total-count-text-size: var(--fs-small);
 	}
 }

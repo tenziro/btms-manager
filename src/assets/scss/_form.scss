@@ -40,16 +40,6 @@
 // * form group
 .form-group {
 	@include flex(flex, null, null, center);
-	&.search {
-		> .input,
-		> app-input-text {
-			flex: 1 1;
-		}
-		.btn-search {
-			flex: none;
-			margin-left: 8px;
-		}
-	}
 	&.name {
 		> .input,
 		> app-input-text {
@@ -62,44 +52,8 @@
 			}
 		}
 	}
-	&.policy {
-		> .select-box {
-			flex: 1 1;
-			&:nth-child(2) {
-				margin-left: 8px;
-			}
-		}
-	}
-	&.email {
-		> .input,
-		> app-input-text {
-			&:nth-child(1) {
-				flex: 0 0 55%;
-			}
-			&:nth-child(2) {
-				flex: 1 1 auto;
-				margin-left: 8px;
-			}
-		}
-	}
-	&.mobile {
-		.input {
-			flex: 1 1 auto;
-			input {
-				border: {
-					radius: var(--rd-medium) 0 0 var(--rd-medium);
-				}
-			}
-		}
-		.btn {
-			flex: none;
-			border: {
-				radius: 0 var(--rd-medium) var(--rd-medium) 0;
-			}
-		}
-	}
 	&.both {
-		gap: 0 8px;
+		gap: 0 0.571rem;
 		> .input,
 		> .select-box {
 			flex: 1 1;
@@ -107,7 +61,12 @@
 		.dash {
 			color: var(--c-gray-4);
 			flex: none;
-			padding: 0 0.714rem;
+		}
+	}
+	&.search-all {
+		gap: 0 0.571rem;
+		.both {
+			flex: 1 1;
 		}
 	}
 }
@@ -118,16 +77,9 @@
 .select-box,
 .textarea {
 	@include position(relative);
-	&.w-100 {
-		width: 100%;
+	&.inline {
+		display: inline-block;
 	}
-}
-.btn-input-clear {
-	@include position(absolute, 1, null, var(--btn-input-clear), null, null);
-	@include bg-image-set(common, btn-input-clear, 50% 50%, no-repeat);
-	width: 18px;
-	height: 18px;
-	text-indent: -9999em;
 }
 
 // ! input
@@ -136,6 +88,26 @@
 		input {
 			padding-right: calc(var(--input-padding-right) + 18px);
 		}
+	}
+	&:has(.btn-input-cal) {
+		input {
+			padding-right: calc(var(--input-padding-right) + 18px);
+		}
+	}
+	.btn-input-clear {
+		@include position(absolute, 1, null, var(--btn-input-clear-position), null, null);
+		@include bg-image-set(common, btn-input-clear, 50% 50%, no-repeat);
+		width: 18px;
+		height: 18px;
+		text-indent: -9999em;
+	}
+	.btn-input-cal {
+		@include position(absolute, 1, null, var(--btn-input-cal-position), null, null);
+		@include bg-image-svg(icons, ico-calendar-month, 50% 50%, no-repeat, null, auto 18px);
+		width: 18px;
+		height: 18px;
+		text-indent: -9999em;
+		filter: brightness(0) saturate(100%) invert(53%) sepia(9%) saturate(227%) hue-rotate(174deg) brightness(95%) contrast(92%);
 	}
 	input {
 		@include text-ellipsis;
@@ -166,6 +138,14 @@
 			--input-padding-right: 0.571rem;
 			--input-radius: var(--rd-small);
 		}
+		.btn-input-clear {
+			--btn-input-clear-position: 0.571rem;
+			top: 6px;
+		}
+		.btn-input-cal {
+			--btn-input-cal-position: 0.571rem;
+			top: 6px;
+		}
 	}
 	&.md {
 		input {
@@ -176,7 +156,11 @@
 			--input-radius: var(--rd-small);
 		}
 		.btn-input-clear {
-			--btn-input-clear: 0.643rem;
+			--btn-input-clear-position: 0.643rem;
+			top: 9px;
+		}
+		.btn-input-cal {
+			--btn-input-cal-position: 0.643rem;
 			top: 9px;
 		}
 	}
@@ -189,7 +173,11 @@
 			--input-radius: var(--rd-medium);
 		}
 		.btn-input-clear {
-			--btn-input-clear: 0.857rem;
+			--btn-input-clear-position: 0.857rem;
+			top: 12px;
+		}
+		.btn-input-cal {
+			--btn-input-cal-position: 0.857rem;
 			top: 12px;
 		}
 	}
@@ -202,19 +190,12 @@
 			--input-radius: var(--rd-medium);
 		}
 		.btn-input-clear {
-			--btn-input-clear: 1.143rem;
+			--btn-input-clear-position: 1.143rem;
 			top: 16px;
 		}
-	}
-	&.cal {
-		input {
-			@include bg-image-set(common, ico-input-calendar-default, right calc(var(--input-padding-right) - 4px) center, no-repeat);
-			&:disabled {
-				@include bg-image-set(common, ico-input-calendar-disabled calc(var(--input-padding-left) - 4px) 50%, no-repeat);
-			}
-			padding: {
-				right: calc(var(--input-padding-right) + 24px);
-			}
+		.btn-input-cal {
+			--btn-input-cal-position: 1.143rem;
+			top: 16px;
 		}
 	}
 	&.line {
@@ -382,7 +363,7 @@
 			color: var(--placeholder);
 		}
 		height: var(--selectbox-height);
-		padding: 0 calc(var(--selectbox-padding-right) + 14px) 0 var(--selectbox-padding-left);
+		padding: 0 calc(var(--selectbox-padding-right) + 20px) 0 var(--selectbox-padding-left);
 		font: {
 			size: var(--selectbox-font-size);
 			weight: var(--selectbox-font-weight);
@@ -1005,6 +986,16 @@
 			--radio-item-font-size: var(--fs-medium);
 			--icon-size: 1.071rem;
 			--icon-gap: 0.429rem;
+		}
+	}
+}
+
+@media (hover: hover) {
+	.input {
+		.btn-input-cal {
+			&:hover {
+				filter: brightness(0) saturate(100%) invert(18%) sepia(0%) saturate(7500%) hue-rotate(279deg) brightness(98%) contrast(93%);
+			}
 		}
 	}
 }

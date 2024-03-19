@@ -78,3 +78,15 @@
 		overflow-x: auto;
 	}
 }
+
+.td-load {
+	width: 100%;
+	display: inline-block;
+	height: 16px;
+	border: {
+		radius: var(--rd-small);
+	}
+	background: linear-gradient(to right, #eaecee 30%, #f2f3f7 50%, #eaecee 70%);
+	background-size: 200% 200%;
+	animation: 1.2s skeleton-loading linear infinite;
+}

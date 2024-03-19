@@ -62,10 +62,14 @@
 					@include flex(flex, null, null, center);
 				}
 			}
+			[class^="col"] {
+				> :not(.search-form-label) {
+					flex: 1 1 auto;
+				}
+			}
 			.search-form-label {
 				flex: 0 0 100px;
 				+ * {
-					flex: 1 1 auto;
 					margin-left: 0.5rem;
 				}
 			}

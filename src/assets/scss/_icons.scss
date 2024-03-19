@@ -32,6 +32,17 @@
 	&.xl {
 		--icon-size: 2.286em;
 	}
+	&.xxl {
+		--icon-size: 2.571em;
+	}
+	&.alert {
+		&-circle {
+			@include bg-image-svg(icons, ico-alert-circle);
+		}
+		&-triangle {
+			@include bg-image-svg(icons, ico-alert-triangle);
+		}
+	}
 	&.arrow {
 		&-down {
 			@include bg-image-svg(icons, ico-arrow-down);
@@ -152,6 +163,9 @@
 	}
 	&.location {
 		@include bg-image-svg(icons, ico-location);
+	}
+	&.list-off {
+		@include bg-image-svg(icons, ico-list-off);
 	}
 	&.lock {
 		@include bg-image-svg(icons, ico-lock);
