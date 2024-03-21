@@ -22,7 +22,7 @@
 	}
 	&.search-form-area {
 		.row {
-			--gap-row: 0.625rem;
+			--gap-row: 0.714rem;
 		}
 		.search-form-label {
 			color: var(--c-gray-1);
@@ -39,17 +39,62 @@
 		p {
 			color: var(--c-gray-3);
 			font: {
-				size: var(--fs-small);
+				size: var(--card-sub-title-size);
 			}
 		}
 	}
 	.header-title {
 		font: {
-			size: var(--fs-large);
-			weight: var(--fw-medium);
+			size: var(--card-main-title-size);
+			weight: var(--fw-semi);
 		}
 		+ p {
-			margin-top: 4px;
+			margin-top: 0.286rem;
+		}
+	}
+}
+.dl-home-summary {
+	@include flex(flex, column);
+	row-gap: 0.714rem;
+	dt {
+		span {
+			display: block;
+			line-height: var(--lh-150);
+			&:nth-child(1) {
+				font: {
+					size: var(--dt-title-size);
+					weight: var(--fw-semi);
+				}
+			}
+			&:nth-child(2) {
+				color: var(--c-gray-4);
+				font: {
+					size: var(--dt-title-size2);
+				}
+			}
+		}
+	}
+	dd {
+		font: {
+			size: var(--dd-text-size);
+			weight: var(--fw-bold);
+		}
+	}
+	&[data-direction="left"] {
+		dt {
+			span {
+				&:nth-child(2) {
+					@include text-ellipsis;
+				}
+			}
+		}
+		dd {
+			@include text-ellipsis;
+		}
+	}
+	&[data-direction="right"] {
+		dd {
+			text-align: right;
 		}
 	}
 }
@@ -73,10 +118,24 @@
 					margin-left: 0.5rem;
 				}
 			}
+			.search-all {
+				> .select-box {
+					flex: 0 0 100px;
+				}
+			}
 			.search-group {
 				padding-top: 0.5rem;
 			}
 		}
+	}
+	.card-header {
+		--card-main-title-size: var(--fs-medium);
+		--card-sub-title-size: var(--fs-small);
+	}
+	.dl-home-summary {
+		--dt-title-size: var(--fs-medium);
+		--dt-title-size2: var(--fs-small);
+		--dd-text-size: var(--fs-large);
 	}
 }
 @media (max-width: 768px) {
@@ -90,6 +149,33 @@
 			.search-group {
 				padding-top: 0.5rem;
 			}
+			&.list-reservation {
+				.row {
+					.col-6 {
+						&:nth-of-type(n+5) {
+							display: none;
+						}
+					}
+				}
+			}
+			&.list-staff {
+				.row {
+					.col-6 {
+						&:nth-of-type(n+3):nth-of-type(-n+5) {
+							display: none;
+						}
+					}
+				}
+			}
 		}
+	}
+	.card-header {
+		--card-main-title-size: var(--fs-base);
+		--card-sub-title-size: var(--fs-xsmall);
+	}
+	.dl-home-summary {
+		--dt-title-size: var(--fs-base);
+		--dt-title-size2: var(--fs-xsmall);
+		--dd-text-size: var(--fs-medium);
 	}
 }

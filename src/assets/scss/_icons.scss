@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 .icon {
-	@include flex(flex, null, null, center, null, null, center);
+	@include flex(inline-flex, null, null, center, null, null, center);
 	--size: initial;
 	flex: none;
 	background: {
@@ -14,26 +14,27 @@
 	background: {
 		size: auto var(--icon-size);
 	}
+	vertical-align: middle;
 	&.xxs {
-		--icon-size: 0.857rem;
+		--icon-size: 12px;
 	}
 	&.xs {
-		--icon-size: 1rem;
+		--icon-size: 14px;
 	}
 	&.sm {
-		--icon-size: 1.143rem;
+		--icon-size: 16px;
 	}
 	&.md {
-		--icon-size: 1.714rem;
+		--icon-size: 24px;
 	}
 	&.lg {
-		--icon-size: 2rem;
+		--icon-size: 28px;
 	}
 	&.xl {
-		--icon-size: 2.286em;
+		--icon-size: 32px;
 	}
 	&.xxl {
-		--icon-size: 2.571em;
+		--icon-size: 36px;
 	}
 	&.alert {
 		&-circle {
@@ -102,14 +103,6 @@
 		@include bg-image-svg(icons, ico-calendar-month);
 	}
 	&.chevron {
-		&-left {
-			@include bg-image-svg(icons, ico-chevron-left);
-		}
-		&-right {
-			@include bg-image-svg(icons, ico-chevron-right);
-		}
-	}
-	&.circle-chevron {
 		&-down {
 			@include bg-image-svg(icons, ico-chevron-down);
 		}
@@ -123,8 +116,27 @@
 			@include bg-image-svg(icons, ico-chevron-up);
 		}
 	}
+	&.circle-chevron {
+		&-down {
+			@include bg-image-svg(icons, ico-circle-chevron-down);
+		}
+		&-left {
+			@include bg-image-svg(icons, ico-circle-chevron-left);
+		}
+		&-right {
+			@include bg-image-svg(icons, ico-circle-chevron-right);
+		}
+		&-up {
+			@include bg-image-svg(icons, ico-circle-chevron-up);
+		}
+	}
 	&.close {
 		@include bg-image-svg(icons, ico-calendar-close);
+	}
+	&.currency {
+		&-won {
+			@include bg-image-svg(icons, ico-currency-won);
+		}
 	}
 	&.device-mobile {
 		@include bg-image-svg(icons, ico-device-mobile);
@@ -232,6 +244,16 @@
 	}
 	&.train {
 		@include bg-image-svg(icons, ico-train);
+	}
+	&.trending {
+		&-up {
+			@include bg-image-svg(icons, ico-trending-up);
+			filter: brightness(0) saturate(100%) invert(28%) sepia(95%) saturate(999%) hue-rotate(330deg) brightness(93%) contrast(101%);
+		}
+		&-down {
+			@include bg-image-svg(icons, ico-trending-down);
+			filter: brightness(0) saturate(100%) invert(21%) sepia(100%) saturate(2415%) hue-rotate(226deg) brightness(84%) contrast(104%);
+		}
 	}
 	&.upload {
 		@include bg-image-svg(icons, ico-upload);

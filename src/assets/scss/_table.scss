@@ -27,9 +27,14 @@
 			}
 		}
 		tbody {
+			&:has(.btn) {
+				th, td {
+					padding: 0.464rem 1.143rem;
+				}
+			}
 			th,
 			td {
-				padding: 1.143rem;
+				padding: 0.857rem 1.143rem;
 				color: var(--c-gray-3);
 			}
 		}

@@ -41,15 +41,15 @@
 						<button type="button" class="btn-close-nav">메뉴 닫기</button>
 					</h1>
 					<ul class="main-nav">
-						<li><button type="button" class="btn-nav-main active"><i class="icon md home"></i><span class="text">홈</span></button></li>
+						<li><button type="button" class="btn-nav-main" onclick="location.href='홈.html';"><i class="icon md home"></i><span class="text">홈</span></button></li>
 						<li>
 							<details class="nav-btn-group" name="nav" open>
 								<summary class="btn-nav-main"><i class="icon md user"></i><span class="text">예약/직원관리</span></summary>
 								<div class="sub-nav">
 									<ul>
-										<li><a href="#" class="nav-item active">전체 예약 리스트</a></li>
-										<li><a href="#" class="nav-item">직원관리</a></li>
-										<li><a href="#" class="nav-item">발권내역</a></li>
+										<li><a href="전체예약리스트.html" class="nav-item active">전체 예약 리스트</a></li>
+										<li><a href="직원관리.html" class="nav-item">직원관리</a></li>
+										<li><a href="발권내역.html" class="nav-item">발권내역</a></li>
 									</ul>
 								</div>
 							</details>
@@ -109,31 +109,24 @@
 				<main id="contents">
 					<!-- breadcrumbs -->
 					<ul class="breadcrumbs">
-						<li class="home"><a href="#">홈</a></li>
-						<li><a href="#">예약/직원관리</a></li>
+						<li class="home"><a href="홈.html">홈</a></li>
+						<li><a href="전체예약리스트.html">예약/직원관리</a></li>
 						<li><span class="current">전체 예약 리스트</span></li>
 					</ul>
 					<div id="page-header">
 						<h2>전체 예약 리스트</h2>
 						<p>전체 출장 예약 현황을 조회할 수 있습니다.</p>
 					</div>
-					<div class="row">
+					<div class="row md">
 						<div class="col-12">
-							<div class="card default search-form-area">
-								<div class="row">
-									<div class="col-12">
+							<div class="card default search-form-area list-reservation">
+								<div class="row md">
+									<div class="col-6">
 										<div class="form-group search-all">
 											<div class="select-box md line">
 												<select name="" id="">
 													<option value="">예약일</option>
 													<option value="">출발일</option>
-												</select>
-											</div>
-											<div class="select-box md line">
-												<select name="" id="">
-													<option value="">취소예약포함</option>
-													<option value="">취소예약제외</option>
-													<option value="">취소예약만</option>
 												</select>
 											</div>
 											<div class="form-group both">
@@ -175,12 +168,6 @@
 										</div>
 									</div>
 									<div class="col-6">
-										<label for="" class="search-form-label">출장자</label>
-										<div class="input md line">
-											<input type="text" name="" id="" placeholder="출장자 이름 입력">
-										</div>
-									</div>
-									<div class="col-6">
 										<label for="" class="search-form-label">규정위반 여부</label>
 										<div class="select-box md line">
 											<select name="" id="">
@@ -210,12 +197,16 @@
 							</div>
 						</div>
 					</div>
-					<div class="row">
+					<div class="row md">
 						<div class="col-12">
 							<div class="list-total-count">총 <strong>35</strong>개의 검색결과가 있습니다.</div>
 							<div class="card database">
 								<div class="database-control">
-									<button type="button" class="btn sm secondary" data-icon-position="left"><i class="icon xxs download"></i><span>엑셀 다운로드</span></button>
+									<label class="switch sm mg-r-auto" data-switch-direction="right">
+										<input type="checkbox" name="" id="" class="control-input">
+										<span class="control-text">취소포함</span>
+									</label>
+									<button type="button" class="btn sm secondary" data-icon-position="left"><i class="icon xs download"></i><span>엑셀 다운로드</span></button>
 									<div class="select-box sm line">
 										<select name="" id="">
 											<option value="">10</option>
