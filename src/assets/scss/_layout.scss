@@ -109,6 +109,9 @@
 			color: var(--c-gray-5);
 		}
 		&.active {
+			font: {
+				weight: var(--fw-medium);
+			}
 			color: var(--primary-blue);
 		}
 	}
@@ -578,6 +581,9 @@
 					weight: var(--fw-medium);
 				}
 			}
+			.icon {
+				--icon-size: 22px;
+			}
 			&:not(.active) {
 				.icon {
 					filter: invert(81%) sepia(3%) saturate(629%) hue-rotate(178deg) brightness(93%) contrast(93%);
@@ -597,7 +603,7 @@
 		}
 		.sub-nav {
 			ul {
-				padding: 1.143rem 0 0 0.571rem;
+				padding: 1.143rem 0 0.143rem 0.571rem;
 				li {
 					&:not(:first-child) {
 						margin-top: 0.857rem;
@@ -608,7 +614,7 @@
 		.nav-item {
 			@include flex(flex, null, null, center);
 			width: 100%;
-			padding-left: 0.571rem;
+			padding-left: 1.714rem;
 			&:before {
 				content: "";
 				@include border(all, 2px, solid, transparent, var(--rd-full));

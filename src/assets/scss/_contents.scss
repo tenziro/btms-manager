@@ -56,8 +56,8 @@
 		}
 	}
 	.sub-character {
-		margin-left: auto;
 		color: var(--c-gray-4);
+		margin-left: auto;
 		font: {
 			size: var(--card-sub-character-size);
 		}
@@ -131,6 +131,37 @@
 	.google-map-iframe {
 		@include position(absolute, 1, 0, 0, 0, 0);
 	}
+	.map-pin-item {
+		@include position(absolute);
+		z-index: 10;
+		> .bubble {
+			display: block;
+		}
+	}
+	.marker {
+		@include position(relative);
+		display: inline-block;
+		width: 24px;
+		height: 24px;
+		border-radius: 50% 50% 50% 0;
+		// border: 4px solid var(--primary-blue);
+		background: {
+			color: var(--primary-blue);
+		}
+		transform: rotate(-45deg);
+		&:after {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: 8px;
+			height: 8px;
+			border-radius: 50%;
+			margin-left: -4px;
+			margin-top: -4px;
+			background-color: var(--c-white);
+		}
+	}
 }
 .trip-warning {
 	@include flex(inline-flex, null, null, center);
@@ -140,10 +171,10 @@
 		content: "";
 		display: inline-block;
 		flex: none;
-		margin-right: 0.286rem;
-		vertical-align: middle;
 		width: var(--icon-size);
 		height: var(--icon-size);
+		margin-right: 0.286rem;
+		vertical-align: middle;
 	}
 	&.type1 {
 		color: var(--primary-blue);
@@ -160,13 +191,13 @@
 	&.type3 {
 		color: #FF6F00;
 		&:before {
-			filter: brightness(0) saturate(100%) invert(43%) sepia(64%) saturate(2157%) hue-rotate(1deg) brightness(103%) contrast(104%)
+			filter: brightness(0) saturate(100%) invert(43%) sepia(64%) saturate(2157%) hue-rotate(1deg) brightness(103%) contrast(104%);
 		}
 	}
 	&.type4 {
 		color: #EB2A14;
 		&:before {
-			filter: brightness(0) saturate(100%) invert(22%) sepia(100%) saturate(2310%) hue-rotate(352deg) brightness(94%) contrast(99%)
+			filter: brightness(0) saturate(100%) invert(22%) sepia(100%) saturate(2310%) hue-rotate(352deg) brightness(94%) contrast(99%);
 		}
 	}
 	&.type5 {
@@ -178,7 +209,7 @@
 	&.type6 {
 		color: var(--c-black);
 		&:before {
-			filter: brightness(0) saturate(100%) invert(0%) sepia(96%) saturate(7486%) hue-rotate(350deg) brightness(94%) contrast(106%)
+			filter: brightness(0) saturate(100%) invert(0%) sepia(96%) saturate(7486%) hue-rotate(350deg) brightness(94%) contrast(106%);
 		}
 	}
 }

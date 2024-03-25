@@ -10,6 +10,8 @@
 		<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
 		<link rel="stylesheet" type="text/css" href="../../assets/css/base.css" />
 		<title>bzp출장관리 - 출장관리자 :: 현재 예약현황</title>
+		<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAB-KEwQnoJ9go6bPCVqcCzYExLAFsODIs&callback=console.debug&libraries=maps,marker&v=beta">
+		</script>
 	</head>
 
 	<body>
@@ -22,7 +24,7 @@
 						<li>
 							<button type="button" class="btn-header-util">
 								<i class="icon md setting"></i>
-								<div class="bubble sm" data-direction="bottom">회원정보 수정</div>
+								<div class="bubble sm" data-direction="bottom">내정보 수정</div>
 							</button>
 						</li>
 						<li>
@@ -70,10 +72,10 @@
 								<summary class="btn-nav-main"><i class="icon md flight"></i><span class="text">항공 리포트</span></summary>
 								<div class="sub-nav">
 									<ul>
-										<li><a href="#" class="nav-item">Missed Cost</a></li>
-										<li><a href="#" class="nav-item">지역별 리포트</a></li>
-										<li><a href="#" class="nav-item">항공사별 리포트</a></li>
-										<li><a href="#" class="nav-item">규정위반 리포트</a></li>
+										<li><a href="항공-지역별리포트.html" class="nav-item">지역별 리포트</a></li>
+										<li><a href="항공-항공사별리포트.html" class="nav-item">항공사별 리포트</a></li>
+										<li><a href="항공-missedcost.html" class="nav-item">Missed Cost</a></li>
+										<li><a href="항공-규정위반리포트.html" class="nav-item">규정위반 리포트</a></li>
 									</ul>
 								</div>
 							</details>
@@ -83,9 +85,9 @@
 								<summary class="btn-nav-main"><i class="icon md hotel"></i><span class="text">숙박 리포트</span></summary>
 								<div class="sub-nav">
 									<ul>
-										<li><a href="#" class="nav-item">지역별 리포트</a></li>
-										<li><a href="#" class="nav-item">숙소별 리포트</a></li>
-										<li><a href="#" class="nav-item">규정위반 리포트</a></li>
+										<li><a href="숙박-지역별리포트.html" class="nav-item">지역별 리포트</a></li>
+										<li><a href="숙박-숙소별리포트.html" class="nav-item">숙소별 리포트</a></li>
+										<li><a href="숙박-규정위반리포트.html" class="nav-item">규정위반 리포트</a></li>
 									</ul>
 								</div>
 							</details>
@@ -95,9 +97,9 @@
 								<summary class="btn-nav-main"><i class="icon md train"></i><span class="text">열차 리포트</span></summary>
 								<div class="sub-nav">
 									<ul>
-										<li><a href="#" class="nav-item">지역별 리포트</a></li>
-										<li><a href="#" class="nav-item">열차별 리포트</a></li>
-										<li><a href="#" class="nav-item">규정위반 리포트</a></li>
+										<li><a href="열차-지역별리포트.html" class="nav-item">지역별 리포트</a></li>
+										<li><a href="열차-열차별리포트.html" class="nav-item">열차별 리포트</a></li>
+										<li><a href="열차-규정위반리포트.html" class="nav-item">규정위반 리포트</a></li>
 									</ul>
 								</div>
 							</details>
@@ -115,7 +117,7 @@
 					</ul>
 					<div id="page-header">
 						<h2>현재 예약현황</h2>
-						<p>현재(오늘 기준 ~ 직전 30일) 예약현황을 보실 수 있습니다.</p>
+						<p>현재(오늘 기준 ~ 직전 30일) 예약현황을 조회할 수 있습니다.</p>
 					</div>
 					<div class="page-item">
 						<h3 class="page-item-title"><strong>예약현황</strong></h3>
@@ -273,7 +275,12 @@
 							<div class="col-12">
 								<div class="card database">
 									<div class="map-area">
-										<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3178.9947254372746!2d-115.15587831838701!3d36.108798856836394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c53e0fe66103%3A0xa5afcf0c01b6a9cc!2sVirgin%20Hotels%20Las%20Vegas%2C%20Curio%20Collection%20by%20Hilton!5e0!3m2!1sko!2skr!4v1667370585058!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="google-map-iframe" title=""></iframe>
+										<!-- pin -->
+										<div class="map-pin-item" style="top: 50%; left: 50%;">
+											<span class="marker"></span>
+											<div class="bubble md" data-direction="top" style="--bubble-text: var(--primary-blue);">3명</div>
+										</div>
+										<gmp-map center="39.77306021099419,-233.96722412109375" zoom="3" map-id="travel-map" class="google-map-iframe"></gmp-map>
 									</div>
 									<div class="table type1 table-responsive text-wrap bordered-thead-top bordered-bottom">
 										<table>
@@ -339,6 +346,38 @@
 													<td>1명</td>
 													<td>
 														<span class="trip-warning type6">특별여행경보</span>
+													</td>
+												</tr>
+											</tbody>
+											<!-- 로딩 중일때 -->
+											<tbody class="table-loading">
+												<!-- 로딩 표시는 상단 리스트 표시 갯수만큼 반복해서 표시한다. -->
+												<tr>
+													<td>
+														<span class="td-load"></span>
+													</td>
+													<td>
+														<span class="td-load"></span>
+													</td>
+													<td>
+														<span class="td-load"></span>
+													</td>
+													<td>
+														<span class="td-load"></span>
+													</td>
+													<td>
+														<span class="td-load"></span>
+													</td>
+												</tr>
+											</tbody>
+											<!-- 데이터 검색 결과 없을때 -->
+											<tbody class="table-nolist">
+												<tr>
+													<td colspan="5">
+														<div class="database-nolist">
+															<i class="icon xxl alert-triangle"></i>
+															<p class="nolist-msg">현재 출장중인 임직원이 없습니다.</p>
+														</div>
 													</td>
 												</tr>
 											</tbody>
