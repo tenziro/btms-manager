@@ -231,8 +231,6 @@
 
 .row {
 	@include flex(flex, null, wrap);
-	--gutter-x: 1.429rem;
-	--gutter-y: 0;
 	row-gap: calc(1 * var(--gap-row));
 	margin: {
 		top: calc(-1 * var(--gutter-y));
@@ -249,13 +247,19 @@
 		}
 	}
 	+ .row {
-		margin-top: calc(var(--gap-row) * 2);
+		margin-top: calc(var(--gap-margin) * 2);
 	}
 	&.sm {
-		--gap-row: 0.714rem;
+		--gutter-x: 1rem;
+		--gutter-y: 0;
+		--gap-row: 1rem;
+		--gap-margin: 0.729rem;
 	}
 	&.md {
+		--gutter-x: 1.429rem;
+		--gutter-y: 0;
 		--gap-row: 1.429rem;
+		--gap-margin: 1.429rem;
 	}
 }
 
@@ -670,8 +674,8 @@
 		}
 	}
 	#page-header {
-		--page-mb: 0.714rem;
-		--page-title-size: var(--fs-extra);
+		--page-mb: 1rem;
+		--page-title-size: var(--fs-big);
 		--page-title-weight: var(--fw-semi);
 		--page-text-mt: 0.143rem;
 		--page-text-size: var(--fs-xsmall);

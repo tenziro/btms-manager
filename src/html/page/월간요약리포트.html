@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+		<link rel="stylesheet" type="text/css" href="../../assets/css/base.css" />
+		<title>bzp출장관리 - 출장관리자 :: 월간요약 리포트</title>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<header id="header">
+				<div class="inner">
+					<h1 class="xl-title"><a href="/" class="header-logo">BZP출장관리</a></h1>
+					<div class="sm-title"><button type="button" class="btn-open-nav">메뉴 열기</button></div>
+					<ul class="header-util">
+						<li>
+							<button type="button" class="btn-header-util">
+								<i class="icon md setting"></i>
+								<div class="bubble sm" data-direction="bottom">회원정보 수정</div>
+							</button>
+						</li>
+						<li>
+							<button type="button" class="btn-header-util">
+								<i class="icon md logout"></i>
+								<div class="bubble sm" data-direction="bottom">로그아웃</div>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<nav id="nav">
+				<div class="inner">
+					<h1 class="sm-title">
+						<i class="header-logo">BZP출장관리</i>
+						<button type="button" class="btn-close-nav">메뉴 닫기</button>
+					</h1>
+					<ul class="main-nav">
+						<li><button type="button" class="btn-nav-main" onclick="location.href='홈.html';"><i class="icon md home"></i><span class="text">홈</span></button></li>
+						<li>
+							<details class="nav-btn-group" name="nav">
+								<summary class="btn-nav-main"><i class="icon md user"></i><span class="text">예약/직원관리</span></summary>
+								<div class="sub-nav">
+									<ul>
+										<li><a href="전체예약리스트.html" class="nav-item">전체 예약 리스트</a></li>
+										<li><a href="직원관리.html" class="nav-item">직원관리</a></li>
+										<li><a href="발권내역.html" class="nav-item">발권내역</a></li>
+									</ul>
+								</div>
+							</details>
+						</li>
+						<li>
+							<details class="nav-btn-group" name="nav" open>
+								<summary class="btn-nav-main"><i class="icon md report"></i><span class="text">종합 리포트</span></summary>
+								<div class="sub-nav">
+									<ul>
+										<li><a href="#" class="nav-item active">월간요약 리포트</a></li>
+										<li><a href="현재예약현황.html" class="nav-item">현재 예약현황</a></li>
+									</ul>
+								</div>
+							</details>
+						</li>
+						<li>
+							<details class="nav-btn-group" name="nav">
+								<summary class="btn-nav-main"><i class="icon md flight"></i><span class="text">항공 리포트</span></summary>
+								<div class="sub-nav">
+									<ul>
+										<li><a href="#" class="nav-item">Missed Cost</a></li>
+										<li><a href="#" class="nav-item">지역별 리포트</a></li>
+										<li><a href="#" class="nav-item">항공사별 리포트</a></li>
+										<li><a href="#" class="nav-item">규정위반 리포트</a></li>
+									</ul>
+								</div>
+							</details>
+						</li>
+						<li>
+							<details class="nav-btn-group" name="nav">
+								<summary class="btn-nav-main"><i class="icon md hotel"></i><span class="text">숙박 리포트</span></summary>
+								<div class="sub-nav">
+									<ul>
+										<li><a href="#" class="nav-item">지역별 리포트</a></li>
+										<li><a href="#" class="nav-item">숙소별 리포트</a></li>
+										<li><a href="#" class="nav-item">규정위반 리포트</a></li>
+									</ul>
+								</div>
+							</details>
+						</li>
+						<li>
+							<details class="nav-btn-group" name="nav">
+								<summary class="btn-nav-main"><i class="icon md train"></i><span class="text">열차 리포트</span></summary>
+								<div class="sub-nav">
+									<ul>
+										<li><a href="#" class="nav-item">지역별 리포트</a></li>
+										<li><a href="#" class="nav-item">열차별 리포트</a></li>
+										<li><a href="#" class="nav-item">규정위반 리포트</a></li>
+									</ul>
+								</div>
+							</details>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<div id="container">
+				<main id="contents">
+					<!-- breadcrumbs -->
+					<ul class="breadcrumbs">
+						<li class="home"><a href="홈.html">홈</a></li>
+						<li><a href="월간요약리포트.html">종합 리포트</a></li>
+						<li><span class="current">월간요약 리포트</span></li>
+					</ul>
+					<div id="page-header">
+						<h2>월간요약 리포트</h2>
+						<p>월간 예약 현황을 조회하실 수 있습니다.</p>
+					</div>
+					<div class="row sm">
+						<div class="col-3">
+							<div class="card default">
+								<dl class="dl-home-summary" data-direction="right">
+									<dt>
+										<span>3월 출장 직원</span>
+										<span>2024.03.01 ~ 2024.03.31</span>
+									</dt>
+									<dd class="c-primary-blue">121명</dd>
+								</dl>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card default">
+								<dl class="dl-home-summary" data-direction="right">
+									<dt>
+										<span>3월 출장 건수</span>
+										<span>2024.03.01 ~ 2024.03.31</span>
+									</dt>
+									<dd class="c-primary-blue">45건</dd>
+								</dl>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card default">
+								<dl class="dl-home-summary" data-direction="right">
+									<dt>
+										<span>3월 전체 출장위반 건수</span>
+										<span>2024.03.01 ~ 2024.03.31</span>
+									</dt>
+									<dd class="c-danger">12건</dd>
+								</dl>
+							</div>
+						</div>
+						<div class="col-3">
+							<div class="card default">
+								<dl class="dl-home-summary" data-direction="right">
+									<dt>
+										<span>3월 전체 출장 금액</span>
+										<span>2024.03.01 ~ 2024.03.31</span>
+									</dt>
+									<dd class="c-danger">22,313,000원</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+					<div class="row md">
+						<div class="col-12">
+							<div class="card default search-form-area">
+								<div class="row md">
+									<div class="col-12">
+										<div class="form-group search-month">
+											<div class="radio-group type2 md">
+												<label class="radio-group-item">
+													<input type="radio" name="r2" class="control-input" checked>
+													<span class="control-text">1개월</span>
+												</label>
+												<label class="radio-group-item">
+													<input type="radio" name="r2" class="control-input">
+													<span class="control-text">3개월</span>
+												</label>
+												<label class="radio-group-item">
+													<input type="radio" name="r2" class="control-input">
+													<span class="control-text">6개월</span>
+												</label>
+												<label class="radio-group-item">
+													<input type="radio" name="r2" class="control-input">
+													<span class="control-text">직접입력</span>
+												</label>
+											</div>
+											<div class="form-group month">
+												<div class="form-group">
+													<div class="select-box md line">
+														<select name="" id="">
+															<option value="">2024년</option>
+															<option value="">2023년</option>
+														</select>
+													</div>
+													<div class="select-box md line">
+														<select name="" id="">
+															<option value="">1월</option>
+															<option value="">2월</option>
+														</select>
+													</div>
+												</div>
+												<span class="dash">~</span>
+												<div class="form-group">
+													<div class="select-box md line">
+														<select name="" id="">
+															<option value="">2024년</option>
+															<option value="">2023년</option>
+														</select>
+													</div>
+													<div class="select-box md line">
+														<select name="" id="">
+															<option value="">1월</option>
+															<option value="" selected>2월</option>
+														</select>
+													</div>
+												</div>
+											</div>
+											<button type="submit" class="btn md tertiary"><span>조회</span></button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row sm">
+						<div class="col-6">
+							<div class="card database">
+								<div class="card-header">
+									<div class="title">
+										<h3 class="header-title">출장 인원 현황</h3>
+									</div>
+								</div>
+								<div class="table type1 table-responsive text-wrap bordered-thead-top bordered-bottom">
+									<table>
+										<thead>
+											<tr>
+												<th>구분</th>
+												<th>2024년 3월</th>
+												<th>2024년 1월 ~ 2024년 2월</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>항공</th>
+												<td>11명</td>
+												<td>20명</td>
+											</tr>
+											<tr>
+												<th>호텔</th>
+												<td>10명</td>
+												<td>30명</td>
+											</tr>
+											<tr>
+												<th>열차</th>
+												<td>12명</td>
+												<td>21명</td>
+											</tr>
+										</tbody>
+										<!-- 데이터 검색 결과 없을때 -->
+										<tbody class="table-nolist">
+											<tr>
+												<td colspan="3">
+													<div class="database-nolist">
+														<i class="icon xxl alert-triangle"></i>
+														<p class="nolist-msg">조회된 데이터가 없습니다.<br>다른 검색조건으로 조회 바랍니다.</p>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<th>합계</th>
+												<th>33명</th>
+												<th>72명</th>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="card database">
+								<div class="card-header">
+									<div class="title">
+										<h3 class="header-title">출장 금액 현황</h3>
+									</div>
+								</div>
+								<div class="table type1 table-responsive text-wrap bordered-thead-top bordered-bottom">
+									<table>
+										<thead>
+											<tr>
+												<th>구분</th>
+												<th>2024년 3월</th>
+												<th>2024년 1월 ~ 2024년 2월</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<th>항공</th>
+												<td>13,245,050원</td>
+												<td>27,325,180원</td>
+											</tr>
+											<tr>
+												<th>호텔</th>
+												<td>7,892,100원</td>
+												<td>21,983,760원</td>
+											</tr>
+											<tr>
+												<th>열차</th>
+												<td>1,132,000원</td>
+												<td>3,873,950원</td>
+											</tr>
+										</tbody>
+										<!-- 데이터 검색 결과 없을때 -->
+										<tbody class="table-nolist">
+											<tr>
+												<td colspan="3">
+													<div class="database-nolist">
+														<i class="icon xxl alert-triangle"></i>
+														<p class="nolist-msg">조회된 데이터가 없습니다.<br>다른 검색조건으로 조회 바랍니다.</p>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+										<tfoot>
+											<tr>
+												<th>합계</th>
+												<th>22,385,500원</th>
+												<th>53,128,750원</th>
+											</tr>
+										</tfoot>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="card database">
+								<div class="card-header">
+									<div class="title">
+										<h3 class="header-title">항공 좌석 클래스</h3>
+									</div>
+								</div>
+								<div class="table type1 table-responsive text-wrap bordered-thead-top bordered-bottom">
+									<table>
+										<thead>
+											<tr>
+												<th>구분</th>
+												<th>2024년 3월</th>
+												<th>2024년 1월 ~ 2024년 2월</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>일반석</td>
+												<td>15건</td>
+												<td>33건</td>
+											</tr>
+											<tr>
+												<td>비즈니스석</td>
+												<td>3건</td>
+												<td>7건</td>
+											</tr>
+											<tr>
+												<td>일등석</td>
+												<td>0건</td>
+												<td>2건</td>
+											</tr>
+										</tbody>
+										<!-- 데이터 검색 결과 없을때 -->
+										<tbody class="table-nolist">
+											<tr>
+												<td colspan="3">
+													<div class="database-nolist">
+														<i class="icon xxl alert-triangle"></i>
+														<p class="nolist-msg">조회된 데이터가 없습니다.<br>다른 검색조건으로 조회 바랍니다.</p>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+						<div class="col-6">
+							<div class="card database">
+								<div class="card-header">
+									<div class="title">
+										<h3 class="header-title">가장 많이 방문한 목적지</h3>
+									</div>
+								</div>
+								<div class="table type1 table-responsive text-wrap bordered-thead-top bordered-bottom">
+									<table>
+										<thead>
+											<tr>
+												<th>#</th>
+												<th>2024년 3월</th>
+												<th>2024년 1월 ~ 2024년 2월</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>1</td>
+												<td>런던(영국)</td>
+												<td>뉴욕(미국)</td>
+											</tr>
+											<tr>
+												<td>2</td>
+												<td>파리(프랑스)</td>
+												<td>호치민(베트남)</td>
+											</tr>
+											<tr>
+												<td>3</td>
+												<td>로스앤젤레스(미국)</td>
+												<td>상하이(중국)</td>
+											</tr>
+										</tbody>
+										<!-- 데이터 검색 결과 없을때 -->
+										<tbody class="table-nolist">
+											<tr>
+												<td colspan="3">
+													<div class="database-nolist">
+														<i class="icon xxl alert-triangle"></i>
+														<p class="nolist-msg">조회된 데이터가 없습니다.<br>다른 검색조건으로 조회 바랍니다.</p>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</main>
+				<footer id="footer">
+					<div class="inner">
+						<ul class="company">
+							<li>비즈플레이(주)</li>
+							<li>대표이사 : 김홍기</li>
+						</ul>
+						<ul>
+							<li>주소 : 서울시 영등포구 영신로 220 KnK디지털타워 12층</li>
+							<li>사업자등록번호 : 107-88-36127</li>
+							<li>통신판매신고번호 : 2015-서울영등포-0113호</li>
+						</ul>
+						<ul>
+							<li><button class="btn-privacy">개인정보 처리방침</button></li>
+							<li><button class="btn-agree">이용약관</button></li>
+						</ul>
+						<p>
+							&copy; Bizplay. All rights reserved.
+						</p>
+					</div>
+				</footer>
+			</div>
+		</div>
+
+		<script>
+			// 리사이즈 시
+			window.addEventListener('resize', function () {
+				const nav = document.querySelector('#nav');
+				const body = document.querySelector('body');
+				if (window.innerWidth > 768 && nav.classList.contains('opened')) {
+					nav.classList.remove('opened');
+					body.classList.remove('stop-scroll');
+				}
+			});
+			// 메뉴 열고 닫기
+			const toggleNav = (action) => {
+				const nav = document.getElementById('nav');
+				const body = document.querySelector('body');
+				if (action === 'open') {
+					nav.classList.add('opened');
+					body.classList.add('stop-scroll');
+				} else if (action === 'close') {
+					nav.classList.remove('opened');
+					body.classList.remove('stop-scroll');
+				}
+			};
+			document.querySelector('.btn-open-nav').addEventListener('click', () => toggleNav('open'));
+			document.querySelector('.btn-close-nav').addEventListener('click', () => toggleNav('close'));
+
+			document.addEventListener('DOMContentLoaded', function () {
+
+				const navItemElements = document.querySelectorAll('.sub-nav .nav-item');
+				navItemElements.forEach(function (navItem) {
+					navItem.addEventListener('click', function () {
+						const currentActiveNavItem = document.querySelector('.sub-nav .nav-item.active');
+						if (currentActiveNavItem) {
+							currentActiveNavItem.classList.remove('active');
+						}
+						this.classList.add('active');
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

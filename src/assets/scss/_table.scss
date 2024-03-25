@@ -7,7 +7,7 @@
 	--table-accent-color: var(--c-point-1);
 	--table-link-color: var(--primary-blue);
 	&.type1 {
-		--table-bg-color: #FAFAFA;
+		--table-bg-color: #f1f1f9;
 		table {
 			border-collapse: collapse;
 			caption-side: bottom;
@@ -36,6 +36,13 @@
 			td {
 				padding: 0.857rem 1.143rem;
 				color: var(--c-gray-3);
+				text-align: left;
+			}
+			th {
+				color: var(--c-gray-1);
+				font: {
+					weight: var(--fw-medium);
+				}
 			}
 		}
 		tfoot {
@@ -53,12 +60,14 @@
 			}
 		}
 	}
-	&.bordered-bottom {
+	&.bordered-thead-top {
 		thead {
 			th {
 				@include border(top, 1px, solid, var(--table-border-color));
 			}
 		}
+	}
+	&.bordered-bottom {
 		th, td {
 			@include border(bottom, 1px, solid, var(--table-border-color));
 		}

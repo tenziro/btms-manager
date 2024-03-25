@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link rel="icon" type="image/x-icon" href="favicon.ico">
+		<link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+		<link rel="stylesheet" type="text/css" href="../../assets/css/base.css" />
+		<title>bzp출장관리 - 출장관리자 :: 현재 예약현황</title>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<header id="header">
+				<div class="inner">
+					<h1 class="xl-title"><a href="/" class="header-logo">BZP출장관리</a></h1>
+					<div class="sm-title"><button type="button" class="btn-open-nav">메뉴 열기</button></div>
+					<ul class="header-util">
+						<li>
+							<button type="button" class="btn-header-util">
+								<i class="icon md setting"></i>
+								<div class="bubble sm" data-direction="bottom">회원정보 수정</div>
+							</button>
+						</li>
+						<li>
+							<button type="button" class="btn-header-util">
+								<i class="icon md logout"></i>
+								<div class="bubble sm" data-direction="bottom">로그아웃</div>
+							</button>
+						</li>
+					</ul>
+				</div>
+			</header>
+			<nav id="nav">
+				<div class="inner">
+					<h1 class="sm-title">
+						<i class="header-logo">BZP출장관리</i>
+						<button type="button" class="btn-close-nav">메뉴 닫기</button>
+					</h1>
+					<ul class="main-nav">
+						<li><button type="button" class="btn-nav-main" onclick="location.href='홈.html';"><i class="icon md home"></i><span class="text">홈</span></button></li>
+						<li>
+							<details class="nav-btn-group" name="nav">
+								<summary class="btn-nav-main"><i class="icon md user"></i><span class="text">예약/직원관리</span></summary>
+								<div class="sub-nav">
+									<ul>
+										<li><a href="전체예약리스트.html" class="nav-item">전체 예약 리스트</a></li>
+										<li><a href="직원관리.html" class="nav-item">직원관리</a></li>
+										<li><a href="발권내역.html" class="nav-item">발권내역</a></li>
+									</ul>
+								</div>
+							</details>
+						</li>
+						<li>
+							<details class="nav-btn-group" name="nav" open>
+								<summary class="btn-nav-main"><i class="icon md report"></i><span class="text">종합 리포트</span></summary>
+								<div class="sub-nav">
+									<ul>
+										<li><a href="월간요약리포트.html" class="nav-item">월간요약 리포트</a></li>
+										<li><a href="현재예약현황.html" class="nav-item active">현재 예약현황</a></li>
+									</ul>
+								</div>
+							</details>
+						</li>
+						<li>
+							<details class="nav-btn-group" name="nav">
+								<summary class="btn-nav-main"><i class="icon md flight"></i><span class="text">항공 리포트</span></summary>
+								<div class="sub-nav">
+									<ul>
+										<li><a href="#" class="nav-item">Missed Cost</a></li>
+										<li><a href="#" class="nav-item">지역별 리포트</a></li>
+										<li><a href="#" class="nav-item">항공사별 리포트</a></li>
+										<li><a href="#" class="nav-item">규정위반 리포트</a></li>
+									</ul>
+								</div>
+							</details>
+						</li>
+						<li>
+							<details class="nav-btn-group" name="nav">
+								<summary class="btn-nav-main"><i class="icon md hotel"></i><span class="text">숙박 리포트</span></summary>
+								<div class="sub-nav">
+									<ul>
+										<li><a href="#" class="nav-item">지역별 리포트</a></li>
+										<li><a href="#" class="nav-item">숙소별 리포트</a></li>
+										<li><a href="#" class="nav-item">규정위반 리포트</a></li>
+									</ul>
+								</div>
+							</details>
+						</li>
+						<li>
+							<details class="nav-btn-group" name="nav">
+								<summary class="btn-nav-main"><i class="icon md train"></i><span class="text">열차 리포트</span></summary>
+								<div class="sub-nav">
+									<ul>
+										<li><a href="#" class="nav-item">지역별 리포트</a></li>
+										<li><a href="#" class="nav-item">열차별 리포트</a></li>
+										<li><a href="#" class="nav-item">규정위반 리포트</a></li>
+									</ul>
+								</div>
+							</details>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<div id="container">
+				<main id="contents">
+					<!-- breadcrumbs -->
+					<ul class="breadcrumbs">
+						<li class="home"><a href="홈.html">홈</a></li>
+						<li><a href="월간요약리포트.html">종합 리포트</a></li>
+						<li><span class="current">현재 예약현황</span></li>
+					</ul>
+					<div id="page-header">
+						<h2>현재 예약현황</h2>
+						<p>현재(오늘 기준 ~ 직전 30일) 예약현황을 보실 수 있습니다.</p>
+					</div>
+					<div class="page-item">
+						<h3 class="page-item-title"><strong>예약현황</strong></h3>
+						<div class="row sm">
+							<div class="col-6">
+								<div class="card database">
+									<div class="card-header">
+										<dl class="dl-home-summary" data-direction="right">
+											<dt>
+												<span>항공 예약현황</span>
+												<span>2024.02.01 ~ 현재</span>
+											</dt>
+											<dd class="c-primary-blue">17건</dd>
+										</dl>
+									</div>
+									<div class="table type1 table-responsive text-wrap bordered-thead-top bordered-bottom">
+										<table>
+											<thead>
+												<tr>
+													<th class="align-c">발권완료</th>
+													<th class="align-c">예약요청</th>
+													<th class="align-c">예약취소</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="align-c">13건</td>
+													<td class="align-c c-primary-blue">3건</td>
+													<td class="align-c c-danger">1건</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="card database">
+									<div class="card-header">
+										<dl class="dl-home-summary" data-direction="right">
+											<dt>
+												<span>숙박 예약현황</span>
+												<span>2024.02.01 ~ 현재</span>
+											</dt>
+											<dd class="c-primary-blue">12건</dd>
+										</dl>
+									</div>
+									<div class="table type1 table-responsive text-wrap bordered-thead-top bordered-bottom">
+										<table>
+											<thead>
+												<tr>
+													<th class="align-c">예약완료</th>
+													<th class="align-c">예약요청</th>
+													<th class="align-c">예약취소</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td class="align-c">5건</td>
+													<td class="align-c c-primary-blue">5건</td>
+													<td class="align-c c-danger">2건</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="page-item">
+						<h3 class="page-item-title"><strong>서비스별 출장규정 상세현황</strong></h3>
+						<div class="row sm">
+							<div class="col-6">
+								<div class="card database">
+									<div class="card-header">
+										<div class="title">
+											<h4 class="header-title">출장규정 별 예약현황</h4>
+										</div>
+									</div>
+									<div class="table type1 table-responsive text-wrap bordered-bottom">
+										<table>
+											<thead>
+												<tr>
+													<th>구분</th>
+													<th>전체</th>
+													<th>출장규정 적합 예약</th>
+													<th>출장규정 위반 예약</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th>항공</th>
+													<td>5건</td>
+													<td>2건</td>
+													<td>3건</td>
+												</tr>
+												<tr>
+													<th>숙박</th>
+													<td>5건</td>
+													<td>2건</td>
+													<td>3건</td>
+												</tr>
+												<tr>
+													<th>열차</th>
+													<td>5건</td>
+													<td>2건</td>
+													<td>3건</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+							<div class="col-6">
+								<div class="card database">
+									<div class="card-header">
+										<div class="title">
+											<h4 class="header-title">상위 출장규정 위반사유</h4>
+										</div>
+									</div>
+									<div class="table type1 table-responsive text-wrap bordered-bottom">
+										<table>
+											<thead>
+												<tr>
+													<th>구분</th>
+													<th>상위 출장규정 위반사유</th>
+													<th>서비스 내 점유율</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th>항공</th>
+													<td>만석으로 인한 상위 클래스 이용</td>
+													<td>50%(2건)</td>
+												</tr>
+												<tr>
+													<th>숙박</th>
+													<td>부서 임원 수행</td>
+													<td>50%(2건)</td>
+												</tr>
+												<tr>
+													<th>열차</th>
+													<td>출장규정 내 좌석 매진</td>
+													<td>66.6%(2건)</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="page-item">
+						<h3 class="page-item-title"><strong>지역별 출장자 현황</strong></h3>
+						<div class="row sm">
+							<div class="col-12">
+								<div class="card database">
+									<div class="map-area">
+										<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3178.9947254372746!2d-115.15587831838701!3d36.108798856836394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c8c53e0fe66103%3A0xa5afcf0c01b6a9cc!2sVirgin%20Hotels%20Las%20Vegas%2C%20Curio%20Collection%20by%20Hilton!5e0!3m2!1sko!2skr!4v1667370585058!5m2!1sko!2skr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="google-map-iframe" title=""></iframe>
+									</div>
+									<div class="table type1 table-responsive text-wrap bordered-thead-top bordered-bottom">
+										<table>
+											<thead>
+												<tr>
+													<th>#</th>
+													<th>국가명</th>
+													<th>도시명</th>
+													<th>출장인원</th>
+													<th>출장경보 단계</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>1</td>
+													<td>미국</td>
+													<td>로스앤젤레스</td>
+													<td>7명</td>
+													<td>
+														<span class="trip-warning type1">출장유의</span>
+													</td>
+												</tr>
+												<tr>
+													<td>2</td>
+													<td>이스라엘</td>
+													<td>예루살렘</td>
+													<td>5명</td>
+													<td>
+														<span class="trip-warning type2">출장자제</span>
+													</td>
+												</tr>
+												<tr>
+													<td>3</td>
+													<td>파키스탄</td>
+													<td>이슬라마바드</td>
+													<td>4명</td>
+													<td>
+														<span class="trip-warning type3">철수권고</span>
+													</td>
+												</tr>
+												<tr>
+													<td>4</td>
+													<td>러시아</td>
+													<td>모스크바</td>
+													<td>3명</td>
+													<td>
+														<span class="trip-warning type4">출장금지</span>
+													</td>
+												</tr>
+												<tr>
+													<td>5</td>
+													<td>우크라이나</td>
+													<td>키이우</td>
+													<td>2명</td>
+													<td>
+														<span class="trip-warning type5">특별여행주의</span>
+													</td>
+												</tr>
+												<tr>
+													<td>6</td>
+													<td>아프가니스탄</td>
+													<td>카불</td>
+													<td>1명</td>
+													<td>
+														<span class="trip-warning type6">특별여행경보</span>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</main>
+				<footer id="footer">
+					<div class="inner">
+						<ul class="company">
+							<li>비즈플레이(주)</li>
+							<li>대표이사 : 김홍기</li>
+						</ul>
+						<ul>
+							<li>주소 : 서울시 영등포구 영신로 220 KnK디지털타워 12층</li>
+							<li>사업자등록번호 : 107-88-36127</li>
+							<li>통신판매신고번호 : 2015-서울영등포-0113호</li>
+						</ul>
+						<ul>
+							<li><button class="btn-privacy">개인정보 처리방침</button></li>
+							<li><button class="btn-agree">이용약관</button></li>
+						</ul>
+						<p>
+							&copy; Bizplay. All rights reserved.
+						</p>
+					</div>
+				</footer>
+			</div>
+		</div>
+
+		<script>
+			// 리사이즈 시
+			window.addEventListener('resize', function () {
+				const nav = document.querySelector('#nav');
+				const body = document.querySelector('body');
+				if (window.innerWidth > 768 && nav.classList.contains('opened')) {
+					nav.classList.remove('opened');
+					body.classList.remove('stop-scroll');
+				}
+			});
+			// 메뉴 열고 닫기
+			const toggleNav = (action) => {
+				const nav = document.getElementById('nav');
+				const body = document.querySelector('body');
+				if (action === 'open') {
+					nav.classList.add('opened');
+					body.classList.add('stop-scroll');
+				} else if (action === 'close') {
+					nav.classList.remove('opened');
+					body.classList.remove('stop-scroll');
+				}
+			};
+			document.querySelector('.btn-open-nav').addEventListener('click', () => toggleNav('open'));
+			document.querySelector('.btn-close-nav').addEventListener('click', () => toggleNav('close'));
+
+			document.addEventListener('DOMContentLoaded', function () {
+
+				const navItemElements = document.querySelectorAll('.sub-nav .nav-item');
+				navItemElements.forEach(function (navItem) {
+					navItem.addEventListener('click', function () {
+						const currentActiveNavItem = document.querySelector('.sub-nav .nav-item.active');
+						if (currentActiveNavItem) {
+							currentActiveNavItem.classList.remove('active');
+						}
+						this.classList.add('active');
+					});
+				});
+			});
+		</script>
+	</body>
+
+</html>

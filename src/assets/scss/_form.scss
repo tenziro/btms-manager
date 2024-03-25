@@ -63,16 +63,32 @@
 			flex: none;
 		}
 	}
-	&.search-all {
+	&.month {
+		gap: 0 0.286rem;
+		flex: 1 1;
+		.form-group {
+			flex: 1 1;
+			gap: 0 0.286rem;
+			.select-box {
+				&:first-child {
+					flex: 2 1 auto;
+				}
+				&:nth-child(2) {
+					flex: 1 1 auto;
+				}
+			}
+		}
+	}
+	&.search-all,
+	&.search-month {
 		gap: 0 0.429rem;
-		.both {
-			flex: 1 1 auto;
-		}
-		.radio-group {
-			flex: 1 1 auto;
-		}
 		.btn {
 			--btn-padding: 0 1.429rem;
+		}
+	}
+	&.search-all {
+		.both {
+			flex: 1 1 auto;
 		}
 	}
 }
@@ -87,7 +103,6 @@
 		display: inline-block;
 	}
 }
-
 // ! input
 .input {
 	&:has(.btn-input-clear) {
@@ -226,7 +241,6 @@
 		}
 	}
 }
-
 // ! input-file
 .input-file {
 	&:not(.inline) {
@@ -356,7 +370,6 @@
 		}
 	}
 }
-
 // ! select
 .select-box {
 	select {
@@ -449,7 +462,6 @@
 		}
 	}
 }
-
 // ! textarea
 .textarea {
 	textarea {
@@ -494,7 +506,6 @@
 		}
 	}
 }
-
 // ! Checkbox
 .checkbox {
 	@include flex(inline-flex);
@@ -751,7 +762,6 @@
 		}
 	}
 }
-
 // ! Radio
 .radio {
 	@include flex(inline-flex);
@@ -851,7 +861,6 @@
 		}
 	}
 }
-
 // * checkbox, radio 공통
 .checkbox,
 .radio {
@@ -1214,24 +1223,30 @@
 		}
 	}
 }
+@media (min-width: 769px) {
+	.form-group {
+		&.search-all,
+		&.search-month {
+			.radio-group {
+				flex: 0 0 40%;
+			}
+		}
+	}
+}
 
 @media (max-width: 768px) {
 	.form-group {
-		&.search-all {
+		&.search-all,
+		&.search-month {
 			flex-wrap: wrap;
-			> .select-box {
-				flex: 1 1;
-			}
-			> .radio-group {
-				flex: 1 1;
-			}
-			.form-group {
-				margin-top: 0.571rem;
+			> * {
 				flex: 0 0 100%;
+			}
+			.radio-group {
+				margin-bottom: 0.571rem;
 			}
 			.btn {
 				margin-top: 0.571rem;
-				flex: 0 0 100%;
 			}
 		}
 	}
