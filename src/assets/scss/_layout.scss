@@ -1,37 +1,3 @@
-#login {
-	@include position(relative);
-	@include bg-image-set(common, bg-login, bottom center, no-repeat, null, cover);
-	height: 100vh;
-	.logo {
-		@include position(absolute, null, 12vh, null, null, 50%, 6.62vw);
-	}
-	.login-msg {
-		margin-bottom: 1.571rem;
-		font: {
-			size: 40px;
-			weight: var(--fw-medium);
-		}
-	}
-	.login-form {
-		@include position(absolute, null, 50vh, 0, null, null, calc(-9.5vw), -50%);
-		width: 25vw;
-		.btn-group {
-			margin-top: 2.429rem;
-		}
-	}
-}
-@media screen and (max-width: 1920px) {
-	#login {
-		.logo {
-			@include position(absolute, null, 15vh, null, null, 50%, 120px);
-		}
-		.login-form {
-			@include position(absolute, null, 50vh, null, null, 50%, 17vw, -50%);
-			width: 350px;
-		}
-	}
-}
-
 // ! layout
 #wrap {
 	@include flex(flex, column);
@@ -267,6 +233,28 @@
 }
 
 @media (min-width: 769px) {
+	#login {
+		@include position(relative);
+		@include bg-image-set(common, bg-login, bottom center, no-repeat, null, cover);
+		height: 100vh;
+		.logo {
+			@include position(absolute, null, 12vh, null, null, 50%, 6.62vw);
+		}
+		.login-msg {
+			margin-bottom: 1.571rem;
+			font: {
+				size: 40px;
+				weight: var(--fw-medium);
+			}
+		}
+		.login-form {
+			@include position(absolute, null, 50vh, 0, null, null, calc(-9.5vw), -50%);
+			width: 25vw;
+			.btn-group {
+				margin-top: 2.429rem;
+			}
+		}
+	}
 	#wrap {
 		&:has(.nav-btn-group[open]) {
 			#contents {
@@ -503,7 +491,55 @@
 		}
 	}
 }
+@media (min-width: 769px) and (max-width: 1920px) {
+	#login {
+		.logo {
+			@include position(absolute, null, 15vh, null, null, 50%, 120px);
+		}
+		.login-form {
+			@include position(absolute, null, 50vh, null, null, 50%, 17vw, -50%);
+			width: 350px;
+		}
+	}
+}
 @media (max-width: 768px) {
+	#wrap {
+		justify-content: center;
+		background: {
+			color: var(--primary-blue);
+		}
+	}
+	#login {
+		margin: 1.429rem;
+		background: {
+			color: var(--c-white);
+		}
+		padding: 1.429rem;
+		border: {
+			radius: var(--rd-medium);
+		}
+		box-shadow: rgba(var(--c-black-rgb), 0.1) 0px 4px 6px -1px, rgba(var(--c-black-rgb), 0.06) 0px 2px 4px -1px;
+		.logo {
+			text-align: center;
+			margin: 0.714rem 0 1.429rem;
+			img {
+				width: 100px;
+			}
+		}
+		.login-msg {
+			display: none;
+		}
+		.form-type1 {
+			.form-item {
+				&:last-child {
+					margin-top: 0.714rem;
+				}
+			}
+		}
+		.btn-group {
+			margin-top: 1.429rem;
+		}
+	}
 	#header {
 		.xl-title {
 			display: none;

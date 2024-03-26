@@ -17,7 +17,7 @@
 				<div class="modal-contents">
 					<div class="modal-header bordered-bottom">
 						<h1 class="title">임직원 등록</h1>
-						<button type="button" class="btn-modal-close">닫기</button>
+						<button type="button" class="btn-modal-close" onclick="javascript:window.close();">닫기</button>
 					</div>
 					<div class="modal-body default">
 						<ul class="form-type1">
@@ -83,21 +83,11 @@
 							</li>
 							<li class="form-item">
 								<div class="form-item-title">
-									<label for=""><sup>비밀번호 확인</sup></label>
-								</div>
-								<div class="form-item-contents">
-									<div class="input md line">
-										<input type="password" placeholder="비밀번호 재입력">
-									</div>
-								</div>
-							</li>
-							<li class="form-item">
-								<div class="form-item-title">
 									<label for=""><sup>이메일 주소</sup></label>
 								</div>
 								<div class="form-item-contents">
 									<div class="input lg line">
-										<input type="email" value="" placeholder="가입시 입력한 이메일 주소 입력">
+										<input type="email" value="" placeholder="이메일 주소 입력">
 									</div>
 								</div>
 							</li>
@@ -116,7 +106,7 @@
 									<label for=""><sup>성별</sup></label>
 								</div>
 								<div class="form-item-contents">
-									<div class="radio-group type1 lg">
+									<div class="radio-group type2 lg">
 										<label class="radio-group-item">
 											<input type="radio" class="control-input" name="gender" checked>
 											<span class="control-text"><i class="icon gender-male"></i>남성</span>
@@ -162,6 +152,21 @@
 											<option value="">과장</option>
 											<option value="">대리</option>
 											<option value="">사원</option>
+										</select>
+									</div>
+								</div>
+							</li>
+							<li class="form-item">
+								<div class="form-item-title">
+									<label for=""><sup>계정상태</sup></label>
+								</div>
+								<div class="form-item-contents">
+									<div class="select-box lg line">
+										<select required>
+											<option value="" selected disabled>계정상태 선택</option>
+											<option value="">승인대기</option>
+											<option value="">사용가능</option>
+											<option value="">사용제한</option>
 										</select>
 									</div>
 								</div>
