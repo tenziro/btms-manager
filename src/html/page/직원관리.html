@@ -187,7 +187,11 @@
 							</div>
 							<div class="card database">
 								<div class="database-control">
-									<button type="button" class="btn sm secondary" data-icon-position="left"><i class="icon xs user-plus"></i><span>신규 임직원 등록</span></button>
+									<label class="switch sm mg-r-auto" data-switch-direction="right">
+										<input type="checkbox" name="" id="" class="control-input">
+										<span class="control-text">승인대기만 보기</span>
+									</label>
+									<button type="button" class="btn sm secondary" data-icon-position="left"><i class="icon xs user-plus"></i><span>임직원 등록</span></button>
 									<div class="select-box sm line">
 										<select name="" id="">
 											<option value="">10</option>
@@ -365,9 +369,7 @@
 			};
 			document.querySelector('.btn-open-nav').addEventListener('click', () => toggleNav('open'));
 			document.querySelector('.btn-close-nav').addEventListener('click', () => toggleNav('close'));
-
 			document.addEventListener('DOMContentLoaded', function () {
-
 				const navItemElements = document.querySelectorAll('.sub-nav .nav-item');
 				navItemElements.forEach(function (navItem) {
 					navItem.addEventListener('click', function () {

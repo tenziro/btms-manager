@@ -120,8 +120,15 @@
 	@include flex(flex, null, null, center);
 	strong {
 		font: {
-			size: var(--fs-large);
+			size: var(--page-item-title-size);
 			weight: var(--fw-semi);
+		}
+	}
+	.comment-text {
+		color: var(--c-gray-4);
+		margin-left: auto;
+		font: {
+			size: var(--page-item-comment-size);
 		}
 	}
 }
@@ -247,6 +254,14 @@
 		--card-sub-title-size: var(--fs-small);
 		--card-sub-character-size: var(--fs-xsmall);
 	}
+	.page-item-title {
+		strong {
+			--page-item-title-size: var(--fs-large);
+		}
+		.comment-text {
+			--page-item-comment-size: var(--fs-small);
+		}
+	}
 	.dl-home-summary {
 		--dt-title-size: var(--fs-medium);
 		--dt-title-size2: var(--fs-small);
@@ -291,6 +306,14 @@
 		--card-main-title-size: var(--fs-base);
 		--card-sub-title-size: var(--fs-xsmall);
 		--card-sub-character-size: var(--fs-xxsmall);
+	}
+	.page-item-title {
+		strong {
+			--page-item-title-size: var(--fs-medium);
+		}
+		.comment-text {
+			--page-item-comment-size: var(--fs-xsmall);
+		}
 	}
 	.dl-home-summary {
 		--dt-title-size: var(--fs-base);

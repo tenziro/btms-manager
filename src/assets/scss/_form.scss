@@ -1242,11 +1242,18 @@
 			> * {
 				flex: 0 0 100%;
 			}
-			.radio-group {
-				margin-bottom: 0.571rem;
-			}
 			.btn {
 				margin-top: 0.571rem;
+			}
+		}
+		&.search-all {
+			.form-group {
+				margin-top: 0.571rem;
+			}
+		}
+		&.search-month {
+			.radio-group {
+				margin-bottom: 0.571rem;
 			}
 		}
 	}

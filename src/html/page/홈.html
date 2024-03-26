@@ -337,6 +337,30 @@
 													<td><i class="icon xs trending-down mg-r4"></i>313,200원</td>
 												</tr>
 											</tbody>
+											<!-- 로딩 중일때 -->
+											<tbody class="table-loading">
+												<!-- 로딩 표시는 상단 리스트 표시 갯수만큼 반복해서 표시한다. -->
+												<tr>
+													<td>
+														<span class="td-load"></span>
+													</td>
+													<td>
+														<span class="td-load"></span>
+													</td>
+													<td>
+														<span class="td-load"></span>
+													</td>
+													<td>
+														<span class="td-load"></span>
+													</td>
+													<td>
+														<span class="td-load"></span>
+													</td>
+													<td>
+														<span class="td-load"></span>
+													</td>
+												</tr>
+											</tbody>
 											<!-- 데이터 검색 결과 없을때 -->
 											<tbody class="table-nolist">
 												<tr>
@@ -396,6 +420,30 @@
 													<td><i class="icon xs trending-down mg-r4"></i>1건</td>
 													<td>843,920원</td>
 													<td><i class="icon xs trending-down mg-r4"></i>313,200원</td>
+												</tr>
+											</tbody>
+											<!-- 로딩 중일때 -->
+											<tbody class="table-loading">
+												<!-- 로딩 표시는 상단 리스트 표시 갯수만큼 반복해서 표시한다. -->
+												<tr>
+													<td>
+														<span class="td-load"></span>
+													</td>
+													<td>
+														<span class="td-load"></span>
+													</td>
+													<td>
+														<span class="td-load"></span>
+													</td>
+													<td>
+														<span class="td-load"></span>
+													</td>
+													<td>
+														<span class="td-load"></span>
+													</td>
+													<td>
+														<span class="td-load"></span>
+													</td>
 												</tr>
 											</tbody>
 											<!-- 데이터 검색 결과 없을때 -->
@@ -472,9 +520,7 @@
 			};
 			document.querySelector('.btn-open-nav').addEventListener('click', () => toggleNav('open'));
 			document.querySelector('.btn-close-nav').addEventListener('click', () => toggleNav('close'));
-
 			document.addEventListener('DOMContentLoaded', function () {
-
 				const navItemElements = document.querySelectorAll('.sub-nav .nav-item');
 				navItemElements.forEach(function (navItem) {
 					navItem.addEventListener('click', function () {
