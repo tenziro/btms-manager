@@ -23,7 +23,7 @@
 					<ul class="header-util">
 						<li>
 							<button type="button" class="btn-header-util">
-								<i class="icon md setting"></i>
+								<i class="icon md user-cog"></i>
 								<div class="bubble sm" data-direction="bottom">내정보 수정</div>
 							</button>
 						</li>
@@ -46,7 +46,7 @@
 						<li><button type="button" class="btn-nav-main" onclick="location.href='홈.html';"><i class="icon md home"></i><span class="text">홈</span></button></li>
 						<li>
 							<details class="nav-btn-group" name="nav">
-								<summary class="btn-nav-main"><i class="icon md user"></i><span class="text">예약/직원관리</span></summary>
+								<summary class="btn-nav-main"><i class="icon md calendar-user"></i><span class="text">예약/직원관리</span></summary>
 								<div class="sub-nav">
 									<ul>
 										<li><a href="전체예약리스트.html" class="nav-item">전체 예약 리스트</a></li>
@@ -202,7 +202,7 @@
 											<h4 class="header-title">출장규정 별 예약현황</h4>
 										</div>
 									</div>
-									<div class="table type1 table-responsive text-wrap bordered-bottom">
+									<div class="table type1 table-responsive text-wrap bordered-thead-top bordered-bottom">
 										<table>
 											<thead>
 												<tr>
@@ -243,7 +243,7 @@
 											<h4 class="header-title">상위 출장규정 위반사유</h4>
 										</div>
 									</div>
-									<div class="table type1 table-responsive text-wrap bordered-bottom">
+									<div class="table type1 table-responsive text-wrap bordered-thead-top bordered-bottom">
 										<table>
 											<thead>
 												<tr>
@@ -280,6 +280,52 @@
 							<strong>지역별 출장자 현황</strong>
 							<span class="comment-text">(현재 출장자 기준)</span>
 						</h3>
+						<div class="row sm">
+							<div class="col-3">
+								<div class="card default">
+									<dl class="dl-home-summary" data-direction="right">
+										<dt>
+											<span>출장자 가장 많은 국가</span>
+											<span>2024.02.01 ~ 현재</span>
+										</dt>
+										<dd class="c-primary-blue">미국, 40명</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="card default">
+									<dl class="dl-home-summary" data-direction="right">
+										<dt>
+											<span>출장자 가장 많은 도시</span>
+											<span>2024.02.01 ~ 현재</span>
+										</dt>
+										<dd class="c-primary-blue">로스엔젤레스, 24명</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="card default">
+									<dl class="dl-home-summary" data-direction="right">
+										<dt>
+											<span>출장경보 지역 외 출장자</span>
+											<span>2024.02.01 ~ 현재</span>
+										</dt>
+										<dd class="c-danger">10명</dd>
+									</dl>
+								</div>
+							</div>
+							<div class="col-3">
+								<div class="card default">
+									<dl class="dl-home-summary" data-direction="right">
+										<dt>
+											<span>출장경보 지역 내 출장자</span>
+											<span>2024.02.01 ~ 현재</span>
+										</dt>
+										<dd class="c-danger">24명</dd>
+									</dl>
+								</div>
+							</div>
+						</div>
 						<div class="row sm">
 							<div class="col-12">
 								<div class="card database">

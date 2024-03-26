@@ -99,8 +99,13 @@
 	&.calculator {
 		@include bg-image-svg(icons, ico-calculator);
 	}
-	&.calendar-month {
-		@include bg-image-svg(icons, ico-calendar-month);
+	&.calendar {
+		&-user {
+			@include bg-image-svg(icons, ico-calendar-user);
+		}
+		&-month {
+			@include bg-image-svg(icons, ico-calendar-month);
+		}
 	}
 	&.chevron {
 		&-down {
@@ -206,6 +211,9 @@
 	&.menu {
 		@include bg-image-svg(icons, ico-menu);
 	}
+	&.message-question {
+		@include bg-image-svg(icons, ico-message-question);
+	}
 	&.password {
 		@include bg-image-svg(icons, ico-password);
 	}
@@ -262,6 +270,9 @@
 		@include bg-image-svg(icons, ico-user);
 		&-plus {
 			@include bg-image-svg(icons, ico-user-plus);
+		}
+		&-cog {
+			@include bg-image-svg(icons, ico-user-cog);
 		}
 	}
 }
