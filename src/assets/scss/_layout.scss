@@ -235,7 +235,7 @@
 @media (min-width: 769px) {
 	#login {
 		@include position(relative);
-		@include bg-image-set(common, bg-login, bottom center, no-repeat, null, cover);
+		@include bg-image-set(common, bg-login-pc, bottom center, no-repeat, null, cover);
 		height: 100vh;
 		.logo {
 			@include position(absolute, null, 12vh, null, null, 50%, 6.62vw);
@@ -504,20 +504,21 @@
 }
 @media (max-width: 768px) {
 	#wrap {
-		justify-content: center;
-		background: {
-			color: var(--primary-blue);
+		&:has(#login) {
+			@include bg-image-set(common, bg-login-mo, bottom center, no-repeat, null, cover);
+			justify-content: center;
 		}
 	}
 	#login {
-		margin: 1.429rem;
+		margin: 1.143rem;
 		background: {
-			color: var(--c-white);
+			color: rgba(var(--c-white-rgb), 0.75);
 		}
 		padding: 1.429rem;
 		border: {
 			radius: var(--rd-medium);
 		}
+		backdrop-filter: blur(10px);
 		box-shadow: rgba(var(--c-black-rgb), 0.1) 0px 4px 6px -1px, rgba(var(--c-black-rgb), 0.06) 0px 2px 4px -1px;
 		.logo {
 			text-align: center;
