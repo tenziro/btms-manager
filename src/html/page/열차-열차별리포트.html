@@ -310,63 +310,7 @@
 				</footer>
 			</div>
 		</div>
-
-		<script>
-			// 리사이즈 시
-			window.addEventListener('resize', function () {
-				const nav = document.querySelector('#nav');
-				const body = document.querySelector('body');
-				if (window.innerWidth > 768 && nav.classList.contains('opened')) {
-					nav.classList.remove('opened');
-					body.classList.remove('stop-scroll');
-				}
-			});
-			// 메뉴 열고 닫기
-			const toggleNav = (action) => {
-				const nav = document.getElementById('nav');
-				const body = document.querySelector('body');
-				if (action === 'open') {
-					nav.classList.add('opened');
-					body.classList.add('stop-scroll');
-				} else if (action === 'close') {
-					nav.classList.remove('opened');
-					body.classList.remove('stop-scroll');
-				}
-			};
-			document.querySelector('.btn-open-nav').addEventListener('click', () => toggleNav('open'));
-			document.querySelector('.btn-close-nav').addEventListener('click', () => toggleNav('close'));
-			document.addEventListener('DOMContentLoaded', function () {
-				const navItemElements = document.querySelectorAll('.sub-nav .nav-item');
-				navItemElements.forEach(function (navItem) {
-					navItem.addEventListener('click', function () {
-						const currentActiveNavItem = document.querySelector('.sub-nav .nav-item.active');
-						if (currentActiveNavItem) {
-							currentActiveNavItem.classList.remove('active');
-						}
-						this.classList.add('active');
-					});
-				});
-			});
-			// 조회
-			const radioGroup = document.querySelectorAll('input[name="r2"]');
-			const radioSelf = document.getElementById('self');
-			const selfForms = document.querySelectorAll('#startYear, #startMonth, #endYear, #endMonth, #btnSearch');
-			function updateInputState() {
-				if (radioSelf.checked) {
-					selfForms.forEach(input => {
-						input.removeAttribute('disabled');
-					});
-				} else {
-					selfForms.forEach(input => {
-						input.setAttribute('disabled', 'disabled');
-					});
-				}
-			}
-			radioGroup.forEach(radio => {
-				radio.addEventListener('change', updateInputState);
-			});
-			window.onload = updateInputState;
-		</script>
+		<script src="../../assets/js/common.js"></script>
 	</body>
 
 </html>
