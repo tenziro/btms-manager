@@ -236,7 +236,7 @@
 		}
 	}
 	+ .list-dropdown {
-		margin-top: 2.857rem;
+		margin-top: var(--list-dropdown-margin);
 	}
 }
 
@@ -257,6 +257,9 @@
 	.list-total-count {
 		--total-count-text-size: var(--fs-base);
 	}
+	.list-dropdown {
+		--list-dropdown-margin: 2.857rem;
+	}
 }
 @media (max-width: 768px) {
 	.list-total-count {
@@ -266,5 +269,8 @@
 		&.database {
 			justify-content: center;
 		}
+	}
+	.list-dropdown {
+		--list-dropdown-margin: 1.429rem;
 	}
 }
