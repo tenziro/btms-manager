@@ -35,6 +35,7 @@
 		height: 1.714rem;
 		text-indent: -9999em;
 		filter: brightness(0) saturate(100%) invert(96%) sepia(100%) saturate(2%) hue-rotate(166deg) brightness(105%) contrast(101%);
+		margin-right: 1rem;
 	}
 	.header-util {
 		@include flex(flex, null, null, center);
@@ -50,6 +51,9 @@
 	}
 	.icon {
 		filter: brightness(0) saturate(100%) invert(96%) sepia(100%) saturate(2%) hue-rotate(166deg) brightness(105%) contrast(101%);
+	}
+	h1 {
+		@include flex(inline-flex, null, null, center);
 	}
 }
 #nav {
@@ -235,6 +239,9 @@
 	#header {
 		+ #nav {
 			@include position(sticky, 10, 64px, null, null, null);
+		}
+		.btn-open-nav {
+			display: none;
 		}
 	}
 	#header,
@@ -541,24 +548,24 @@
 			margin-top: 1.429rem;
 		}
 	}
-	#header {
-		.xl-title {
-			display: none;
-		}
-	}
 	#nav {
-		width: 220px;
+		width: 100%;
 		&:not(.opened) {
-			@include position(fixed, 12, 0, 0, null, -220px);
+			@include position(fixed, 12, 0, 0, null, -100%, 0);
 			&:after {
 				content: none;
 			}
+			.inner {
+				transform: translateX(-100%);
+			}
 		}
 		&.opened {
-			@include position(fixed, 12, 0, 0, null, 0);
-			transition: left 380ms;
+			@include position(fixed, 12, 0, 0, null, 0, 0);
 			&:after {
 				content: "";
+			}
+			.inner {
+				transform: translateX(0);
 			}
 		}
 		&:after {
@@ -576,6 +583,9 @@
 			background: {
 				color: var(--c-white);
 			}
+			width: 70vw;
+			min-width: fit-content;
+			transition: transform 380ms;
 		}
 		.sm-title {
 			@include flex(flex, null, null, center, null, null, space-between);
@@ -640,7 +650,7 @@
 		}
 		.sub-nav {
 			ul {
-				padding: 1.143rem 0 0.143rem 0.571rem;
+				padding: 0.857rem 0 0.143rem 0.571rem;
 				li {
 					&:not(:first-child) {
 						margin-top: 0.857rem;
@@ -651,7 +661,7 @@
 		.nav-item {
 			@include flex(flex, null, null, center);
 			width: 100%;
-			padding-left: 1.714rem;
+			padding-left: 1.429rem;
 			&:before {
 				content: "";
 				@include border(all, 2px, solid, transparent, var(--rd-full));

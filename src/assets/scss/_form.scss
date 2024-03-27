@@ -39,6 +39,7 @@
 // * form group
 .form-group {
 	@include flex(flex, null, null, center);
+	@include position(relative);
 	&.name {
 		> .input,
 		> app-input-text {
@@ -81,13 +82,12 @@
 	&.search-all,
 	&.search-month {
 		gap: 0 0.429rem;
-		.btn {
-			--btn-padding: 0 1.429rem;
-		}
-	}
-	&.search-all {
 		.both {
 			flex: 1 1 auto;
+		}
+		.btn {
+			flex: none;
+			--btn-padding: 0 1.429rem;
 		}
 	}
 }
@@ -1230,6 +1230,13 @@
 				flex: 0 0 40%;
 			}
 		}
+		&.both {
+			.input {
+				.layer-calendar {
+					@include position(absolute, 1, calc(100% + 5px), 0);
+				}
+			}
+		}
 	}
 }
 
@@ -1242,6 +1249,7 @@
 				flex: 0 0 100%;
 			}
 			.btn {
+				flex: 0 0 100%;
 				margin-top: 0.571rem;
 			}
 		}
@@ -1253,6 +1261,20 @@
 		&.search-month {
 			.radio-group {
 				margin-bottom: 0.571rem;
+			}
+		}
+		&.both {
+			.input {
+				&:nth-of-type(1) {
+					.layer-calendar {
+						@include position(absolute, 1, calc(100% + 5px), null, null, 0);
+					}
+				}
+				&:nth-of-type(2) {
+					.layer-calendar {
+						@include position(absolute, 1, calc(100% + 5px), 0);
+					}
+				}
 			}
 		}
 	}

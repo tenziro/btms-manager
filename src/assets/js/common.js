@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
 		});
 	});
 });
+
 // input 관련
 document.addEventListener('DOMContentLoaded', function () {
 	const inputs = Array.from(document.querySelectorAll(".input input"));
@@ -100,3 +101,68 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 });
+//  달력 열기
+document.addEventListener('DOMContentLoaded', function () {
+	const btnInputCals = document.querySelectorAll('.btn-input-cal');
+	btnInputCals.forEach(function (btn) {
+		btn.addEventListener('click', function (event) {
+			const layerCalendars = document.querySelectorAll('.layer-calendar');
+			const targetCalendar = document.querySelector(btn.getAttribute('data-target'));
+			layerCalendars.forEach(function (calendar) {
+				if (calendar !== targetCalendar) {
+					calendar.classList.remove('show');
+				}
+			});
+			if (targetCalendar) {
+				targetCalendar.classList.toggle('show');
+			}
+			event.stopPropagation();
+		});
+	});
+	document.addEventListener('click', function (event) {
+		const layerCalendars = document.querySelectorAll('.layer-calendar');
+		const btnInputCals = document.querySelectorAll('.btn-input-cal');
+		const isOutsideClick = Array.from(layerCalendars).concat(Array.from(btnInputCals)).every(function (element) {
+			return !element.contains(event.target);
+		});
+
+		if (isOutsideClick) {
+			layerCalendars.forEach(function (layerCalendar) {
+				layerCalendar.classList.remove('show');
+			});
+		}
+	});
+});
+// 직접선택 제어
+const radios = document.querySelectorAll('input[name="r2"]');
+const selfRadio = radios[3];
+const formGroup = document.querySelector('.search-form-area');
+const inputs = formGroup.querySelectorAll('input[type="text"]');
+const btnInputCals = formGroup.querySelectorAll('.btn-input-cal');
+const btnSearch = formGroup.querySelector('.btn.tertiary');
+
+function updateInputState() {
+	if (selfRadio.checked) {
+		inputs.forEach(function (input) {
+			input.disabled = false;
+		});
+		btnInputCals.forEach(function (btnInputCal) {
+			btnInputCal.disabled = false;
+		});
+		btnSearch.disabled = false;
+	} else {
+		inputs.forEach(function (input) {
+			input.disabled = true;
+		});
+		btnInputCals.forEach(function (btnInputCal) {
+			btnInputCal.disabled = true;
+		});
+		btnSearch.disabled = true;
+	}
+}
+
+radios.forEach(radio => {
+	radio.addEventListener('change', updateInputState);
+});
+
+window.onload = updateInputState;
