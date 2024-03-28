@@ -423,13 +423,15 @@ strong {
 		margin-bottom: auto;
 	}
 }
-// * modal type2 animation
-@keyframes modal-type2 {
+// * alert animation
+@keyframes alert-motion {
 	from {
-		transform: translate3d(0, 100%, 0);
+		transform: scale(0.9);
+		opacity: 0.2;
 	}
 	to {
-		transform: translate3d(0, 0, 0);
+		transform: scale(1);
+		opacity: 1;
 	}
 }
 // * skeleton UI animation
@@ -447,12 +449,29 @@ strong {
 		transform: rotate(360deg);
 	}
 }
-// * 열차 좌석 선택 animation
-@keyframes train-seat {
+@keyframes alert-icon {
 	from {
-		transform: translate3d(-50%, 100%, 0);
+		scale: 0.9;
 	}
 	to {
-		transform: translate3d(-50%, 0, 0);
+		scale: 1;
+	}
+}
+@keyframes alert-outline {
+	from {
+		outline-width: 0;
+	}
+	to {
+		outline-width: 4px;
+	}
+}
+@keyframes modal-motion {
+	from {
+		transform: scale(0.95);
+		opacity: 0.2;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
 	}
 }

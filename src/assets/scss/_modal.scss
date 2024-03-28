@@ -72,6 +72,8 @@
 			max-width: 510px;
 			max-height: 80vh;
 			box-shadow: rgba(var(--c-black-rgb), 0.1) 0px 4px 6px -1px, rgba(var(--c-black-rgb), 0.06) 0px 2px 4px -1px;
+			animation: 560ms cubic-bezier(0.465, 0.183, 0.153, 0.946) modal-motion;
+			will-change: transform, opacity;
 		}
 		&:not(:has(.modal-footer)) {
 			.modal-body {

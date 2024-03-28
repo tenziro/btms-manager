@@ -2,9 +2,11 @@
 window.addEventListener('resize', function () {
 	const nav = document.querySelector('#nav');
 	const body = document.querySelector('body');
-	if (window.innerWidth > 768 && nav.classList.contains('opened')) {
-		nav.classList.remove('opened');
-		body.classList.remove('stop-scroll');
+	if (nav) {
+		if (window.innerWidth > 768 && nav.classList.contains('opened')) {
+			nav.classList.remove('opened');
+			body.classList.remove('stop-scroll');
+		}
 	}
 });
 // 메뉴 열고 닫기
@@ -134,35 +136,40 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 });
 // 직접선택 제어
-const radios = document.querySelectorAll('input[name="r2"]');
-const selfRadio = radios[3];
-const formGroup = document.querySelector('.search-form-area');
-const inputs = formGroup.querySelectorAll('input[type="text"]');
-const btnInputCals = formGroup.querySelectorAll('.btn-input-cal');
-const btnSearch = formGroup.querySelector('.btn.tertiary');
+document.addEventListener('DOMContentLoaded', function () {
+	const radios = document.querySelectorAll('input[name="r2"]');
+	const selfRadio = radios.length > 3 ? radios[3] : null;
+	const formGroup = document.querySelector('.search-month');
+	const inputs = formGroup ? formGroup.querySelectorAll('input[type="text"]') : [];
+	const btnInputCals = formGroup ? formGroup.querySelectorAll('.btn-input-cal') : [];
+	const btnSearch = formGroup ? formGroup.querySelector('.btn.tertiary') : null;
 
-function updateInputState() {
-	if (selfRadio.checked) {
-		inputs.forEach(function (input) {
-			input.disabled = false;
-		});
-		btnInputCals.forEach(function (btnInputCal) {
-			btnInputCal.disabled = false;
-		});
-		btnSearch.disabled = false;
-	} else {
-		inputs.forEach(function (input) {
-			input.disabled = true;
-		});
-		btnInputCals.forEach(function (btnInputCal) {
-			btnInputCal.disabled = true;
-		});
-		btnSearch.disabled = true;
+	function updateInputState() {
+		if (selfRadio && selfRadio.checked) {
+			inputs.forEach(function (input) {
+				input.disabled = false;
+			});
+			btnInputCals.forEach(function (btnInputCal) {
+				btnInputCal.disabled = false;
+			});
+			if (btnSearch) {
+				btnSearch.disabled = false;
+			}
+		} else {
+			inputs.forEach(function (input) {
+				input.disabled = true;
+			});
+			btnInputCals.forEach(function (btnInputCal) {
+				btnInputCal.disabled = true;
+			});
+			if (btnSearch) {
+				btnSearch.disabled = true;
+			}
+		}
 	}
-}
-
-radios.forEach(radio => {
-	radio.addEventListener('change', updateInputState);
+	radios.forEach(radio => {
+		radio.addEventListener('change', updateInputState);
+	});
+	updateInputState(); // 초기 상태 설정
 });
 
-window.onload = updateInputState;
