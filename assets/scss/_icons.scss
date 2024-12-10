@@ -257,10 +257,16 @@
 		&-up {
 			@include bg-image-svg(icons, ico-trending-up);
 			filter: brightness(0) saturate(100%) invert(28%) sepia(95%) saturate(999%) hue-rotate(330deg) brightness(93%) contrast(101%);
+			+ * {
+				color: var(--c-danger);
+			}
 		}
 		&-down {
 			@include bg-image-svg(icons, ico-trending-down);
 			filter: brightness(0) saturate(100%) invert(21%) sepia(100%) saturate(2415%) hue-rotate(226deg) brightness(84%) contrast(104%);
+			+ * {
+				color: var(--primary-blue);
+			}
 		}
 	}
 	&.upload {
