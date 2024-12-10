@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // input 관련
 document.addEventListener('DOMContentLoaded', function () {
-	const inputs = Array.from(document.querySelectorAll(".input input"));
+	const inputs = Array.from(document.querySelectorAll(".input > input"));
 	inputs.forEach(input => {
 		// input 값 변경시 Clear 버튼 추가 또는 제거
 		input.addEventListener("input", function () {
@@ -71,10 +71,10 @@ document.addEventListener('DOMContentLoaded', function () {
 					btnClear.addEventListener('click', function () {
 						input.value = '';
 						btnClear.remove();
-						if (input.parentElement.nextElementSibling) {
-							input.parentElement.nextElementSibling.style.display = 'none';
-							input.parentElement.nextElementSibling.querySelector('input').value = '';
-						}
+						// if (input.parentElement.nextElementSibling) {
+						// 	input.parentElement.nextElementSibling.style.display = 'none';
+						// 	input.parentElement.nextElementSibling.querySelector('input').value = '';
+						// }
 					});
 					input.insertAdjacentElement('afterend', btnClear);
 				}
