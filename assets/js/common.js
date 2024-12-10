@@ -184,4 +184,3 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 	updateInputState(); // 초기 상태 설정
 });
-
