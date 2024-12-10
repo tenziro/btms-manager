@@ -1,3 +1,15 @@
+// lenis scroll
+const lenis = new Lenis({
+	duration: 1.5,
+	easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+});
+
+function raf(time) {
+	lenis.raf(time);
+	requestAnimationFrame(raf);
+}
+requestAnimationFrame(raf);
+
 // 리사이즈 시
 window.addEventListener('resize', function () {
 	const nav = document.querySelector('#nav');

@@ -1,186 +1,188 @@
 <html lang="ko">
 
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-		<link rel="icon" type="image/x-icon" href="favicon.ico">
-		<link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
-		<link rel="stylesheet" type="text/css" href="../../assets/css/base.css" />
-		<title>bzp출장관리 - 임직원 등록</title>
-	</head>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+	<link rel="icon" type="image/x-icon" href="../../favicon.ico">
+	<link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+	<link rel="stylesheet" type="text/css" href="../../assets/css/base.css" />
+	<link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+	<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+	<title>bzp출장관리 - 임직원 등록</title>
+</head>
 
-	<body>
-		<div id="wrap">
-			<div class="modal">
-				<div class="modal-contents">
-					<div class="modal-header bordered-bottom">
-						<h1 class="title">임직원 등록</h1>
-						<button type="button" class="btn-modal-close" onclick="javascript:window.close();">닫기</button>
-					</div>
-					<div class="modal-body default">
-						<ul class="form-type1">
-							<li class="form-item">
-								<div class="form-item-title">
-									<label for="">회사명</label>
+<body>
+	<div id="wrap">
+		<div class="modal">
+			<div class="modal-contents">
+				<div class="modal-header bordered-bottom">
+					<h1 class="title">임직원 등록</h1>
+					<button type="button" class="btn-modal-close" onclick="javascript:window.close();">닫기</button>
+				</div>
+				<div class="modal-body default">
+					<ul class="form-type1">
+						<li class="form-item">
+							<div class="form-item-title">
+								<label for="">회사명</label>
+							</div>
+							<div class="form-item-contents">
+								<div class="input md line">
+									<input type="text" value="비즈플레이(주)" disabled>
 								</div>
-								<div class="form-item-contents">
+							</div>
+						</li>
+						<li class="form-item">
+							<div class="form-item-title">
+								<label for=""><sup>한글 성/이름</sup></label>
+							</div>
+							<div class="form-item-contents">
+								<div class="form-group name">
 									<div class="input md line">
-										<input type="text" value="비즈플레이(주)" disabled>
+										<input type="text" placeholder="한글 성" />
 									</div>
-								</div>
-							</li>
-							<li class="form-item">
-								<div class="form-item-title">
-									<label for=""><sup>한글 성/이름</sup></label>
-								</div>
-								<div class="form-item-contents">
-									<div class="form-group name">
-										<div class="input md line">
-											<input type="text" placeholder="한글 성" />
-										</div>
-										<div class="input md line">
-											<input type="text" placeholder="한글 이름" />
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="form-item">
-								<div class="form-item-title">
-									<label for=""><sup>영문 성/이름</sup></label>
-								</div>
-								<div class="form-item-contents">
-									<div class="form-group name">
-										<div class="input md line">
-											<input type="text" placeholder="영문 성" />
-										</div>
-										<div class="input md line">
-											<input type="text" placeholder="영문 이름" />
-										</div>
-									</div>
-								</div>
-							</li>
-							<li class="form-item">
-								<div class="form-item-title">
-									<label for=""><sup>아이디</sup></label>
-								</div>
-								<div class="form-item-contents">
 									<div class="input md line">
-										<input type="text" value="" placeholder="회사법인계정 이메일 주소 입력">
+										<input type="text" placeholder="한글 이름" />
 									</div>
 								</div>
-							</li>
-							<li class="form-item">
-								<div class="form-item-title">
-									<label for=""><sup>비밀번호</sup></label>
-								</div>
-								<div class="form-item-contents">
+							</div>
+						</li>
+						<li class="form-item">
+							<div class="form-item-title">
+								<label for=""><sup>영문 성/이름</sup></label>
+							</div>
+							<div class="form-item-contents">
+								<div class="form-group name">
 									<div class="input md line">
-										<input type="password" value="" placeholder="비밀번호 입력">
+										<input type="text" placeholder="영문 성" />
 									</div>
-								</div>
-							</li>
-							<li class="form-item">
-								<div class="form-item-title">
-									<label for=""><sup>이메일 주소</sup></label>
-								</div>
-								<div class="form-item-contents">
 									<div class="input md line">
-										<input type="email" value="" placeholder="이메일 주소 입력">
+										<input type="text" placeholder="영문 이름" />
 									</div>
 								</div>
-							</li>
-							<li class="form-item">
-								<div class="form-item-title">
-									<label for=""><sup>휴대폰 번호</sup></label>
+							</div>
+						</li>
+						<li class="form-item">
+							<div class="form-item-title">
+								<label for=""><sup>아이디</sup></label>
+							</div>
+							<div class="form-item-contents">
+								<div class="input md line">
+									<input type="text" value="" placeholder="회사법인계정 이메일 주소 입력">
 								</div>
-								<div class="form-item-contents">
-									<div class="input md line">
-										<input type="tel" placeholder="숫자만 입력">
-									</div>
+							</div>
+						</li>
+						<li class="form-item">
+							<div class="form-item-title">
+								<label for=""><sup>비밀번호</sup></label>
+							</div>
+							<div class="form-item-contents">
+								<div class="input md line">
+									<input type="password" value="" placeholder="비밀번호 입력">
 								</div>
-							</li>
-							<li class="form-item">
-								<div class="form-item-title">
-									<label for=""><sup>성별</sup></label>
+							</div>
+						</li>
+						<li class="form-item">
+							<div class="form-item-title">
+								<label for=""><sup>이메일 주소</sup></label>
+							</div>
+							<div class="form-item-contents">
+								<div class="input md line">
+									<input type="email" value="" placeholder="이메일 주소 입력">
 								</div>
-								<div class="form-item-contents">
-									<div class="radio-group type2 lg">
-										<label class="radio-group-item">
-											<input type="radio" class="control-input" name="gender" checked>
-											<span class="control-text"><i class="icon gender-male"></i>남성</span>
-										</label>
-										<label class="radio-group-item">
-											<input type="radio" class="control-input" name="gender">
-											<span class="control-text"><i class="icon gender-female"></i>여성</span>
-										</label>
-									</div>
+							</div>
+						</li>
+						<li class="form-item">
+							<div class="form-item-title">
+								<label for=""><sup>휴대폰 번호</sup></label>
+							</div>
+							<div class="form-item-contents">
+								<div class="input md line">
+									<input type="tel" placeholder="숫자만 입력">
 								</div>
-							</li>
-							<li class="form-item">
-								<div class="form-item-title">
-									<label for=""><sup>생년월일</sup></label>
+							</div>
+						</li>
+						<li class="form-item">
+							<div class="form-item-title">
+								<label for=""><sup>성별</sup></label>
+							</div>
+							<div class="form-item-contents">
+								<div class="radio-group type2 lg">
+									<label class="radio-group-item">
+										<input type="radio" class="control-input" name="gender" checked>
+										<span class="control-text"><i class="icon gender-male"></i>남성</span>
+									</label>
+									<label class="radio-group-item">
+										<input type="radio" class="control-input" name="gender">
+										<span class="control-text"><i class="icon gender-female"></i>여성</span>
+									</label>
 								</div>
-								<div class="form-item-contents">
-									<div class="input md line">
-										<input type="number" placeholder="생년월일 8자리 입력(YYYYMMDD)" maxlength="8">
-									</div>
+							</div>
+						</li>
+						<li class="form-item">
+							<div class="form-item-title">
+								<label for=""><sup>생년월일</sup></label>
+							</div>
+							<div class="form-item-contents">
+								<div class="input md line">
+									<input type="number" placeholder="생년월일 8자리 입력(YYYYMMDD)" maxlength="8">
 								</div>
-							</li>
-							<li class="form-item">
-								<div class="form-item-title">
-									<label for=""><sup>소속부서</sup></label>
+							</div>
+						</li>
+						<li class="form-item">
+							<div class="form-item-title">
+								<label for=""><sup>소속부서</sup></label>
+							</div>
+							<div class="form-item-contents">
+								<div class="select-box md line">
+									<select required>
+										<option value="" selected disabled>소속부서 선택</option>
+										<option value="">해외영업팀</option>
+									</select>
 								</div>
-								<div class="form-item-contents">
-									<div class="select-box md line">
-										<select required>
-											<option value="" selected disabled>소속부서 선택</option>
-											<option value="">해외영업팀</option>
-										</select>
-									</div>
+							</div>
+						</li>
+						<li class="form-item">
+							<div class="form-item-title">
+								<label for=""><sup>직급</sup></label>
+							</div>
+							<div class="form-item-contents">
+								<div class="select-box md line">
+									<select required>
+										<option value="" selected disabled>직급 선택</option>
+										<option value="">과장</option>
+										<option value="">대리</option>
+										<option value="">사원</option>
+									</select>
 								</div>
-							</li>
-							<li class="form-item">
-								<div class="form-item-title">
-									<label for=""><sup>직급</sup></label>
+							</div>
+						</li>
+						<li class="form-item">
+							<div class="form-item-title">
+								<label for=""><sup>계정상태</sup></label>
+							</div>
+							<div class="form-item-contents">
+								<div class="select-box md line">
+									<select required>
+										<option value="" selected disabled>계정상태 선택</option>
+										<option value="">승인대기</option>
+										<option value="">사용가능</option>
+										<option value="">사용제한</option>
+									</select>
 								</div>
-								<div class="form-item-contents">
-									<div class="select-box md line">
-										<select required>
-											<option value="" selected disabled>직급 선택</option>
-											<option value="">과장</option>
-											<option value="">대리</option>
-											<option value="">사원</option>
-										</select>
-									</div>
-								</div>
-							</li>
-							<li class="form-item">
-								<div class="form-item-title">
-									<label for=""><sup>계정상태</sup></label>
-								</div>
-								<div class="form-item-contents">
-									<div class="select-box md line">
-										<select required>
-											<option value="" selected disabled>계정상태 선택</option>
-											<option value="">승인대기</option>
-											<option value="">사용가능</option>
-											<option value="">사용제한</option>
-										</select>
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-					<div class="modal-footer bordered-top">
-						<button type="button" class="btn xl secondary"><span>취소</span></button>
-						<button type="button" class="btn xl primary"><span>등록</span></button>
-					</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="modal-footer bordered-top">
+					<button type="button" class="btn xl secondary"><span>취소</span></button>
+					<button type="button" class="btn xl primary"><span>등록</span></button>
 				</div>
 			</div>
 		</div>
-		<script src="../../assets/js/common.js"></script>
-	</body>
+	</div>
+	<script src="../../assets/js/common.js"></script>
+</body>
 
 </html>
