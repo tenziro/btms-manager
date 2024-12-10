@@ -69,6 +69,7 @@
 			display: block;
 			line-height: var(--lh-150);
 			&:nth-child(1) {
+				@include text-ellipsis;
 				font: {
 					size: var(--dt-title-size);
 					weight: var(--fw-semi);
