@@ -184,3 +184,50 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 	updateInputState(); // 초기 상태 설정
 });
+// 숫자 카운트 
+document.addEventListener('DOMContentLoaded', () => {
+	const totalCounts = document.querySelectorAll('.total-count');
+
+	// 숫자를 세자리마다 콤마로 포맷하는 함수
+	function formatNumberWithCommas(number) {
+		return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+	}
+
+	// 각 자릿수를 랜덤 숫자로 애니메이션하는 함수
+	function animateNumber(element, targetNumber) {
+		const targetStr = formatNumberWithCommas(targetNumber);
+		element.innerHTML = '';
+
+		// 콤마를 포함한 각 문자에 대해 처리
+		targetStr.split('').forEach(char => {
+			if (char === ',') {
+				// 콤마는 그대로 추가
+				const comma = document.createElement('span');
+				comma.textContent = ',';
+				element.appendChild(comma);
+			} else {
+				// 숫자는 애니메이션을 위한 span 생성
+				const digitSpan = document.createElement('span');
+				digitSpan.textContent = '0';
+				element.appendChild(digitSpan);
+
+				// 애니메이션 시작
+				const targetDigit = char;
+				const interval = setInterval(() => {
+					const randomDigit = Math.floor(Math.random() * 10);
+					digitSpan.textContent = randomDigit;
+					if (randomDigit.toString() === targetDigit) {
+						clearInterval(interval);
+						digitSpan.textContent = targetDigit;
+					}
+				}, 50);
+			}
+		});
+	}
+
+	totalCounts.forEach(countElement => {
+		const targetNum = parseInt(countElement.getAttribute('data-num'), 10);
+		animateNumber(countElement, targetNum);
+	});
+});
+
