@@ -103,6 +103,11 @@ button,
 	// }
 }
 a,
+select,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
 button {
 	&:focus-visible {
 		outline: 2px solid rgba(var(--primary-blue-rgb), 0.5);
