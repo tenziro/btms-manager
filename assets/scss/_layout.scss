@@ -68,11 +68,6 @@
 				}
 			}
 		}
-		&:not([open]) {
-			.sub-nav {
-				display: none;
-			}
-		}
 	}
 	.nav-item {
 		&:not(.active) {
@@ -274,6 +269,8 @@
 			@include position(absolute, 1, 60px, 0, null, 0);
 			@include border(top, 1px, solid, var(--border-default));
 			@include box-shadow(0, 0.125rem, 0.25rem, rgba(165, 163, 174, .15));
+			transition: all 400ms ease-out;
+			overflow: hidden;
 			background: {
 				color: var(--c-white);
 			}
@@ -311,6 +308,18 @@
 				}
 				.text {
 					color: var(--primary-blue);
+				}
+			}
+		}
+		.nav-btn-group {
+			&[open] {
+				.sub-nav {
+					height: 48px;
+				}
+			}
+			&:not([open]) {
+				.sub-nav {
+					height: 0;
 				}
 			}
 		}
@@ -683,6 +692,13 @@
 					border: {
 						color: var(--primary-blue);
 					}
+				}
+			}
+		}
+		.nav-btn-group {
+			&:not([open]) {
+				.sub-nav {
+					display: none;
 				}
 			}
 		}
