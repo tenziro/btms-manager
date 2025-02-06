@@ -1,540 +1,540 @@
 <!DOCTYPE html>
 <html lang="ko">
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-	<link rel="icon" type="image/x-icon" href="../../favicon.ico">
-	<link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
-	<link rel="stylesheet" type="text/css" href="../../assets/css/base.css" />
-	<link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
-	<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-	<title>bzp출장관리 - 출장관리자 :: 전체 예약 리스트</title>
-</head>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<link rel="icon" type="image/x-icon" href="../../favicon.ico">
+		<link rel="icon" type="image/png" sizes="96x96" href="../../favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+		<link rel="stylesheet" type="text/css" href="../../assets/css/base.css" />
+		<link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
+		<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+		<title>bzp출장관리 - 출장관리자 :: 전체 예약 리스트</title>
+	</head>
 
-<body>
-	<div id="wrap">
-		<header id="header">
-			<div class="inner">
-				<h1><button type="button" class="btn-open-nav">메뉴 열기</button><a href="홈.html" class="header-logo">BZP출장관리</a></h1>
-				<ul class="header-util">
-					<li>
-						<button type="button" class="btn-header-util">
-							<i class="icon md user-cog"></i>
-							<div class="bubble sm" data-direction="bottom">내정보 수정</div>
-						</button>
-					</li>
-					<li>
-						<button type="button" class="btn-header-util">
-							<i class="icon md logout"></i>
-							<div class="bubble sm" data-direction="bottom">로그아웃</div>
-						</button>
-					</li>
-				</ul>
-			</div>
-		</header>
-		<nav id="nav">
-			<div class="inner">
-				<h1 class="sm-title">
-					<i class="header-logo">BZP출장관리</i>
-					<button type="button" class="btn-close-nav">메뉴 닫기</button>
-				</h1>
-				<ul class="main-nav">
-					<li><button type="button" class="btn-nav-main" onclick="location.href='홈.html';"><i class="icon md home"></i><span class="text">홈</span></button></li>
-					<li>
-						<details class="nav-btn-group" name="nav" open>
-							<summary class="btn-nav-main"><i class="icon md calendar-user"></i><span class="text">예약/직원관리</span></summary>
-							<div class="sub-nav">
-								<ul>
-									<li><a href="전체예약리스트.html" class="nav-item active">전체 예약 리스트</a></li>
-									<li><a href="직원관리.html" class="nav-item">직원관리</a></li>
-									<li><a href="발권내역.html" class="nav-item">발권내역</a></li>
-								</ul>
-							</div>
-						</details>
-					</li>
-					<li>
-						<details class="nav-btn-group" name="nav">
-							<summary class="btn-nav-main"><i class="icon md report"></i><span class="text">종합 리포트</span></summary>
-							<div class="sub-nav">
-								<ul>
-									<li><a href="월간요약리포트.html" class="nav-item">월간요약 리포트</a></li>
-									<li><a href="현재예약현황.html" class="nav-item">현재 예약현황</a></li>
-								</ul>
-							</div>
-						</details>
-					</li>
-					<li>
-						<details class="nav-btn-group" name="nav">
-							<summary class="btn-nav-main"><i class="icon md flight"></i><span class="text">항공 리포트</span></summary>
-							<div class="sub-nav">
-								<ul>
-									<li><a href="항공-지역별리포트.html" class="nav-item">지역별 리포트</a></li>
-									<li><a href="항공-항공사별리포트.html" class="nav-item">항공사별 리포트</a></li>
-									<li><a href="항공-missedcost.html" class="nav-item">Missed Cost</a></li>
-									<li><a href="항공-규정위반리포트.html" class="nav-item">규정위반 리포트</a></li>
-								</ul>
-							</div>
-						</details>
-					</li>
-					<li>
-						<details class="nav-btn-group" name="nav">
-							<summary class="btn-nav-main"><i class="icon md hotel"></i><span class="text">숙박 리포트</span></summary>
-							<div class="sub-nav">
-								<ul>
-									<li><a href="숙박-지역별리포트.html" class="nav-item">지역별 리포트</a></li>
-									<li><a href="숙박-숙소별리포트.html" class="nav-item">숙소별 리포트</a></li>
-									<li><a href="숙박-규정위반리포트.html" class="nav-item">규정위반 리포트</a></li>
-								</ul>
-							</div>
-						</details>
-					</li>
-					<li>
-						<details class="nav-btn-group" name="nav">
-							<summary class="btn-nav-main"><i class="icon md train"></i><span class="text">열차 리포트</span></summary>
-							<div class="sub-nav">
-								<ul>
-									<li><a href="열차-지역별리포트.html" class="nav-item">지역별 리포트</a></li>
-									<li><a href="열차-열차별리포트.html" class="nav-item">열차별 리포트</a></li>
-									<li><a href="열차-규정위반리포트.html" class="nav-item">규정위반 리포트</a></li>
-								</ul>
-							</div>
-						</details>
-					</li>
-				</ul>
-			</div>
-		</nav>
-		<div id="container">
-			<main id="contents">
-				<!-- breadcrumbs -->
-				<ul class="breadcrumbs">
-					<li class="home"><a href="홈.html">홈</a></li>
-					<li><a href="전체예약리스트.html">예약/직원관리</a></li>
-					<li><span class="current">전체 예약 리스트</span></li>
-				</ul>
-				<div id="page-header">
-					<h2>전체 예약 리스트</h2>
-					<p>전체 출장 예약현황 정보를 제공합니다.</p>
+	<body>
+		<div id="wrap">
+			<header id="header">
+				<div class="inner">
+					<h1><button type="button" class="btn-open-nav">메뉴 열기</button><a href="홈.html" class="header-logo">BZP출장관리</a></h1>
+					<ul class="header-util">
+						<li>
+							<button type="button" class="btn-header-util">
+								<i class="icon md user-cog"></i>
+								<div class="bubble sm" data-direction="bottom">내정보 수정</div>
+							</button>
+						</li>
+						<li>
+							<button type="button" class="btn-header-util">
+								<i class="icon md logout"></i>
+								<div class="bubble sm" data-direction="bottom">로그아웃</div>
+							</button>
+						</li>
+					</ul>
 				</div>
-				<div class="row md">
-					<div class="col-12">
-						<div class="card default search-form-area list-reservation">
-							<div class="row md">
-								<div class="col-6">
-									<div class="form-group search-all">
+			</header>
+			<nav id="nav">
+				<div class="inner">
+					<h1 class="sm-title">
+						<i class="header-logo">BZP출장관리</i>
+						<button type="button" class="btn-close-nav">메뉴 닫기</button>
+					</h1>
+					<ul class="main-nav">
+						<li><button type="button" class="btn-nav-main" onclick="location.href='홈.html';"><i class="icon md home"></i><span class="text">홈</span></button></li>
+						<li>
+							<details class="nav-btn-group" name="nav" open>
+								<summary class="btn-nav-main"><i class="icon md calendar-user"></i><span class="text">예약/직원관리</span></summary>
+								<div class="sub-nav">
+									<ul>
+										<li><a href="전체예약리스트.html" class="nav-item active">전체 예약 리스트</a></li>
+										<li><a href="직원관리.html" class="nav-item">직원관리</a></li>
+										<li><a href="발권내역.html" class="nav-item">발권내역</a></li>
+									</ul>
+								</div>
+							</details>
+						</li>
+						<li>
+							<details class="nav-btn-group" name="nav">
+								<summary class="btn-nav-main"><i class="icon md report"></i><span class="text">종합 리포트</span></summary>
+								<div class="sub-nav">
+									<ul>
+										<li><a href="월간요약리포트.html" class="nav-item">월간요약 리포트</a></li>
+										<li><a href="현재예약현황.html" class="nav-item">현재 예약현황</a></li>
+									</ul>
+								</div>
+							</details>
+						</li>
+						<li>
+							<details class="nav-btn-group" name="nav">
+								<summary class="btn-nav-main"><i class="icon md flight"></i><span class="text">항공 리포트</span></summary>
+								<div class="sub-nav">
+									<ul>
+										<li><a href="항공-지역별리포트.html" class="nav-item">지역별 리포트</a></li>
+										<li><a href="항공-항공사별리포트.html" class="nav-item">항공사별 리포트</a></li>
+										<li><a href="항공-missedcost.html" class="nav-item">Missed Cost</a></li>
+										<li><a href="항공-규정위반리포트.html" class="nav-item">규정위반 리포트</a></li>
+									</ul>
+								</div>
+							</details>
+						</li>
+						<li>
+							<details class="nav-btn-group" name="nav">
+								<summary class="btn-nav-main"><i class="icon md hotel"></i><span class="text">숙박 리포트</span></summary>
+								<div class="sub-nav">
+									<ul>
+										<li><a href="숙박-지역별리포트.html" class="nav-item">지역별 리포트</a></li>
+										<li><a href="숙박-숙소별리포트.html" class="nav-item">숙소별 리포트</a></li>
+										<li><a href="숙박-규정위반리포트.html" class="nav-item">규정위반 리포트</a></li>
+									</ul>
+								</div>
+							</details>
+						</li>
+						<li>
+							<details class="nav-btn-group" name="nav">
+								<summary class="btn-nav-main"><i class="icon md train"></i><span class="text">열차 리포트</span></summary>
+								<div class="sub-nav">
+									<ul>
+										<li><a href="열차-지역별리포트.html" class="nav-item">지역별 리포트</a></li>
+										<li><a href="열차-열차별리포트.html" class="nav-item">열차별 리포트</a></li>
+										<li><a href="열차-규정위반리포트.html" class="nav-item">규정위반 리포트</a></li>
+									</ul>
+								</div>
+							</details>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<div id="container">
+				<main id="contents">
+					<!-- breadcrumbs -->
+					<ul class="breadcrumbs">
+						<li class="home"><a href="홈.html">홈</a></li>
+						<li><a href="전체예약리스트.html">예약/직원관리</a></li>
+						<li><span class="current">전체 예약 리스트</span></li>
+					</ul>
+					<div id="page-header">
+						<h2>전체 예약 리스트</h2>
+						<p>전체 출장 예약현황 정보를 제공합니다.</p>
+					</div>
+					<div class="row md">
+						<div class="col-12">
+							<div class="card default search-form-area list-reservation">
+								<div class="row md">
+									<div class="col-6">
+										<div class="form-group search-all">
+											<div class="select-box md line">
+												<select name="" id="">
+													<option value="">예약일</option>
+													<option value="">출발일</option>
+												</select>
+											</div>
+											<div class="form-group both">
+												<!--.btn-input-cal이 있는 경우에는 .btn-input-clear를 표시하지 않는다. -->
+												<div class="input md line">
+													<input type="text" name="" id="" value="2024.03.01" readonly>
+													<button type="button" class="btn-input-cal" data-target="#cal1">달력 열기</button>
+													<div class="layer-calendar" id="cal1">
+														<div class="calendar-selector">
+															<div class="select-box sm line">
+																<select name="" id="">
+																	<option value="">2024년</option>
+																	<option value="">2023년</option>
+																</select>
+															</div>
+															<div class="select-box sm line">
+																<select name="" id="">
+																	<option value="">1월</option>
+																	<option value="">2월</option>
+																	<option value="" selected>3월</option>
+																</select>
+															</div>
+														</div>
+														<div class="calendar-header">
+															<span>일</span>
+															<span>월</span>
+															<span>화</span>
+															<span>수</span>
+															<span>목</span>
+															<span>금</span>
+															<span>토</span>
+														</div>
+														<div class="calendar-body month">
+															<button type="button" class="day" role="checkbox" aria-checked="false" disabled>29</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false" disabled>30</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false" disabled>31</button>
+															<button type="button" class="day" role="checkbox" aria-checked="true">1</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">2</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">3</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">4</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">5</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">6</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">7</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">8</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">9</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">10</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">11</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">12</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">13</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">14</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">15</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">16</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">17</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">18</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">19</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">20</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">21</button>
+															<button type="button" class="day today">22</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">23</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">24</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">25</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">26</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">27</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">28</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">29</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">30</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">31</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false" disabled>1</button>
+														</div>
+													</div>
+												</div>
+												<span class="dash">~</span>
+												<div class="input md line">
+													<input type="text" name="" id="" value="2024.03.31" readonly>
+													<button type="button" class="btn-input-cal" data-target="#cal2">달력 열기</button>
+													<div class="layer-calendar" id="cal2">
+														<div class="calendar-selector">
+															<div class="select-box sm line">
+																<select name="" id="">
+																	<option value="">2024년</option>
+																	<option value="">2023년</option>
+																</select>
+															</div>
+															<div class="select-box sm line">
+																<select name="" id="">
+																	<option value="">1월</option>
+																	<option value="">2월</option>
+																	<option value="" selected>3월</option>
+																</select>
+															</div>
+														</div>
+														<div class="calendar-header">
+															<span>일</span>
+															<span>월</span>
+															<span>화</span>
+															<span>수</span>
+															<span>목</span>
+															<span>금</span>
+															<span>토</span>
+														</div>
+														<div class="calendar-body month">
+															<button type="button" class="day" role="checkbox" aria-checked="false" disabled>29</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false" disabled>30</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false" disabled>31</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">1</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">2</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">3</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">4</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">5</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">6</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">7</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">8</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">9</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">10</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">11</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">12</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">13</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">14</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">15</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">16</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">17</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">18</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">19</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">20</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">21</button>
+															<button type="button" class="day today">22</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">23</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">24</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">25</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">26</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">27</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">28</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">29</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false">30</button>
+															<button type="button" class="day" role="checkbox" aria-checked="true">31</button>
+															<button type="button" class="day" role="checkbox" aria-checked="false" disabled>1</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-6">
+										<label for="" class="search-form-label">카테고리</label>
 										<div class="select-box md line">
 											<select name="" id="">
-												<option value="">예약일</option>
-												<option value="">출발일</option>
+												<option value="">전체</option>
+												<option value="">항공</option>
+												<option value="">숙박</option>
+												<option value="">열차</option>
+												<option value="">시외버스</option>
 											</select>
 										</div>
-										<div class="form-group both">
-											<!--.btn-input-cal이 있는 경우에는 .btn-input-clear를 표시하지 않는다. -->
-											<div class="input md line">
-												<input type="text" name="" id="" value="2024.03.01" readonly>
-												<button type="button" class="btn-input-cal" data-target="#cal1">달력 열기</button>
-												<div class="layer-calendar" id="cal1">
-													<div class="calendar-selector">
-														<div class="select-box sm line">
-															<select name="" id="">
-																<option value="">2024년</option>
-																<option value="">2023년</option>
-															</select>
-														</div>
-														<div class="select-box sm line">
-															<select name="" id="">
-																<option value="">1월</option>
-																<option value="">2월</option>
-																<option value="" selected>3월</option>
-															</select>
-														</div>
-													</div>
-													<div class="calendar-header">
-														<span>일</span>
-														<span>월</span>
-														<span>화</span>
-														<span>수</span>
-														<span>목</span>
-														<span>금</span>
-														<span>토</span>
-													</div>
-													<div class="calendar-body month">
-														<button type="button" class="day" disabled>29</button>
-														<button type="button" class="day" disabled>30</button>
-														<button type="button" class="day" disabled>31</button>
-														<button type="button" class="day selected">1</button>
-														<button type="button" class="day">2</button>
-														<button type="button" class="day">3</button>
-														<button type="button" class="day">4</button>
-														<button type="button" class="day">5</button>
-														<button type="button" class="day">6</button>
-														<button type="button" class="day">7</button>
-														<button type="button" class="day">8</button>
-														<button type="button" class="day">9</button>
-														<button type="button" class="day">10</button>
-														<button type="button" class="day">11</button>
-														<button type="button" class="day">12</button>
-														<button type="button" class="day">13</button>
-														<button type="button" class="day">14</button>
-														<button type="button" class="day">15</button>
-														<button type="button" class="day">16</button>
-														<button type="button" class="day">17</button>
-														<button type="button" class="day">18</button>
-														<button type="button" class="day">19</button>
-														<button type="button" class="day">20</button>
-														<button type="button" class="day">21</button>
-														<button type="button" class="day today">22</button>
-														<button type="button" class="day">23</button>
-														<button type="button" class="day">24</button>
-														<button type="button" class="day">25</button>
-														<button type="button" class="day">26</button>
-														<button type="button" class="day">27</button>
-														<button type="button" class="day">28</button>
-														<button type="button" class="day">29</button>
-														<button type="button" class="day">30</button>
-														<button type="button" class="day">31</button>
-														<button type="button" class="day" disabled>1</button>
-													</div>
-												</div>
-											</div>
-											<span class="dash">~</span>
-											<div class="input md line">
-												<input type="text" name="" id="" value="2024.03.31" readonly>
-												<button type="button" class="btn-input-cal" data-target="#cal2">달력 열기</button>
-												<div class="layer-calendar" id="cal2">
-													<div class="calendar-selector">
-														<div class="select-box sm line">
-															<select name="" id="">
-																<option value="">2024년</option>
-																<option value="">2023년</option>
-															</select>
-														</div>
-														<div class="select-box sm line">
-															<select name="" id="">
-																<option value="">1월</option>
-																<option value="">2월</option>
-																<option value="" selected>3월</option>
-															</select>
-														</div>
-													</div>
-													<div class="calendar-header">
-														<span>일</span>
-														<span>월</span>
-														<span>화</span>
-														<span>수</span>
-														<span>목</span>
-														<span>금</span>
-														<span>토</span>
-													</div>
-													<div class="calendar-body month">
-														<button type="button" class="day" disabled>29</button>
-														<button type="button" class="day" disabled>30</button>
-														<button type="button" class="day" disabled>31</button>
-														<button type="button" class="day">1</button>
-														<button type="button" class="day">2</button>
-														<button type="button" class="day">3</button>
-														<button type="button" class="day">4</button>
-														<button type="button" class="day">5</button>
-														<button type="button" class="day">6</button>
-														<button type="button" class="day">7</button>
-														<button type="button" class="day">8</button>
-														<button type="button" class="day">9</button>
-														<button type="button" class="day">10</button>
-														<button type="button" class="day">11</button>
-														<button type="button" class="day">12</button>
-														<button type="button" class="day">13</button>
-														<button type="button" class="day">14</button>
-														<button type="button" class="day">15</button>
-														<button type="button" class="day">16</button>
-														<button type="button" class="day">17</button>
-														<button type="button" class="day">18</button>
-														<button type="button" class="day">19</button>
-														<button type="button" class="day">20</button>
-														<button type="button" class="day">21</button>
-														<button type="button" class="day today">22</button>
-														<button type="button" class="day">23</button>
-														<button type="button" class="day">24</button>
-														<button type="button" class="day">25</button>
-														<button type="button" class="day">26</button>
-														<button type="button" class="day">27</button>
-														<button type="button" class="day">28</button>
-														<button type="button" class="day">29</button>
-														<button type="button" class="day">30</button>
-														<button type="button" class="day selected">31</button>
-														<button type="button" class="day" disabled>1</button>
-													</div>
-												</div>
-											</div>
+									</div>
+									<div class="col-6">
+										<label for="" class="search-form-label">예약번호</label>
+										<div class="input md line">
+											<input type="text" name="" id="" placeholder="예약번호 입력">
+										</div>
+									</div>
+									<div class="col-6">
+										<label for="" class="search-form-label">예약자</label>
+										<div class="input md line">
+											<input type="text" name="" id="" placeholder="예약자 이름 입력">
+										</div>
+									</div>
+									<div class="col-6">
+										<label for="" class="search-form-label">규정위반 여부</label>
+										<div class="select-box md line">
+											<select name="" id="">
+												<option value="">전체</option>
+												<option value="">규정적합</option>
+												<option value="">규정위반</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-6">
+										<label for="" class="search-form-label">Missed Cost</label>
+										<div class="select-box md line">
+											<select name="" id="">
+												<option value="">전체</option>
+												<option value="">Y</option>
+												<option value="">N</option>
+											</select>
+										</div>
+									</div>
+									<div class="col-12">
+										<div class="btn-group search-group">
+											<button type="reset" class="btn md secondary"><span>초기화</span></button>
+											<button type="submit" class="btn md tertiary"><span>검색</span></button>
 										</div>
 									</div>
 								</div>
-								<div class="col-6">
-									<label for="" class="search-form-label">카테고리</label>
-									<div class="select-box md line">
+							</div>
+						</div>
+					</div>
+					<div class="row md">
+						<div class="col-12">
+							<div class="list-total-count">총 <strong>35</strong>개의 검색결과가 있습니다.</div>
+							<div class="card database">
+								<div class="database-control">
+									<label class="switch sm mg-r-auto" data-switch-direction="right">
+										<input type="checkbox" name="" id="" class="control-input">
+										<span class="control-text">취소포함</span>
+									</label>
+									<button type="button" class="btn sm secondary" data-icon-position="left"><i class="icon xs download"></i><span>엑셀 다운로드</span></button>
+									<div class="select-box sm line">
 										<select name="" id="">
-											<option value="">전체</option>
-											<option value="">항공</option>
-											<option value="">숙박</option>
-											<option value="">열차</option>
-											<option value="">시외버스</option>
+											<option value="">10</option>
+											<option value="">20</option>
+											<option value="">30</option>
+											<option value="">50</option>
+											<option value="">100</option>
 										</select>
 									</div>
 								</div>
-								<div class="col-6">
-									<label for="" class="search-form-label">예약번호</label>
-									<div class="input md line">
-										<input type="text" name="" id="" placeholder="예약번호 입력">
-									</div>
+								<div class="table type1 table-responsive table-hover text-wrap bordered-thead-top bordered-bottom">
+									<table>
+										<thead>
+											<tr>
+												<th>카테고리</th>
+												<th>예약일</th>
+												<th>예약번호</th>
+												<th>예약자</th>
+												<th>1번 출장자</th>
+												<th>소속부서</th>
+												<th>직급</th>
+												<th>인원</th>
+												<th>예약상태</th>
+												<th>결제상태</th>
+												<th>이용일자</th>
+												<th>박수</th>
+												<th>객실수</th>
+												<th>출장규정 환산금액</th>
+												<th>원화금액</th>
+												<th>TASF</th>
+												<th>규정위반여부</th>
+												<th>규정위반사유</th>
+												<th>M.Cost 여부</th>
+												<th>M.Cost 사유</th>
+												<th>품의번호</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td>항공</td>
+												<td>2024.03.02 16:13:47</td>
+												<td>24033110002-F01</td>
+												<td>이윤지</td>
+												<td>이윤지</td>
+												<td>해외영업팀</td>
+												<td>팀장</td>
+												<td>1명</td>
+												<td>예약완료</td>
+												<td>결제완료</td>
+												<td>2024.03.20 ~ 2024.03.24</td>
+												<td>-</td>
+												<td>-</td>
+												<td>-</td>
+												<td>1,350,000원</td>
+												<td>75,000원</td>
+												<td>N</td>
+												<td>-</td>
+												<td>N</td>
+												<td>N</td>
+												<td>BZP-12345</td>
+											</tr>
+											<tr>
+												<td>숙박</td>
+												<td>2024.03.02 16:13:47</td>
+												<td>24033110002-H01</td>
+												<td>이윤지</td>
+												<td>이윤지</td>
+												<td>해외영업팀</td>
+												<td>팀장</td>
+												<td>1명</td>
+												<td>예약완료</td>
+												<td>결제완료</td>
+												<td>2024.03.20 ~ 2024.03.21</td>
+												<td>1박</td>
+												<td>1개</td>
+												<td>USD 300.00</td>
+												<td>330,000원</td>
+												<td>0원</td>
+												<td><span class="c-point-1">Y</span></td>
+												<td>호텔부족</td>
+												<td>N</td>
+												<td>N</td>
+												<td>BZP-12345</td>
+											</tr>
+										</tbody>
+										<!-- 로딩 중일때 -->
+										<tbody class="table-loading">
+											<!-- 로딩 표시는 상단 리스트 표시 갯수만큼 반복해서 표시한다. -->
+											<tr>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+												<td>
+													<span class="td-load"></span>
+												</td>
+											</tr>
+										</tbody>
+										<!-- 데이터 검색 결과 없을때 -->
+										<tbody class="table-nolist">
+											<tr>
+												<td colspan="21">
+													<div class="database-nolist">
+														<i class="icon xxl alert-triangle"></i>
+														<p class="nolist-msg">검색 결과가 없습니다.<br>다른 검색조건으로 검색 바랍니다.</p>
+													</div>
+												</td>
+											</tr>
+										</tbody>
+									</table>
 								</div>
-								<div class="col-6">
-									<label for="" class="search-form-label">예약자</label>
-									<div class="input md line">
-										<input type="text" name="" id="" placeholder="예약자 이름 입력">
-									</div>
-								</div>
-								<div class="col-6">
-									<label for="" class="search-form-label">규정위반 여부</label>
-									<div class="select-box md line">
-										<select name="" id="">
-											<option value="">전체</option>
-											<option value="">규정적합</option>
-											<option value="">규정위반</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-6">
-									<label for="" class="search-form-label">Missed Cost</label>
-									<div class="select-box md line">
-										<select name="" id="">
-											<option value="">전체</option>
-											<option value="">Y</option>
-											<option value="">N</option>
-										</select>
-									</div>
-								</div>
-								<div class="col-12">
-									<div class="btn-group search-group">
-										<button type="reset" class="btn md secondary"><span>초기화</span></button>
-										<button type="submit" class="btn md tertiary"><span>검색</span></button>
-									</div>
+								<div class="pagination database">
+									<button type="button" class="btn-pagination-prev">Prev</button>
+									<button type="button" class="btn-pagination">1</button>
+									<strong class="btn-pagination selected">2</strong>
+									<button type="button" class="btn-pagination">3</button>
+									<button type="button" class="btn-pagination-next">Next</button>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row md">
-					<div class="col-12">
-						<div class="list-total-count">총 <strong>35</strong>개의 검색결과가 있습니다.</div>
-						<div class="card database">
-							<div class="database-control">
-								<label class="switch sm mg-r-auto" data-switch-direction="right">
-									<input type="checkbox" name="" id="" class="control-input">
-									<span class="control-text">취소포함</span>
-								</label>
-								<button type="button" class="btn sm secondary" data-icon-position="left"><i class="icon xs download"></i><span>엑셀 다운로드</span></button>
-								<div class="select-box sm line">
-									<select name="" id="">
-										<option value="">10</option>
-										<option value="">20</option>
-										<option value="">30</option>
-										<option value="">50</option>
-										<option value="">100</option>
-									</select>
-								</div>
-							</div>
-							<div class="table type1 table-responsive table-hover text-wrap bordered-thead-top bordered-bottom">
-								<table>
-									<thead>
-										<tr>
-											<th>카테고리</th>
-											<th>예약일</th>
-											<th>예약번호</th>
-											<th>예약자</th>
-											<th>1번 출장자</th>
-											<th>소속부서</th>
-											<th>직급</th>
-											<th>인원</th>
-											<th>예약상태</th>
-											<th>결제상태</th>
-											<th>이용일자</th>
-											<th>박수</th>
-											<th>객실수</th>
-											<th>출장규정 환산금액</th>
-											<th>원화금액</th>
-											<th>TASF</th>
-											<th>규정위반여부</th>
-											<th>규정위반사유</th>
-											<th>M.Cost 여부</th>
-											<th>M.Cost 사유</th>
-											<th>품의번호</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>항공</td>
-											<td>2024.03.02 16:13:47</td>
-											<td>24033110002-F01</td>
-											<td>이윤지</td>
-											<td>이윤지</td>
-											<td>해외영업팀</td>
-											<td>팀장</td>
-											<td>1명</td>
-											<td>예약완료</td>
-											<td>결제완료</td>
-											<td>2024.03.20 ~ 2024.03.24</td>
-											<td>-</td>
-											<td>-</td>
-											<td>-</td>
-											<td>1,350,000원</td>
-											<td>75,000원</td>
-											<td>N</td>
-											<td>-</td>
-											<td>N</td>
-											<td>N</td>
-											<td>BZP-12345</td>
-										</tr>
-										<tr>
-											<td>숙박</td>
-											<td>2024.03.02 16:13:47</td>
-											<td>24033110002-H01</td>
-											<td>이윤지</td>
-											<td>이윤지</td>
-											<td>해외영업팀</td>
-											<td>팀장</td>
-											<td>1명</td>
-											<td>예약완료</td>
-											<td>결제완료</td>
-											<td>2024.03.20 ~ 2024.03.21</td>
-											<td>1박</td>
-											<td>1개</td>
-											<td>USD 300.00</td>
-											<td>330,000원</td>
-											<td>0원</td>
-											<td><span class="c-point-1">Y</span></td>
-											<td>호텔부족</td>
-											<td>N</td>
-											<td>N</td>
-											<td>BZP-12345</td>
-										</tr>
-									</tbody>
-									<!-- 로딩 중일때 -->
-									<tbody class="table-loading">
-										<!-- 로딩 표시는 상단 리스트 표시 갯수만큼 반복해서 표시한다. -->
-										<tr>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-										</tr>
-									</tbody>
-									<!-- 데이터 검색 결과 없을때 -->
-									<tbody class="table-nolist">
-										<tr>
-											<td colspan="21">
-												<div class="database-nolist">
-													<i class="icon xxl alert-triangle"></i>
-													<p class="nolist-msg">검색 결과가 없습니다.<br>다른 검색조건으로 검색 바랍니다.</p>
-												</div>
-											</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-							<div class="pagination database">
-								<button type="button" class="btn-pagination-prev">Prev</button>
-								<button type="button" class="btn-pagination">1</button>
-								<strong class="btn-pagination selected">2</strong>
-								<button type="button" class="btn-pagination">3</button>
-								<button type="button" class="btn-pagination-next">Next</button>
-							</div>
-						</div>
+				</main>
+				<footer id="footer">
+					<div class="inner">
+						<ul class="company">
+							<li>비즈플레이(주)</li>
+							<li>대표이사 : 김홍기</li>
+						</ul>
+						<ul>
+							<li>주소 : 서울시 영등포구 영신로 220 KnK디지털타워 12층</li>
+							<li>사업자등록번호 : 107-88-36127</li>
+							<li>통신판매신고번호 : 2015-서울영등포-0113호</li>
+						</ul>
+						<ul>
+							<li><button class="btn-privacy">개인정보 처리방침</button></li>
+							<li><button class="btn-agree">이용약관</button></li>
+						</ul>
+						<p>
+							&copy; Bizplay. All rights reserved.
+						</p>
 					</div>
-				</div>
-			</main>
-			<footer id="footer">
-				<div class="inner">
-					<ul class="company">
-						<li>비즈플레이(주)</li>
-						<li>대표이사 : 김홍기</li>
-					</ul>
-					<ul>
-						<li>주소 : 서울시 영등포구 영신로 220 KnK디지털타워 12층</li>
-						<li>사업자등록번호 : 107-88-36127</li>
-						<li>통신판매신고번호 : 2015-서울영등포-0113호</li>
-					</ul>
-					<ul>
-						<li><button class="btn-privacy">개인정보 처리방침</button></li>
-						<li><button class="btn-agree">이용약관</button></li>
-					</ul>
-					<p>
-						&copy; Bizplay. All rights reserved.
-					</p>
-				</div>
-			</footer>
+				</footer>
+			</div>
 		</div>
-	</div>
-	<script src="../../assets/js/common.js"></script>
-</body>
+		<script src="../../assets/js/common.js"></script>
+	</body>
 
 </html>

@@ -177,7 +177,7 @@
 						color: rgba(var(--c-point-2-rgb), 0.5);
 					}
 				}
-				&.selected {
+				&[aria-checked="true"] {
 					color: var(--c-white);
 					background: {
 						color: var(--tertiary-blue);
@@ -203,7 +203,7 @@
 				&:disabled {
 					color: var(--c-gray-5);
 				}
-				&.selected {
+				&[aria-checked="true"] {
 					color: var(--c-white);
 					background: {
 						color: var(--tertiary-blue);
