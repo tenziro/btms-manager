@@ -271,7 +271,7 @@
 			}
 		}
 		.sub-nav {
-			@include position(absolute, 1, 60px, 0, null, 0);
+			@include position(absolute, 10, 60px, 0, null, 0);
 			@include border(top, 1px, solid, var(--border-default));
 			@include box-shadow(0, 0.125rem, 0.25rem, rgba(165, 163, 174, .15));
 			background: {
