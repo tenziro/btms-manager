@@ -5,7 +5,7 @@
 	--root-bg: #F6F8FB;
 	--default-bg: #F2F3F7;
 	--default-bg-rgb: 242, 243, 247;
-	--placeholder: rgba(126, 130, 137, 0.4);
+	--placeholder: rgba(126, 130, 137, 0.6);
 	--border-default: #E5E9ED;
 	--border-focus: #BEBEBE;
 	--border-valid: #FF5C4B;
@@ -80,6 +80,7 @@
 	--lh-160: 160%;
 
 	--body-min-width: 320px;
+	--body-max-width: 1280px;
 }
 
 // * local image url setting

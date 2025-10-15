@@ -178,7 +178,7 @@ input,
 textarea {
 	caret-color: var(--border-focus);
 	&::placeholder {
-		color: rgba(var(--c-gray-3-rgb), 0.4);
+		color: var(--placeholder);
 	}
 }
 [type='submit'] {

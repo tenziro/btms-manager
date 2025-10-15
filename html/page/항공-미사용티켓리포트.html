@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="../../assets/css/base.css" />
 	<link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
 	<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-	<title>bzp출장관리 - 출장관리자 :: 전체 예약 리스트</title>
+	<title>bzp출장관리 - 출장관리자 :: 항공 미사용 티켓 리포트</title>
 </head>
 
 <body>
@@ -44,11 +44,11 @@
 				<ul class="main-nav">
 					<li><button type="button" class="btn-nav-main" onclick="location.href='홈.html';"><i class="icon md home"></i><span class="text">홈</span></button></li>
 					<li>
-						<details class="nav-btn-group" name="nav" open>
+						<details class="nav-btn-group" name="nav">
 							<summary class="btn-nav-main"><i class="icon md calendar-user"></i><span class="text">예약/직원관리</span></summary>
 							<div class="sub-nav">
 								<ul>
-									<li><a href="전체예약리스트.html" class="nav-item active">전체 예약 리스트</a></li>
+									<li><a href="전체예약리스트.html" class="nav-item">전체 예약 리스트</a></li>
 									<li><a href="직원관리.html" class="nav-item">직원관리</a></li>
 									<li><a href="발권내역.html" class="nav-item">발권내역</a></li>
 								</ul>
@@ -67,7 +67,7 @@
 						</details>
 					</li>
 					<li>
-						<details class="nav-btn-group" name="nav">
+						<details class="nav-btn-group" name="nav" open>
 							<summary class="btn-nav-main"><i class="icon md flight"></i><span class="text">항공 리포트</span></summary>
 							<div class="sub-nav">
 								<ul>
@@ -75,7 +75,7 @@
 									<li><a href="항공-항공사별리포트.html" class="nav-item">항공사별 리포트</a></li>
 									<li><a href="항공-missedcost.html" class="nav-item">Missed Cost</a></li>
 									<li><a href="항공-규정위반리포트.html" class="nav-item">규정위반 리포트</a></li>
-									<li><a href="항공-미사용티켓리포트.html" class="nav-item">미사용 티켓 리포트</a></li>
+									<li><a href="항공-미사용티켓리포트.html" class="nav-item active">미사용 티켓 리포트</a></li>
 								</ul>
 							</div>
 						</details>
@@ -135,12 +135,12 @@
 				<!-- breadcrumbs -->
 				<ul class="breadcrumbs">
 					<li class="home"><a href="홈.html">홈</a></li>
-					<li><a href="전체예약리스트.html">예약/직원관리</a></li>
-					<li><span class="current">전체 예약 리스트</span></li>
+					<li><a href="항공-지역별리포트.html">항공 리포트</a></li>
+					<li><span class="current">미사용 티켓 리포트</span></li>
 				</ul>
 				<div id="page-header">
-					<h2>전체 예약 리스트</h2>
-					<p>전체 출장 예약현황 정보를 제공합니다.</p>
+					<h2>미사용 티켓 리포트</h2>
+					<p>사용하지 않거나 사용여부가 미확인 된 티켓 현황을 제공합니다.</p>
 				</div>
 				<div class="row md">
 					<div class="col-12">
@@ -150,14 +150,14 @@
 									<div class="form-group search-all">
 										<div class="select-box md line">
 											<select name="" id="">
-												<option value="">예약일</option>
+												<option value="">발권일</option>
 												<option value="">출발일</option>
 											</select>
 										</div>
 										<div class="form-group both">
 											<!--.btn-input-cal이 있는 경우에는 .btn-input-clear를 표시하지 않는다. -->
 											<div class="input md line">
-												<input type="text" name="" id="" value="2025.03.01" readonly>
+												<input type="text" name="" id="" value="2025.09.01" readonly>
 												<button type="button" class="btn-input-cal" data-target="#cal1">달력 열기</button>
 												<div class="layer-calendar" id="cal1">
 													<div class="calendar-selector">
@@ -171,7 +171,16 @@
 															<select name="" id="">
 																<option value="">1월</option>
 																<option value="">2월</option>
-																<option value="" selected>3월</option>
+																<option value="">3월</option>
+																<option value="">4월</option>
+																<option value="">5월</option>
+																<option value="">6월</option>
+																<option value="">7월</option>
+																<option value="">8월</option>
+																<option value="" selected>9월</option>
+																<option value="">10월</option>
+																<option value="">11월</option>
+																<option value="">12월</option>
 															</select>
 														</div>
 													</div>
@@ -185,9 +194,9 @@
 														<span>토</span>
 													</div>
 													<div class="calendar-body month">
+														<button type="button" class="day" role="checkbox" aria-checked="false" disabled>28</button>
 														<button type="button" class="day" role="checkbox" aria-checked="false" disabled>29</button>
 														<button type="button" class="day" role="checkbox" aria-checked="false" disabled>30</button>
-														<button type="button" class="day" role="checkbox" aria-checked="false" disabled>31</button>
 														<button type="button" class="day" role="checkbox" aria-checked="true">1</button>
 														<button type="button" class="day" role="checkbox" aria-checked="false">2</button>
 														<button type="button" class="day" role="checkbox" aria-checked="false">3</button>
@@ -225,7 +234,7 @@
 											</div>
 											<span class="dash">~</span>
 											<div class="input md line">
-												<input type="text" name="" id="" value="2025.03.31" readonly>
+												<input type="text" name="" id="" value="2025.10.31" readonly>
 												<button type="button" class="btn-input-cal" data-target="#cal2">달력 열기</button>
 												<div class="layer-calendar" id="cal2">
 													<div class="calendar-selector">
@@ -239,7 +248,16 @@
 															<select name="" id="">
 																<option value="">1월</option>
 																<option value="">2월</option>
-																<option value="" selected>3월</option>
+																<option value="">3월</option>
+																<option value="">4월</option>
+																<option value="">5월</option>
+																<option value="">6월</option>
+																<option value="">7월</option>
+																<option value="">8월</option>
+																<option value="">9월</option>
+																<option value="" selected>10월</option>
+																<option value="">11월</option>
+																<option value="">12월</option>
 															</select>
 														</div>
 													</div>
@@ -295,47 +313,44 @@
 									</div>
 								</div>
 								<div class="col-6">
-									<label for="" class="search-form-label">카테고리</label>
+									<label for="" class="search-form-label">사용상태</label>
 									<div class="select-box md line">
 										<select name="" id="">
 											<option value="">전체</option>
-											<option value="">항공</option>
-											<option value="">숙박</option>
-											<option value="">열차</option>
-											<option value="">시외버스</option>
+											<option value="">사용</option>
+											<option value="">미사용</option>
+											<option value="">판정불가</option>
+											<option value="">불일치</option>
+											<option value="">기타</option>
 										</select>
 									</div>
 								</div>
 								<div class="col-6">
-									<label for="" class="search-form-label">예약번호</label>
+									<label for="" class="search-form-label">티켓번호</label>
 									<div class="input md line">
-										<input type="text" name="" id="" placeholder="예약번호 입력">
+										<input type="text" name="" id="" placeholder="티켓번호 입력">
 									</div>
 								</div>
 								<div class="col-6">
-									<label for="" class="search-form-label">예약자</label>
+									<label for="" class="search-form-label">출장자</label>
 									<div class="input md line">
-										<input type="text" name="" id="" placeholder="예약자 이름 입력">
+										<input type="text" name="" id="" placeholder="출장자 이름 입력">
 									</div>
 								</div>
 								<div class="col-6">
-									<label for="" class="search-form-label">규정위반 여부</label>
+									<label for="" class="search-form-label">국내/해외</label>
 									<div class="select-box md line">
 										<select name="" id="">
 											<option value="">전체</option>
-											<option value="">규정적합</option>
-											<option value="">규정위반</option>
+											<option value="">국내</option>
+											<option value="">해외</option>
 										</select>
 									</div>
 								</div>
 								<div class="col-6">
-									<label for="" class="search-form-label">Missed Cost</label>
-									<div class="select-box md line">
-										<select name="" id="">
-											<option value="">전체</option>
-											<option value="">Y</option>
-											<option value="">N</option>
-										</select>
+									<label for="" class="search-form-label">항공사</label>
+									<div class="input md line">
+										<input type="text" name="" id="" placeholder="항공사명 입력">
 									</div>
 								</div>
 								<div class="col-12">
@@ -350,13 +365,11 @@
 				</div>
 				<div class="row md">
 					<div class="col-12">
-						<div class="list-total-count">총 <strong>35</strong>개의 검색결과가 있습니다.</div>
+						<div class="list-total-count">
+							총 <strong>35</strong>개의 검색결과가 있습니다.
+						</div>
 						<div class="card database">
 							<div class="database-control">
-								<label class="switch sm mg-r-auto" data-switch-direction="right">
-									<input type="checkbox" name="" id="" class="control-input">
-									<span class="control-text">취소포함</span>
-								</label>
 								<button type="button" class="btn sm secondary" data-icon-position="left"><i class="icon xs download"></i><span>엑셀 다운로드</span></button>
 								<div class="select-box sm line">
 									<select name="" id="">
@@ -368,85 +381,49 @@
 									</select>
 								</div>
 							</div>
-							<div class="table type1 table-responsive table-hover text-wrap bordered-thead-top bordered-bottom">
+							<div class="table type1 table-responsive text-wrap bordered-thead-top bordered-bottom">
 								<table>
 									<thead>
 										<tr>
 											<th>#</th>
-											<th>카테고리</th>
-											<th>예약일</th>
+											<th>발권일</th>
+											<th>국내/해외</th>
+											<th>항공사</th>
+											<th>티켓번호</th>
+											<th>PNR</th>
+											<th>발권상태</th>
+											<th>사용상태</th>
+											<th>탑승자</th>
+											<th>출발일</th>
 											<th>예약번호</th>
-											<th>예약자</th>
-											<th>1번 출장자</th>
-											<th>소속부서</th>
-											<th>직급</th>
-											<th>인원</th>
-											<th>예약상태</th>
-											<th>결제상태</th>
-											<th>이용일자</th>
-											<th>박수</th>
-											<th>객실수</th>
-											<th>출장규정 환산금액</th>
-											<th>원화금액</th>
-											<th>TASF</th>
-											<th>규정위반여부</th>
-											<th>규정위반사유</th>
-											<th>M.Cost 여부</th>
-											<th>M.Cost 사유</th>
-											<th>스케줄번호</th>
-											<th>계획서번호</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td>2</td>
-											<td>항공</td>
-											<td>2024.03.02 16:13:47</td>
-											<td>24033110002-F01</td>
-											<td>이윤지</td>
-											<td>이윤지</td>
-											<td>해외영업팀</td>
-											<td>팀장</td>
-											<td>1명</td>
-											<td>예약완료</td>
-											<td>결제완료</td>
-											<td>2024.03.20 ~ 2024.03.24</td>
-											<td>-</td>
-											<td>-</td>
-											<td>-</td>
-											<td>1,350,000원</td>
-											<td>75,000원</td>
-											<td>N</td>
-											<td>-</td>
-											<td>N</td>
-											<td>N</td>
-											<td>BZP-12345</td>
-											<td>HD-10001</td>
+											<td>2025-10-01</td>
+											<td>국내</td>
+											<td>대한항공</td>
+											<td>988-987654321</td>
+											<td>FQ5ITY</td>
+											<td>발권완료</td>
+											<td><span class="c-danger">미사용</span></td>
+											<td>박인영</td>
+											<td>2025-11-01</td>
+											<td>25100110016-F01</td>
 										</tr>
 										<tr>
 											<td>1</td>
-											<td>숙박</td>
-											<td>2024.03.02 16:13:47</td>
-											<td>24033110002-H01</td>
-											<td>이윤지</td>
-											<td>이윤지</td>
-											<td>해외영업팀</td>
-											<td>팀장</td>
-											<td>1명</td>
-											<td>예약완료</td>
-											<td>결제완료</td>
-											<td>2024.03.20 ~ 2024.03.21</td>
-											<td>1박</td>
-											<td>1개</td>
-											<td>USD 300.00</td>
-											<td>330,000원</td>
-											<td>0원</td>
-											<td><span class="c-point-1">Y</span></td>
-											<td>호텔부족</td>
-											<td>N</td>
-											<td>N</td>
-											<td>BZP-12345</td>
-											<td>HD-10000</td>
+											<td>2025-09-30</td>
+											<td>해외</td>
+											<td>아시아나항공</td>
+											<td>988-123456789</td>
+											<td>RQ5ICQ</td>
+											<td>발권완료</td>
+											<td><span class="c-primary-blue">사용</span></td>
+											<td>심하경</td>
+											<td>2025-12-01</td>
+											<td>25093010010-F01</td>
 										</tr>
 									</tbody>
 									<!-- 로딩 중일때 -->
@@ -486,48 +463,12 @@
 											<td>
 												<span class="td-load"></span>
 											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
 										</tr>
 									</tbody>
 									<!-- 데이터 검색 결과 없을때 -->
 									<tbody class="table-nolist">
 										<tr>
-											<td colspan="23">
+											<td colspan="11">
 												<div class="database-nolist">
 													<i class="icon xxl alert-triangle"></i>
 													<p class="nolist-msg">검색 결과가 없습니다.<br>다른 검색조건으로 검색 바랍니다.</p>

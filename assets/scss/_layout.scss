@@ -1,7 +1,6 @@
 // ! layout
 #wrap {
 	@include flex(flex, column);
-	--max-width: 1440px;
 	--d-padding: 1.143rem;
 	min-width: var(--body-min-width);
 	min-height: 100dvh;
@@ -23,7 +22,7 @@
 	.inner {
 		@include flex(flex, null, null, center, null, null, space-between);
 		width: 100%;
-		max-width: var(--max-width);
+		max-width: var(--body-max-width);
 		height: 64px;
 		padding: 0 var(--d-padding);
 		margin-inline: auto;
@@ -89,7 +88,7 @@
 #footer {
 	.inner {
 		width: 100%;
-		max-width: var(--max-width);
+		max-width: var(--body-max-width);
 		padding: 0 var(--d-padding);
 		margin-inline: auto;
 		row-gap: 0.357rem;
@@ -133,7 +132,7 @@
 }
 #contents {
 	width: 100%;
-	max-width: var(--max-width);
+	max-width: var(--body-max-width);
 	margin-inline: auto;
 }
 #page-header {
@@ -258,12 +257,13 @@
 			color: var(--c-white);
 		}
 		.inner {
-			max-width: var(--max-width);
+			max-width: var(--body-max-width);
 			padding: 0 var(--d-padding);
 			margin-inline: auto;
 		}
 		.main-nav {
 			@include flex(flex, null, null, center);
+			overflow-x: auto;
 			gap: 40px;
 			li {
 				@include flex(flex, null, null, center);
@@ -279,7 +279,7 @@
 			}
 			ul {
 				@include flex(flex, null, null, center);
-				max-width: var(--max-width);
+				max-width: var(--body-max-width);
 				height: 48px;
 				padding: 0 var(--d-padding);
 				margin-inline: auto;

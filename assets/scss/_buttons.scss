@@ -119,8 +119,10 @@
 				}
 			}
 		}
-		&:hover {
-			filter: brightness(105%);
+		&:not(:disabled) {
+			&:hover {
+				filter: brightness(105%);
+			}
 		}
 	}
 }
