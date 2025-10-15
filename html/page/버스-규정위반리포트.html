@@ -11,7 +11,7 @@
 	<link rel="stylesheet" type="text/css" href="../../assets/css/base.css" />
 	<link rel="stylesheet" href="https://unpkg.com/lenis@1.1.18/dist/lenis.css">
 	<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
-	<title>bzp출장관리 - 출장관리자 :: 항공 항공사별 리포트</title>
+	<title>bzp출장관리 - 출장관리자 :: 버스 규정위반 리포트</title>
 	</script>
 </head>
 
@@ -68,12 +68,12 @@
 						</details>
 					</li>
 					<li>
-						<details class="nav-btn-group" name="nav" open>
+						<details class="nav-btn-group" name="nav">
 							<summary class="btn-nav-main"><i class="icon md flight"></i><span class="text">항공 리포트</span></summary>
 							<div class="sub-nav">
 								<ul>
 									<li><a href="항공-지역별리포트.html" class="nav-item">지역별 리포트</a></li>
-									<li><a href="항공-항공사별리포트.html" class="nav-item active">항공사별 리포트</a></li>
+									<li><a href="항공-항공사별리포트.html" class="nav-item">항공사별 리포트</a></li>
 									<li><a href="항공-missedcost.html" class="nav-item">Missed Cost</a></li>
 									<li><a href="항공-규정위반리포트.html" class="nav-item">규정위반 리포트</a></li>
 								</ul>
@@ -105,12 +105,12 @@
 						</details>
 					</li>
 					<li>
-						<details class="nav-btn-group" name="nav">
+						<details class="nav-btn-group" name="nav" open>
 							<summary class="btn-nav-main"><i class="icon md bus"></i><span class="text">버스 리포트</span></summary>
 							<div class="sub-nav">
 								<ul>
 									<li><a href="버스-지역별리포트.html" class="nav-item">지역별 리포트</a></li>
-									<li><a href="버스-규정위반리포트.html" class="nav-item">규정위반 리포트</a></li>
+									<li><a href="버스-규정위반리포트.html" class="nav-item active">규정위반 리포트</a></li>
 								</ul>
 							</div>
 						</details>
@@ -135,12 +135,12 @@
 				<!-- breadcrumbs -->
 				<ul class="breadcrumbs">
 					<li class="home"><a href="홈.html">홈</a></li>
-					<li><a href="항공-지역별리포트.html">항공 리포트</a></li>
-					<li><span class="current">항공사별 리포트</span></li>
+					<li><a href="버스-지역별리포트.html">버스 리포트</a></li>
+					<li><span class="current">규정위반 리포트</span></li>
 				</ul>
 				<div id="page-header">
-					<h2>항공사별 리포트</h2>
-					<p>항공 서비스를 통해 가장 많이 예약한 항공사별 리포트를 제공합니다.</p>
+					<h2>규정위반 리포트</h2>
+					<p>버스 서비스의 규정위반 리포트를 제공합니다.</p>
 				</div>
 				<div class="row sm">
 					<div class="col-12">
@@ -243,7 +243,7 @@
 						<div class="card database">
 							<div class="card-header">
 								<div class="title">
-									<h3 class="header-title">상세 현황</h3>
+									<h3 class="header-title">버스 규정위반 상위 10개 도시</h3>
 								</div>
 							</div>
 							<div class="table type1 table-responsive text-wrap bordered-thead-top bordered-bottom">
@@ -251,37 +251,83 @@
 									<thead>
 										<tr>
 											<th>#</th>
-											<th>항공사명(항공사코드)</th>
-											<th>티켓건수</th>
-											<th>점유율(건수기준)</th>
-											<th>발권금액</th>
-											<th>점유율(금액기준)</th>
+											<th>도시명</th>
+											<th>위반건수</th>
+											<th>위반금액</th>
+											<th>점유율</th>
 										</tr>
 									</thead>
 									<tbody>
 										<tr>
 											<td>1</td>
-											<td>대한항공(KE)</td>
-											<td>65건</td>
-											<td>20%</td>
-											<td>49,312,200원</td>
-											<td>25.4%</td>
+											<td>서울</td>
+											<td>5건</td>
+											<td>3,500,300원</td>
+											<td>19.4%</td>
 										</tr>
 										<tr>
 											<td>2</td>
-											<td>아시아나항공(OZ)</td>
-											<td>65건</td>
-											<td>18%</td>
-											<td>41,002,200원</td>
-											<td>20.4%</td>
+											<td>광주</td>
+											<td>2건</td>
+											<td>843,920원</td>
+											<td>14%</td>
+										</tr>
+									</tbody>
+									<!-- 데이터 검색 결과 없을때 -->
+									<tbody class="table-nolist">
+										<tr>
+											<td colspan="5">
+												<div class="database-nolist">
+													<i class="icon xxl alert-triangle"></i>
+													<p class="nolist-msg">조회된 결과가 없습니다.<br>다른 조건으로 조회 바랍니다.</p>
+												</div>
+											</td>
+										</tr>
+									</tbody>
+									<tfoot>
+										<tr>
+											<th colspan="2" class="align-c">합계</th>
+											<th>7건</th>
+											<th>4,344,220원</th>
+											<th>100%</th>
+										</tr>
+									</tfoot>
+								</table>
+							</div>
+						</div>
+					</div>
+					<div class="col-12">
+						<div class="card database">
+							<div class="card-header">
+								<div class="title">
+									<h3 class="header-title">버스 규정위반 사유</h3>
+								</div>
+							</div>
+							<div class="table type1 table-responsive text-wrap bordered-thead-top bordered-bottom">
+								<table>
+									<thead>
+										<tr>
+											<th>#</th>
+											<th>위반사유</th>
+											<th>위반건수</th>
+											<th>위반금액</th>
+											<th>점유율</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>1</td>
+											<td>좌석부족</td>
+											<td>5건</td>
+											<td>3,500,300원</td>
+											<td>19.4%</td>
 										</tr>
 										<tr>
-											<td>-</td>
+											<td>2</td>
 											<td>기타</td>
-											<td>0건</td>
-											<td>0%</td>
-											<td>0원</td>
-											<td>0%</td>
+											<td>2건</td>
+											<td>843,920원</td>
+											<td>14%</td>
 										</tr>
 									</tbody>
 									<!-- 로딩 중일때 -->
@@ -303,15 +349,12 @@
 											<td>
 												<span class="td-load"></span>
 											</td>
-											<td>
-												<span class="td-load"></span>
-											</td>
 										</tr>
 									</tbody>
 									<!-- 데이터 검색 결과 없을때 -->
 									<tbody class="table-nolist">
 										<tr>
-											<td colspan="6">
+											<td colspan="5">
 												<div class="database-nolist">
 													<i class="icon xxl alert-triangle"></i>
 													<p class="nolist-msg">조회된 결과가 없습니다.<br>다른 조건으로 조회 바랍니다.</p>
@@ -323,8 +366,7 @@
 										<tr>
 											<th colspan="2" class="align-c">합계</th>
 											<th>7건</th>
-											<th>100%</th>
-											<th>54,344,220원</th>
+											<th>4,344,220원</th>
 											<th>100%</th>
 										</tr>
 									</tfoot>

@@ -253,6 +253,12 @@
 	&.train {
 		@include bg-image-svg(icons, ico-train);
 	}
+	&.bus {
+		@include bg-image-svg(icons, ico-bus);
+	}
+	&.rentalcar {
+		@include bg-image-svg(icons, ico-rentalcar);
+	}
 	&.trending {
 		&-up {
 			@include bg-image-svg(icons, ico-trending-up);
