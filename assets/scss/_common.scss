@@ -217,7 +217,7 @@ progress {
 	-webkit-appearance: button;
 }
 summary {
-	display: list-item;
+	display: block;
 	cursor: pointer;
 	&::marker,
 	&::-webkit-details-marker {
