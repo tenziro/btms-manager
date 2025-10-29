@@ -1,8 +1,8 @@
 @charset "UTF-8";
 
 .card {
-	// @include box-shadow(0, 0.125rem, 0.25rem, rgba(165, 163, 174, .15));
-	@include border(all, 1px, solid, var(--border-default), var(--rd-small));
+	@include box-shadow(0, 0, 4px, rgba(31, 41, 55, .04));
+	@include border(all, 1px, solid, var(--border-default), var(--rd-medium));
 	background: {
 		color: var(--c-white);
 	}
@@ -24,6 +24,7 @@
 	&.search-form-area {
 		.row {
 			--gap-row: 0.714rem;
+
 		}
 		.search-form-label {
 			color: var(--c-gray-1);
@@ -233,6 +234,16 @@
 			}
 			.search-group {
 				padding-top: 0.5rem;
+			}
+			&.list-reservation,
+			&.list-staff,
+			&.list-ticket {
+				.row {
+					margin: {
+						left: calc(-0.3 * var(--gutter-x));
+						right: calc(-0.3 * var(--gutter-x));
+					}
+				}
 			}
 		}
 	}

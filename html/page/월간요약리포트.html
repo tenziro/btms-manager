@@ -191,90 +191,86 @@
 				<div class="row sm">
 					<div class="col-12">
 						<div class="card default search-form-area">
-							<div class="row md">
-								<div class="col-12">
-									<div class="form-group search-full">
-										<div class="radio-group type2 md">
-											<label class="radio-group-item">
-												<input type="radio" name="r2" class="control-input" checked>
-												<span class="control-text">1개월</span>
-											</label>
-											<label class="radio-group-item">
-												<input type="radio" name="r2" class="control-input">
-												<span class="control-text">3개월</span>
-											</label>
-											<label class="radio-group-item">
-												<input type="radio" name="r2" class="control-input">
-												<span class="control-text">6개월</span>
-											</label>
-											<label class="radio-group-item">
-												<input type="radio" name="r2" class="control-input" id="self">
-												<span class="control-text">직접선택</span>
-											</label>
-										</div>
-										<div class="form-group both">
-											<!--.btn-input-cal이 있는 경우에는 .btn-input-clear를 표시하지 않는다. -->
-											<div class="input md line">
-												<input type="text" name="" id="" value="2025년 3월" disabled readonly>
-												<button type="button" class="btn-input-cal" data-target="#cal1" disabled>달력 열기</button>
-												<div class="layer-calendar" id="cal1">
-													<div class="calendar-selector">
-														<div class="select-box sm line">
-															<select name="" id="">
-																<option value="">2025년</option>
-																<option value="">2024년</option>
-															</select>
-														</div>
-													</div>
-													<div class="calendar-body year">
-														<button type="button" class="month" role="checkbox" aria-checked="false">1월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">2월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="true">3월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">4월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">5월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">6월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">7월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">8월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">9월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">10월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">11월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">12월</button>
-													</div>
+							<div class="form-group search-full">
+								<div class="radio-group type2 md">
+									<label class="radio-group-item">
+										<input type="radio" name="r2" class="control-input" checked>
+										<span class="control-text">1개월</span>
+									</label>
+									<label class="radio-group-item">
+										<input type="radio" name="r2" class="control-input">
+										<span class="control-text">3개월</span>
+									</label>
+									<label class="radio-group-item">
+										<input type="radio" name="r2" class="control-input">
+										<span class="control-text">6개월</span>
+									</label>
+									<label class="radio-group-item">
+										<input type="radio" name="r2" class="control-input" id="self">
+										<span class="control-text">직접선택</span>
+									</label>
+								</div>
+								<div class="form-group both">
+									<!--.btn-input-cal이 있는 경우에는 .btn-input-clear를 표시하지 않는다. -->
+									<div class="input md line">
+										<input type="text" name="" id="" value="2025년 3월" disabled readonly>
+										<button type="button" class="btn-input-cal" data-target="#cal1" disabled>달력 열기</button>
+										<div class="layer-calendar" id="cal1">
+											<div class="calendar-selector">
+												<div class="select-box sm line">
+													<select name="" id="">
+														<option value="">2025년</option>
+														<option value="">2024년</option>
+													</select>
 												</div>
 											</div>
-											<span class="dash">~</span>
-											<div class="input md line">
-												<input type="text" name="" id="" value="2025년 3월" disabled readonly>
-												<button type="button" class="btn-input-cal" data-target="#cal2">달력 열기</button>
-												<div class="layer-calendar" id="cal2">
-													<div class="calendar-selector">
-														<div class="select-box sm line">
-															<select name="" id="">
-																<option value="">2025년</option>
-																<option value="">2024년</option>
-															</select>
-														</div>
-													</div>
-													<div class="calendar-body year">
-														<button type="button" class="month" role="checkbox" aria-checked="false">1월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">2월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="true">3월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">4월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">5월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">6월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">7월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">8월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">9월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">10월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">11월</button>
-														<button type="button" class="month" role="checkbox" aria-checked="false">12월</button>
-													</div>
-												</div>
+											<div class="calendar-body year">
+												<button type="button" class="month" role="checkbox" aria-checked="false">1월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">2월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="true">3월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">4월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">5월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">6월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">7월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">8월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">9월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">10월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">11월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">12월</button>
 											</div>
 										</div>
-										<button type="submit" class="btn md tertiary" disabled id="btnSearch"><span>조회</span></button>
+									</div>
+									<span class="dash">~</span>
+									<div class="input md line">
+										<input type="text" name="" id="" value="2025년 3월" disabled readonly>
+										<button type="button" class="btn-input-cal" data-target="#cal2">달력 열기</button>
+										<div class="layer-calendar" id="cal2">
+											<div class="calendar-selector">
+												<div class="select-box sm line">
+													<select name="" id="">
+														<option value="">2025년</option>
+														<option value="">2024년</option>
+													</select>
+												</div>
+											</div>
+											<div class="calendar-body year">
+												<button type="button" class="month" role="checkbox" aria-checked="false">1월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">2월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="true">3월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">4월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">5월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">6월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">7월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">8월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">9월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">10월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">11월</button>
+												<button type="button" class="month" role="checkbox" aria-checked="false">12월</button>
+											</div>
+										</div>
 									</div>
 								</div>
+								<button type="submit" class="btn md tertiary" disabled id="btnSearch"><span>조회</span></button>
 							</div>
 						</div>
 					</div>
